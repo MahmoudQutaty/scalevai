@@ -549,62 +549,13 @@ hr{
 
 .purple-bg-grad{
     background: rgb(126,34,206);
-    background: linear-gradient(90deg, #7e22ce91 8%, #625aafae 31%, #7badbbbc 76%, #54d2d0ca 89%);
+    background: linear-gradient(90deg, rgba(126, 34, 206, 0.4) 0%, rgba(99, 102, 241, 0.3) 100%);
     filter: blur(50px);
     opacity: 0.5;
 }
 
 .solution-color-spots {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.solution-page > main,
-.solution-page > footer,
-.solution-page > section,
-.solution-page > nav {
-    position: relative;
-    z-index: 1;
-}
-
-.solution-color-spot {
-    position: absolute;
-    display: block;
-    width: 240px;
-    height: 150px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #7e22ce91 8%, #625aafae 31%, #7badbbbc 76%, #54d2d0ca 89%);
-    filter: blur(50px);
-    opacity: 0.28;
-    transform: rotate(-18deg);
-}
-
-.solution-color-spot-one {
-    top: 22%;
-    left: -80px;
-}
-
-.solution-color-spot-two {
-    top: 54%;
-    right: -90px;
-    transform: rotate(24deg);
-    opacity: 0.22;
-}
-
-.solution-color-spot-three {
-    bottom: 8%;
-    left: 38%;
-    width: 300px;
-    height: 120px;
-    transform: rotate(8deg);
-    opacity: 0.18;
-}
-
-.tw-dark .solution-color-spot {
-    opacity: 0.2;
+    display: none !important;
 }
 
 #dashboard {

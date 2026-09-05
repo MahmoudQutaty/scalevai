@@ -1,0 +1,8 @@
+{
+  "name": "ScaleVAI",
+  "description": "ScaleVAI implements proven AI platforms and builds custom AI solutions for enterprises across the UAE and GCC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -147,11 +147,6 @@ class Prompt{
 
     if (window.location.pathname.includes('/solutions/')) {
         document.body.classList.add('solution-page')
-        const spots = document.createElement('div')
-        spots.className = 'solution-color-spots'
-        spots.setAttribute('aria-hidden', 'true')
-        spots.innerHTML = '<span class="solution-color-spot solution-color-spot-one"></span><span class="solution-color-spot solution-color-spot-two"></span><span class="solution-color-spot solution-color-spot-three"></span>'
-        document.body.prepend(spots)
     }
 
     const header = document.querySelector('#site-header')
@@ -179,10 +174,13 @@ class Prompt{
         const solutions = [
             { title: 'Workforce Intelligence', icon: 'bi-person-check', description: 'Ground-truth presence verification for every floor and entrance.', href: `${assetRoot}solutions/workforce-intelligence.html` },
             { title: 'Immersive Showroom', icon: 'bi-badge-vr', description: 'Interactive 3D experiences that help remote buyers decide faster.', href: `${assetRoot}solutions/immersive-showroom.html` },
-            { title: 'Talent Intelligence', icon: 'bi-people', description: 'AI-powered screening for faster, more focused hiring.', href: `${assetRoot}index.html#solutions` },
-            { title: 'Revenue Cycle', icon: 'bi-graph-up-arrow', description: 'Smarter healthcare operations with fewer preventable denials.', href: `${assetRoot}index.html#solutions` },
-            { title: 'People Assistant', icon: 'bi-chat-dots-fill', description: 'Fast answers for payroll, leave, and policy questions.', href: `${assetRoot}index.html#solutions` },
-            { title: 'AI Workflow Automation', icon: 'bi-diagram-3-fill', description: 'Reliable automation for high-volume operational work.', href: `${assetRoot}index.html#solutions` },
+            { title: 'Talent Intelligence', icon: 'bi-people', description: 'AI-powered screening for faster, more focused hiring.', href: `${assetRoot}solutions/talent-intelligence.html` },
+            { title: 'Revenue Cycle', icon: 'bi-graph-up-arrow', description: 'Smarter healthcare operations with fewer preventable denials.', href: `${assetRoot}solutions/revenue-cycle.html` },
+            { title: 'People Assistant', icon: 'bi-chat-dots-fill', description: 'Fast answers for payroll, leave, and policy questions.', href: `${assetRoot}solutions/people-assistant.html` },
+            { title: 'AI Workflow Automation', icon: 'bi-diagram-3-fill', description: 'Reliable automation for high-volume operational work.', href: `${assetRoot}solutions/ai-workflow-automation.html` },
+            { title: 'Retail Intelligence', icon: 'bi-boxes', description: 'Real-time inventory shrinkage and planogram compliance monitoring.', href: `${assetRoot}solutions/retail-intelligence.html` },
+            { title: 'Audience Intelligence', icon: 'bi-display', description: 'AI-driven dynamic content targeting for digital signage.', href: `${assetRoot}solutions/audience-intelligence.html` },
+            { title: 'Business Efficiency', icon: 'bi-graph-up-arrow', description: 'Ongoing advisory identifying process improvements for compounding value.', href: `${assetRoot}solutions/business-efficiency-consulting.html` },
         ]
 
         header.outerHTML = `
@@ -259,7 +257,7 @@ class Prompt{
                         <div class="tw-flex tw-gap-4 tw-text-lg"><a href="https://x.com/" aria-label="Twitter"><i class="bi bi-twitter"></i></a><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></div>
                     </div>
                     <div class="tw-flex max-md:tw-flex-col tw-flex-wrap tw-gap-6 tw-h-full tw-w-full tw-justify-around">
-                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Solutions</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}solutions/workforce-intelligence.html" class="footer-link">Workforce Intelligence</a><a href="${assetRoot}solutions/immersive-showroom.html" class="footer-link">Immersive Showroom</a><a href="${assetRoot}index.html#solutions" class="footer-link">All solutions</a></div></div>
+                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Solutions</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}solutions/workforce-intelligence.html" class="footer-link">Workforce Intelligence</a><a href="${assetRoot}solutions/immersive-showroom.html" class="footer-link">Immersive Showroom</a><a href="${assetRoot}solutions/talent-intelligence.html" class="footer-link">Talent Intelligence</a><a href="${assetRoot}solutions/revenue-cycle.html" class="footer-link">Revenue Cycle</a><a href="${assetRoot}solutions/business-efficiency-consulting.html" class="footer-link">Business Efficiency</a><a href="${assetRoot}index.html#solutions" class="footer-link">All solutions</a></div></div>
                         <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Company</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}index.html#about" class="footer-link">About</a><a href="${assetRoot}index.html#contact" class="footer-link">Contact</a></div></div>
                         <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Industries</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}index.html#industries" class="footer-link">Real estate</a><a href="${assetRoot}index.html#industries" class="footer-link">Healthcare</a><a href="${assetRoot}index.html#industries" class="footer-link">Retail</a></div></div>
                     </div>

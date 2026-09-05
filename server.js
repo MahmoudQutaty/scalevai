@@ -3,9 +3,10 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 8082;
+const PORT = 3000;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 app.use(express.json({ limit: '10kb' }));
 app.use(express.static(__dirname));
@@ -55,8 +56,9 @@ function isRateLimited(ip) {
 
 app.post('/api/chat', async (req, res) => {
     try {
-        if (!OPENAI_API_KEY) {
-            return res.status(500).json({ error: 'The assistant is not configured yet. Please try again later.' });
+        const apiKey = OPENAI_API_KEY || GEMINI_API_KEY;
+        if (!apiKey) {
+            return res.status(500).json({ error: 'The assistant is not configured yet. Please configure your API key.' });
         }
 
         if (isRateLimited(req.ip)) {
@@ -74,28 +76,79 @@ app.post('/api/chat', async (req, res) => {
             .slice(-10)
             .map((m) => ({ role: m.role, content: m.content.slice(0, 2000) }));
 
-        const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${OPENAI_API_KEY}`,
-            },
-            body: JSON.stringify({
-                model: OPENAI_MODEL,
-                messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...trimmed],
-                max_tokens: 400,
-                temperature: 0.4,
-            }),
-        });
+        let reply = "";
+        let responded = false;
 
-        if (!openaiRes.ok) {
-            const errText = await openaiRes.text();
-            console.error('OpenAI API error:', openaiRes.status, errText);
-            return res.status(502).json({ error: 'The assistant is temporarily unavailable. Please try again shortly.' });
+        const isPlaceholderKey = !OPENAI_API_KEY || OPENAI_API_KEY.includes('your-') || OPENAI_API_KEY.includes('placeholder') || OPENAI_API_KEY.includes('here');
+
+        if (OPENAI_API_KEY && !isPlaceholderKey) {
+            try {
+                const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${OPENAI_API_KEY}`,
+                    },
+                    body: JSON.stringify({
+                        model: OPENAI_MODEL,
+                        messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...trimmed],
+                        max_tokens: 400,
+                        temperature: 0.4,
+                    }),
+                });
+
+                if (openaiRes.ok) {
+                    const data = await openaiRes.json();
+                    reply = data.choices?.[0]?.message?.content?.trim() || "I'm sorry, I couldn't generate a response.";
+                    responded = true;
+                } else {
+                    const errText = await openaiRes.text();
+                    console.warn('OpenAI API error:', openaiRes.status, errText);
+                }
+            } catch (err) {
+                console.warn('OpenAI request failed:', err);
+            }
         }
 
-        const data = await openaiRes.json();
-        const reply = data.choices?.[0]?.message?.content?.trim() || "I'm sorry, I couldn't generate a response.";
+        if (!responded && GEMINI_API_KEY) {
+            try {
+                const geminiContents = trimmed.map((m) => ({
+                    role: m.role === 'assistant' ? 'model' : 'user',
+                    parts: [{ text: m.content }]
+                }));
+
+                const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        systemInstruction: {
+                            parts: [{ text: SYSTEM_PROMPT }]
+                        },
+                        contents: geminiContents,
+                        generationConfig: {
+                            maxOutputTokens: 400,
+                            temperature: 0.4,
+                        }
+                    })
+                });
+
+                if (geminiRes.ok) {
+                    const data = await geminiRes.json();
+                    reply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "I'm sorry, I couldn't generate a response.";
+                    responded = true;
+                } else {
+                    const errText = await geminiRes.text();
+                    console.error('Gemini API error:', geminiRes.status, errText);
+                }
+            } catch (err) {
+                console.error('Gemini request failed:', err);
+            }
+        }
+
+        if (!responded) {
+            return res.status(502).json({ error: 'The assistant is temporarily unavailable. Please verify your API key settings.' });
+        }
+
         res.json({ reply });
     } catch (err) {
         console.error('Chat endpoint error:', err);
@@ -103,6 +156,6 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`ScaleVAI site + VAI assistant running at http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`ScaleVAI site + VAI assistant running at http://0.0.0.0:${PORT}`);
 });
