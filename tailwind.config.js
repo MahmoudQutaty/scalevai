@@ -3,24 +3,23 @@ module.exports = {
 	prefix: 'tw-',
 	important: false,
 	content: [
-		// "./**/*.{html, jsx, js}",
-		"./src/restaurant/nutrio/*.{html,jsx, js}",
-		"./src/restaurant/nutrio/*.js",
-		"./src/restaurant/nutrio/*.html",
-		"./src/restaurant/nutrio/**/*.html",
-		
-		"!.hoverpreview.temp.html"
-		// "*.{html,jsx}"
+		"**/*.{html, jsx, js}",
+		"**/*.js",
+		"**/*.html",
 	],
 	darkMode: 'class',
 	theme: {
 		extend: {
-			colors: {
-				primary: '#f3c776',
-				secondary: '#ed7a36'
-			}
+			 
+			fontFamily: {
+				poly: ['"poly"', "serif"],
+			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function({ addVariant }) {
+			addVariant('firefox', ':-moz-any(&)')
+		}
+	],
 }
 
