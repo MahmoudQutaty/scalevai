@@ -6,7 +6,6 @@ const app = express();
 const PORT = 3000;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 app.use(express.json({ limit: '10kb' }));
 app.use(express.static(__dirname));
@@ -56,8 +55,7 @@ function isRateLimited(ip) {
 
 app.post('/api/chat', async (req, res) => {
     try {
-        const apiKey = OPENAI_API_KEY || GEMINI_API_KEY;
-        if (!apiKey) {
+        if (!OPENAI_API_KEY) {
             return res.status(500).json({ error: 'The assistant is not configured yet. Please configure your API key.' });
         }
 
@@ -107,41 +105,6 @@ app.post('/api/chat', async (req, res) => {
                 }
             } catch (err) {
                 console.warn('OpenAI request failed:', err);
-            }
-        }
-
-        if (!responded && GEMINI_API_KEY) {
-            try {
-                const geminiContents = trimmed.map((m) => ({
-                    role: m.role === 'assistant' ? 'model' : 'user',
-                    parts: [{ text: m.content }]
-                }));
-
-                const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        systemInstruction: {
-                            parts: [{ text: SYSTEM_PROMPT }]
-                        },
-                        contents: geminiContents,
-                        generationConfig: {
-                            maxOutputTokens: 400,
-                            temperature: 0.4,
-                        }
-                    })
-                });
-
-                if (geminiRes.ok) {
-                    const data = await geminiRes.json();
-                    reply = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "I'm sorry, I couldn't generate a response.";
-                    responded = true;
-                } else {
-                    const errText = await geminiRes.text();
-                    console.error('Gemini API error:', geminiRes.status, errText);
-                }
-            } catch (err) {
-                console.error('Gemini request failed:', err);
             }
         }
 
