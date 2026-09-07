@@ -196,11 +196,11 @@ class Prompt{
                         ${megaMenu(1, 'Solutions', solutions)}
                         <a class="header-links" href="${assetRoot}index.html#about">About</a>
                         ${megaMenu(0, 'Industries', industries)}
-                        <a class="header-links" href="${assetRoot}index.html#contact">Contact</a>
+                        <a class="header-links" href="${assetRoot}contact.html">Contact</a>
                     </nav>
                     <div class="lg:tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center">
                         <button type="button" onclick="toggleMode()" class="header-links tw-text-gray-600 dark:tw-text-gray-300" title="Toggle theme" id="theme-toggle"><i class="bi bi-sun" id="toggle-mode-icon"></i></button>
-                        <a href="${assetRoot}index.html#contact" aria-label="Book a discovery call" class="btn tw-flex tw-gap-3 tw-px-3 tw-py-2"><span>Book a call</span><i class="bi bi-arrow-right"></i></a>
+                        <a href="${assetRoot}contact.html" aria-label="Book a discovery call" class="btn tw-flex tw-gap-3 tw-px-3 tw-py-2"><span>Book a call</span><i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
                 <button class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-gray-500 lg:tw-hidden" onclick="toggleHeader()" aria-label="menu" id="collapse-btn"></button>
@@ -258,7 +258,7 @@ class Prompt{
                     </div>
                     <div class="tw-flex max-md:tw-flex-col tw-flex-wrap tw-gap-6 tw-h-full tw-w-full tw-justify-around">
                         <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Solutions</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}solutions/workforce-intelligence.html" class="footer-link">Workforce Intelligence</a><a href="${assetRoot}solutions/immersive-showroom.html" class="footer-link">Immersive Showroom</a><a href="${assetRoot}solutions/talent-intelligence.html" class="footer-link">Talent Intelligence</a><a href="${assetRoot}solutions/revenue-cycle.html" class="footer-link">Revenue Cycle</a><a href="${assetRoot}solutions/business-efficiency-consulting.html" class="footer-link">Business Efficiency</a><a href="${assetRoot}index.html#solutions" class="footer-link">All solutions</a></div></div>
-                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Company</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}index.html#about" class="footer-link">About</a><a href="${assetRoot}index.html#contact" class="footer-link">Contact</a></div></div>
+                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Company</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}index.html#about" class="footer-link">About</a><a href="${assetRoot}contact.html" class="footer-link">Contact</a></div></div>
                         <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Industries</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}index.html#industries" class="footer-link">Real estate</a><a href="${assetRoot}index.html#industries" class="footer-link">Healthcare</a><a href="${assetRoot}index.html#industries" class="footer-link">Retail</a></div></div>
                     </div>
                 </div>

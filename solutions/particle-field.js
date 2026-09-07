@@ -57,8 +57,17 @@
 
     function resize() {
         dpr = Math.min(window.devicePixelRatio || 1, 2)
-        width = canvas.clientWidth
-        height = canvas.clientHeight
+
+        const parent = canvas.parentElement
+        const parentRect = parent ? parent.getBoundingClientRect() : null
+        const parentWidth = parentRect ? parentRect.width : (canvas.clientWidth || window.innerWidth)
+        const parentHeight = parentRect ? parentRect.height : (canvas.clientHeight || 600)
+
+        width = Math.max(1, parentWidth || canvas.clientWidth || window.innerWidth)
+        height = Math.max(1, parentHeight || canvas.clientHeight || 600)
+
+        canvas.style.width = `${width}px`
+        canvas.style.height = `${height}px`
         canvas.width = width * dpr
         canvas.height = height * dpr
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0)

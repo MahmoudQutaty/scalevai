@@ -91,7 +91,7 @@ function resolveHeroLength(value, fallback) {
 function updateHomepageHero() {
     if (!shrinkingHero || !shrinkingHeroSpacer) return
 
-    const maxHeight = resolveHeroLength("80vh", window.innerHeight * 0.8)
+    const maxHeight = resolveHeroLength("100svh", window.innerHeight)
     const minHeight = resolveHeroLength("90px", 90)
     const rect = shrinkingHeroSpacer.getBoundingClientRect()
     const scrollRange = Math.max(180, window.innerHeight * 0.7)
