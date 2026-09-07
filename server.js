@@ -156,6 +156,10 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`ScaleVAI site + VAI assistant running at http://0.0.0.0:${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`ScaleVAI site + VAI assistant running at http://0.0.0.0:${PORT}`);
+    });
+}
+
+module.exports = app;
