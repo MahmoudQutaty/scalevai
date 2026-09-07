@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en" class="tw-dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+        <title>Retail AI Solutions — Store Operations, Footfall &amp; Workforce | ScaleVAI</title>
+        <meta name="description" content="Enterprise AI and computer vision for luxury boutiques, multi-brand chains, supermarkets, and department stores across the UAE &amp; GCC. Real-time footfall heatmaps, active sales floor verification, on-shelf stockout alerts, and WhatsApp VIP clienteling." />
+        <meta name="keywords" content="Retail AI Dubai, In-store computer vision UAE, retail workforce management GCC, footfall analytics Dubai Mall, on-shelf availability AI, retail clienteling WhatsApp, SAP Retail AI integration, ScaleVAI" />
+        <link rel="canonical" href="https://scalevai.com/industries/retail.html" />
+        <link
+            rel="shortcut icon"
+            href="../assets/logo/scalevai-logo-light.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Retail AI Solutions — Store Operations, Footfall &amp; Workforce | ScaleVAI" />
+        <meta property="og:description" content="Turn footfall into revenue. Computer vision footfall heatmaps, active floor staff verification, phantom stockout elimination, and automated WhatsApp clienteling for GCC retail networks." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://scalevai.com/industries/retail.html" />
+        <meta property="og:image" content="https://scalevai.com/assets/images/home/Retail.png" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Retail AI Solutions — Store Operations, Footfall &amp; Workforce | ScaleVAI" />
+        <meta name="twitter:description" content="Enterprise AI on the shopfloor for staff accountability, inventory intelligence, and customer engagement across the UAE &amp; GCC." />
+        <meta name="twitter:image" content="https://scalevai.com/assets/images/home/Retail.png" />
+
+        <link rel="stylesheet" href="../css/tailwind-build.css">
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../solutions/solutions.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Structured data: Service + BreadcrumbList + FAQ -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Retail AI & In-Store Operational Intelligence",
+            "serviceType": "Retail Storefront AI & Computer Vision Analytics",
+            "description": "Enterprise AI solutions for luxury boutiques, multi-store fashion chains, supermarkets, and department stores across the UAE and GCC. Features real-time footfall heatmaps, active sales floor staff verification, on-shelf stockout detection, and WhatsApp VIP clienteling.",
+            "provider": {
+                "@type": "Organization",
+                "name": "ScaleVAI",
+                "url": "https://scalevai.com"
+            },
+            "areaServed": ["United Arab Emirates", "Saudi Arabia", "Qatar", "GCC"],
+            "url": "https://scalevai.com/industries/retail.html"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalevai.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://scalevai.com/#industries" },
+                { "@type": "ListItem", "position": 3, "name": "Retail", "item": "https://scalevai.com/industries/retail.html" }
+            ]
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How does ScaleVAI comply with UAE data privacy laws and shopper anonymity?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "ScaleVAI operates in strict compliance with UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection and global GDPR regulations. Our computer vision algorithms process shopper motion on local edge devices, converting feeds into anonymous mathematical vectors (dwell coordinates and bounding boxes). No facial biometric identifiers, names, or video recordings of shoppers are ever stored or transmitted to external servers."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can we deploy ScaleVAI using our existing store CCTV cameras?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. ScaleVAI is camera-agnostic and connects seamlessly via standard RTSP and ONVIF video streams from your existing ceiling CCTV cameras (Hikvision, Dahua, Axis, Hanwha, Uniview). You do not need to replace your hardware or install expensive proprietary in-store sensors."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How does on-shelf stockout detection differ from traditional RFID or POS inventory?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Traditional POS systems tell you what has been sold, but cannot detect 'phantom stockouts'—items recorded as present in the store's inventory system that are sitting stranded in the stockroom or misplaced on the wrong shelf. ScaleVAI's computer vision continuously monitors display fixtures and hangers in real time, alerting store staff to replenish empty shelf facings before a walking shopper abandons the purchase."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does ScaleVAI integrate with enterprise ERPs like SAP Retail and Oracle Xstore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. ScaleVAI provides robust bi-directional APIs for SAP S/4HANA Retail, Oracle Retail / Xstore, Microsoft Dynamics 365 Commerce, and Shopify POS. This enables unified correlation between footfall traffic, staff hours, and POS cash register conversions."
+                    }
+                }
+            ]
+        }
+        </script>
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fcfcfc] 
+            tw-text-black dark:tw-bg-black dark:tw-text-white"
+    >
+        <header
+            id="site-header"
+            class="site-header lg:tw-px-4 tw-max-w-[100vw] max-lg:tw-top-0 tw-fixed tw-top-0 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full 
+                    tw-px-[3%]
+                    lg:tw-justify-around"
+        >
+            <a class="tw-flex tw-p-[4px] tw-gap-2 tw-place-items-center" href="../index.html" aria-label="ScaleVAI home">
+                <div class="tw-h-[30px]">
+                    <img
+                        src="../assets/logo/scalevai-logo-light-trim.png"
+                        alt="ScaleVAI logo"
+                        class="logo-light tw-hidden tw-object-contain tw-h-full tw-w-auto"
+                    />
+                    <img
+                        src="../assets/logo/scalevai-logo-dark-trim.png"
+                        alt="ScaleVAI logo"
+                        class="logo-dark tw-object-contain tw-h-full tw-w-auto"
+                    />
+                </div>
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <nav
+                    class="tw-relative tw-flex tw-h-full max-lg:tw-h-max tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col 
+                                max-lg:tw-gap-5 lg:tw-mx-auto tw-place-items-center"
+                >
+                    <a class="header-links" href="../index.html#solutions"> Solutions </a>
+                    <a class="header-links" href="../index.html#about"> About </a>
+                    <a class="header-links" href="../index.html#industries"> Industries </a>
+                    <a class="header-links" href="../contact.html"> Contact </a>
+                </nav>
+                <div
+                    class="lg:tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full 
+                            max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <button
+                        type="button"
+                        onclick="toggleMode()"
+                        class="header-links tw-text-gray-600 dark:tw-text-gray-300"
+                        title="Toggle theme"
+                        id="theme-toggle"
+                    >
+                        <i class="bi bi-sun" id="toggle-mode-icon"></i>
+                    </button>
+                    <a
+                        href="../contact.html"
+                        aria-label="Book a retail discovery call"
+                        class="btn tw-flex tw-gap-3 tw-px-3 tw-py-2"
+                    >
+                        <span>Book a call</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-gray-500 lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <main>
+            <!-- Shrinking Hero Section -->
+            <section class="solution-shrinking-hero-spacer tw-relative tw-w-full">
+                <div class="solution-shrinking-hero solution-normal-hero hero-section tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden">
+                    <video
+                        class="solution-hero-video tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-object-cover tw-z-0"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="../assets/images/home/Retail.png"
+                    >
+                        <source src="../assets/videos/Retail Intelligence.mp4" type="video/mp4">
+                    </video>
+                    <div class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-z-0"
+                        style="background: linear-gradient(180deg, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.34) 40%, rgba(0,0,0,0.85) 100%);"></div>
+
+                    <div class="solution-hero-content">
+                        <div class="solution-hero-copy tw-flex tw-flex-col tw-gap-6" style="max-width: 780px;">
+                            <div class="solution-hero-heading-mask">
+                                <h1 class="solution-hero-heading tw-text-6xl tw-font-semibold max-lg:tw-text-4xl" style="color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,0.8);">
+                                    Retail Storefront &amp; Omnichannel Intelligence
+                                </h1>
+                            </div>
+                            <p class="tw-text-lg max-lg:tw-text-base" style="color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.8); max-width: 660px;">
+                                Know your store. Know your staff. Know your customer. Transform ceiling CCTV feeds into real-time footfall heatmaps, active sales floor presence verification, on-shelf stockout alerts, and autonomous WhatsApp VIP clienteling across UAE &amp; GCC store networks.
+                            </p>
+                            <div class="tw-flex max-md:tw-flex-col tw-gap-4">
+                                <a href="../contact.html" class="btn tw-flex tw-gap-2">
+                                    <span>Book a retail discovery call</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="#retail-calculator" class="btn tw-flex tw-gap-2" style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">
+                                    <span>Calculate store network ROI</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breadcrumb -->
+            <nav class="solution-breadcrumb-bar solution-breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#industries">Industries</a>
+                <span>/</span>
+                <span>Retail</span>
+            </nav>
+
+            <!-- Industry Challenge & Opportunity Narrative -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="tw-flex tw-max-w-[820px] tw-flex-col tw-gap-5">
+                    <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">World-Class Destinations &bull; UAE &amp; GCC Retail</div>
+                    <h2 class="reveal-up tw-text-4xl tw-font-medium max-md:tw-text-2xl">
+                        High prime mall rents. Unassisted footfall. Empty display shelves and phantom stockouts.
+                    </h2>
+                    <p class="reveal-up tw-text-gray-700 dark:tw-text-gray-300">
+                        Retail in Dubai, Abu Dhabi, Riyadh, and Doha is defined by world-renowned destinations—from The Dubai Mall and Mall of the Emirates to Riyadh Park and Place Vendôme Qatar. Premium retail real estate demands exceptional sales density per square meter.
+                    </p>
+                    <p class="reveal-up tw-text-gray-700 dark:tw-text-gray-300">
+                        Yet retail executives face persistent operational blind spots: store managers have no live visibility into whether sales staff are actively engaging shoppers or lingering in back stockrooms during peak footfall surges; high-margin display shelves run empty while replacement inventory sits forgotten in storeroom cartons; and long checkout lines lead to basket abandonment. ScaleVAI equips regional retailers with edge computer vision that unlocks complete floor visibility, audits agency staffing, and drives direct conversion lift.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Interactive Retail Yield & Footfall Estimator -->
+            <section id="retail-calculator" class="tw-relative tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[5%] tw-px-[10%] max-md:tw-px-4 tw-bg-[#f6f7fb] dark:tw-bg-[#0a0c10]">
+                <div class="tw-flex tw-w-full tw-max-w-[1100px] tw-flex-col tw-gap-8">
+                    <div class="tw-flex tw-flex-col tw-gap-3">
+                        <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Interactive Retail ROI Estimator</div>
+                        <h2 class="reveal-up tw-text-4xl tw-font-medium max-md:tw-text-2xl">
+                            Estimate your store network's conversion lift &amp; stockout recovery.
+                        </h2>
+                        <p class="reveal-up tw-max-w-[700px] tw-text-gray-700 dark:tw-text-gray-300">
+                            Select your retail format and adjust store count, monthly footfall, and average transaction value (ATV) to project direct revenue lift from shelf availability, peak-hour staff coverage, and agency shift audits.
+                        </p>
+                    </div>
+
+                    <!-- Calculator Grid -->
+                    <div class="reveal-up tw-grid tw-grid-cols-1 lg:tw-grid-cols-12 tw-gap-8 tw-rounded-2xl tw-border-[1px] tw-border-[#e3e8f0] dark:tw-border-[#242830] tw-bg-white dark:tw-bg-[#12141a] tw-p-6 lg:tw-p-10 tw-shadow-xl">
+                        
+                        <!-- Inputs Column -->
+                        <div class="lg:tw-col-span-6 tw-flex tw-flex-col tw-gap-6">
+                            <div>
+                                <label class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-text-gray-500 dark:tw-text-gray-400">Retail Format Archetype</label>
+                                <div class="tw-grid tw-grid-cols-2 tw-gap-2 tw-mt-2">
+                                    <button type="button" class="retail-archetype-btn is-active tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="luxury">
+                                        <i class="bi bi-gem tw-mr-1"></i> Luxury &amp; Watch Boutique
+                                    </button>
+                                    <button type="button" class="retail-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="fashion">
+                                        <i class="bi bi-bag-fill tw-mr-1"></i> Multi-Brand Apparel Chain
+                                    </button>
+                                    <button type="button" class="retail-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="supermarket">
+                                        <i class="bi bi-cart4 tw-mr-1"></i> Hypermarket &amp; FMCG
+                                    </button>
+                                    <button type="button" class="retail-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="electronics">
+                                        <i class="bi bi-laptop tw-mr-1"></i> Electronics &amp; Department
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Store Count Slider -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Number of Store Outlets</span>
+                                    <span id="retail-stores-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">12 stores</span>
+                                </div>
+                                <input id="retail-stores-slider" type="range" min="1" max="60" step="1" value="12" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>1 store</span>
+                                    <span>60+ stores</span>
+                                </div>
+                            </div>
+
+                            <!-- Monthly Footfall Slider -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Monthly Footfall per Store</span>
+                                    <span id="retail-footfall-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">22,000 visitors</span>
+                                </div>
+                                <input id="retail-footfall-slider" type="range" min="3000" max="150000" step="1000" value="22000" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>3,000</span>
+                                    <span>150,000+</span>
+                                </div>
+                            </div>
+
+                            <!-- Average Basket Value / ATV Slider -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Average Transaction Value (ATV)</span>
+                                    <span id="retail-atv-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">AED 1,250</span>
+                                </div>
+                                <input id="retail-atv-slider" type="range" min="50" max="4500" step="25" value="1250" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>AED 50</span>
+                                    <span>AED 4,500+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Column -->
+                        <div class="lg:tw-col-span-6 tw-flex tw-flex-col tw-justify-between tw-rounded-xl tw-bg-[#f6f7fb] dark:tw-bg-[#08090d] tw-p-6 lg:tw-p-8 tw-border tw-border-[#e3e8f0] dark:tw-border-[#1f232b]">
+                            <div>
+                                <span class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-text-gray-500 dark:tw-text-gray-400">Projected Annual Financial Value Created</span>
+                                <div class="tw-mt-3 tw-flex tw-items-baseline tw-gap-2">
+                                    <span id="retail-value-display" class="tw-text-4xl lg:tw-text-5xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">AED 2,840,000</span>
+                                    <span class="tw-text-sm tw-text-gray-500 dark:tw-text-gray-400">/ year</span>
+                                </div>
+                                <p class="tw-mt-2 tw-text-xs tw-text-gray-600 dark:tw-text-gray-400">
+                                    Combined incremental sales from recovered shelf stockouts, active sales associate floor engagement, and eliminated agency promoter ghost shifts.
+                                </p>
+                            </div>
+
+                            <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-my-6">
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Conversion Rate Uplift</div>
+                                    <div id="retail-conversion-display" class="tw-text-2xl tw-font-bold tw-text-green-600 dark:tw-text-green-400 tw-mt-1">+18.5%</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Peak-hour floor coverage</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Stockout Recovery</div>
+                                    <div id="retail-stockout-display" class="tw-text-2xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a] tw-mt-1">AED 720K</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Phantom on-shelf stockouts</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Queue Abandonment</div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-green-600 dark:tw-text-green-400 tw-mt-1">-64%</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Instant register overflow alert</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Deployment Speed</div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a] tw-mt-1">2&ndash;4 Weeks</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Zero sensor hardware rewiring</div>
+                                </div>
+                            </div>
+
+                            <a href="../contact.html" class="btn tw-w-full tw-flex tw-justify-center tw-gap-2">
+                                <span>Request Retail Diagnostic</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Capabilities Slider (Matching Solution Standard) -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Core Retail Capabilities</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">
+                        Precision AI on the shopfloor, in the stockroom, and on WhatsApp
+                    </h2>
+                    <p class="tw-mt-3 tw-text-gray-700 dark:tw-text-gray-300">
+                        Purpose-engineered for shopping mall flagships, high-volume retail chains, and luxury boutiques across the GCC.
+                    </p>
+                </div>
+
+                <div class="solution-capability-slider reveal-up" data-capability-slider>
+                    <div class="solution-capability-track">
+                        <!-- Slide 1 -->
+                        <article class="solution-capability-slide is-active" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/Retail.png" alt="Real-Time Shopfloor Heatmaps &amp; Footfall Analytics">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Shopper Footfall &amp; Dwell Heatmaps</h3>
+                                <p>Converts ceiling CCTV cameras into real-time heatmaps without recording shopper faces. Measures store entrance capture rates, display table dwell times, and shopper flow patterns to optimize visual merchandising and high-margin product placement.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 2 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/Workforce Intelligence.png" alt="Active Sales Floor Presence &amp; Staff Verification">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Active Sales Floor Presence Verification</h3>
+                                <p>Passive computer vision verifies sales associates and brand promoters are actively stationed in customer-facing zones. Alerts store supervisors when high-traffic departments are unassisted and audits outsourced agency promoter shift invoices.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 3 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/Audience Intelligence.png" alt="On-Shelf Availability &amp; Stockout Computer Vision">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>On-Shelf Availability &amp; Stockout Alerts</h3>
+                                <p>Identifies empty display hangers, depleted shelf facings, and misplaced SKUs in real time. Automatically dispatches replenishment tasks to stockroom personnel via smartwatch or mobile app before shoppers walk away empty-handed.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 4 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/People Assistant.png" alt="WhatsApp VIP Clienteling &amp; Omnichannel Concierge">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Autonomous WhatsApp VIP Clienteling</h3>
+                                <p>Empowers store teams with an AI clienteling assistant on WhatsApp. Automatically shares tailored new arrivals based on past purchases, notifies VIP customers when reserved sizes arrive in-store, and confirms private styling appointments.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 5 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/integrations1.png" alt="Certified POS, ERP &amp; RFID Integration">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Certified POS, ERP &amp; Inventory Integration</h3>
+                                <p>Bi-directional real-time connectors for SAP S/4HANA Retail, Oracle Retail (Xstore), Microsoft Dynamics 365, and Shopify POS. Correlates live footfall count with POS cash register rings to deliver true store conversion rates by the hour.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="solution-capability-controls" aria-label="Retail capabilities controls">
+                        <button type="button" data-capability-prev aria-label="Previous capability">
+                            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <span data-capability-counter>01 / 05</span>
+                        <button type="button" data-capability-next aria-label="Next capability">
+                            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Where It Delivers Value (Detailed Retail Sub-Sectors with Value Rows) -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Industry Sub-Sectors</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">
+                        Where ScaleVAI delivers the highest retail ROI
+                    </h2>
+                    <p class="tw-mt-3 tw-text-gray-700 dark:tw-text-gray-300">
+                        Tailored operational playbooks engineered for luxury flagship boutiques, multi-store apparel chains, and grocery hypermarkets.
+                    </p>
+                </div>
+
+                <div class="solution-value-list tw-mt-8">
+                    <!-- Row 1 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Luxury Fashion, Watches &amp; High-Jewelry Boutiques</h3>
+                            <p>For premier boutiques in Dubai Mall Fashion Avenue or The Galleria Al Maryah Island. Ensure every high-net-worth customer entering the boutique is greeted immediately, while VIP advisors receive automated styling history suggestions on their tablets.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Instant floor alerts when VIP lounges or display vitrines remain unattended</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> WhatsApp clienteling engine driving +32% higher repeat appointment bookings</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> 100% anonymized shopper privacy &bull; No biometric recordings stored</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/Retail.png" alt="Luxury fashion and high-jewelry boutique AI" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 2 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Multi-Store Apparel, Footwear &amp; Fast Fashion Chains</h3>
+                            <p>Eliminate the number-one cause of lost apparel sales: missing sizes on display racks. When a shopper browses denim or footwear, computer vision identifies depleted size runs and prompts backroom stock runners to replenish before the customer leaves.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> 78% reduction in phantom stockouts where inventory is in stockroom but off the floor</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Real-time queue monitoring triggering additional POS checkout openings</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Direct POS integration with Oracle Xstore and SAP Retail</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article3.png" alt="Multi-store apparel and footwear retail AI" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 3 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Hypermarkets, Supermarkets &amp; FMCG Chains</h3>
+                            <p>Maintain high-velocity shelf availability in fresh produce, dairy, and beverage aisles. Computer vision detects shelf gaps in minutes rather than hours, reducing lost sales and ensuring outsourced merchandising brand promoters fulfill contracted shelf presence.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Continuous detection of out-of-stock FMCG end-caps and gondola heads</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Audit third-party brand agency merchandiser shift hours and display execution</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Checkout queue dwell analytics cutting customer checkout abandonment by 55%</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article2.jpg" alt="Hypermarket and FMCG retail grocery AI" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 4 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Consumer Electronics &amp; Department Stores</h3>
+                            <p>In high-value consumer tech and specialty department stores, consultative customer engagement is critical. Monitor sales associate coverage across high-margin zones (smartphones, gaming, home appliances) to ensure no browsing customer waits longer than 90 seconds.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Customer dwell alerts when unassisted shoppers linger at demo display stations</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Multi-zone staff balance preventing overstaffing in low-traffic departments</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Real-time hourly conversion tracking by department against POS transactions</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article1.png" alt="Consumer electronics and department store AI" loading="lazy">
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Case Study Proof Point -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up tw-flex tw-flex-col tw-gap-4 tw-rounded-2xl tw-border-[1px] tw-bg-[#f6f7fb] tw-p-8 lg:tw-p-10 dark:tw-border-[#1f2123] dark:tw-bg-[#080808]" style="max-width: 960px;">
+                    <div class="tw-flex tw-justify-between tw-items-center max-md:tw-flex-col max-md:tw-items-start tw-gap-2">
+                        <div class="tw-text-xs tw-uppercase tw-tracking-wide tw-text-[#c9963a] tw-font-semibold">Regional Retail Case Study &bull; Dubai &amp; Riyadh Mall Network</div>
+                        <span class="tw-text-xs tw-bg-[#e2e8f0] dark:tw-bg-[#1c2028] tw-py-1 tw-px-3 tw-rounded-full tw-text-gray-700 dark:tw-text-gray-300">18-Store Multi-Brand Fashion Group</span>
+                    </div>
+                    <div class="tw-text-2xl tw-font-semibold">
+                        AED 3.45M in annual recovered sales across 18 stores: 21.6% conversion lift &amp; 100% agency promoter compliance
+                    </div>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300">
+                        A prominent regional fashion retailer operating 18 flagship stores across The Dubai Mall, Mall of the Emirates, Yas Mall, and Riyadh Park integrated ScaleVAI over their existing ceiling cameras. The solution connected to their Oracle Retail POS and SAP inventory backend to resolve chronic phantom stockouts and staffing mismatches.
+                    </p>
+
+                    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-6 tw-mt-4 tw-pt-4 tw-border-t tw-border-gray-200 dark:tw-border-[#1f2123]">
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">AED 3.45M</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">Annual sales recovered from eliminated on-shelf stockouts and optimized peak staffing</div>
+                        </div>
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">+21.6%</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">Average store footfall-to-POS transaction conversion rate increase</div>
+                        </div>
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">100%</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">Agency staffing invoice compliance, eliminating AED 480K in ghost promoter billing</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How We Work / Deployment Blueprint -->
+            <section class="tw-relative tw-flex tw-w-full tw-min-h-[90vh] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="tw-flex tw-w-full tw-max-w-[85%] tw-flex-col tw-place-content-center tw-place-items-center tw-gap-4 tw-p-4">
+                    <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Deployment Methodology</div>
+                    <h2 class="reveal-up tw-text-center tw-text-5xl tw-font-medium tw-leading-normal max-md:tw-text-3xl">
+                        From camera onboarding to live store optimization
+                    </h2>
+                    <p class="reveal-up tw-mt-2 tw-max-w-[700px] tw-text-center tw-text-gray-700 dark:tw-text-gray-300">
+                        Rapid, non-invasive deployment across your store footprint using existing ceiling CCTV and network infrastructure.
+                    </p>
+
+                    <div class="how-we-work-flow reveal-up tw-mt-6">
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-camera-video-fill"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">1. Camera &amp; Network Audit</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                We connect securely to your existing store CCTV streams via RTSP/ONVIF. No rewiring, hardware tear-down, or proprietary sensor purchases required.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">2. Floorplan &amp; Zone Calibration</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                We digitize your store floorplan, mapping entrance threshold count lines, customer dwell heat zones, key fixture displays, and checkout queue boundaries.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-diagram-3-fill"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">3. ERP &amp; POS Integration</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                Connect real-time transactional streams from SAP Retail, Oracle Xstore, or Shopify POS, correlating footfall with hourly basket transactions.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-phone-vibrate-fill"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">4. Store Edge Alerts &amp; Ops</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                Store managers and regional directors receive live WhatsApp and tablet alerts for unattended peak traffic zones, shelf stockouts, and queue spikes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Retail FAQ Accordion -->
+            <section class="tw-relative tw-flex tw-w-full tw-flex-col tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Questions &amp; Answers</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">Frequently Asked Questions</h2>
+                </div>
+                <div class="tw-mt-6 tw-flex tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4">
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>How does ScaleVAI comply with UAE data privacy laws and shopper anonymity?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            ScaleVAI operates in strict compliance with UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection and global GDPR regulations. Our computer vision algorithms process shopper motion on local edge devices, converting feeds into anonymous mathematical vectors (dwell coordinates and bounding boxes). No facial biometric identifiers, names, or video recordings of shoppers are ever stored or transmitted to external servers.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>Can we deploy ScaleVAI using our existing store CCTV cameras?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            Yes. ScaleVAI is camera-agnostic and connects seamlessly via standard RTSP and ONVIF video streams from your existing ceiling CCTV cameras (Hikvision, Dahua, Axis, Hanwha, Uniview). You do not need to replace your hardware or install expensive proprietary in-store sensors.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>How does on-shelf stockout detection differ from traditional RFID or POS inventory?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            Traditional POS systems tell you what has been sold, but cannot detect "phantom stockouts"—items recorded as present in the store's inventory system that are sitting stranded in the stockroom or misplaced on the wrong shelf. ScaleVAI's computer vision continuously monitors display fixtures and hangers in real time, alerting store staff to replenish empty shelf facings before a walking shopper abandons the purchase.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>Does ScaleVAI integrate with enterprise ERPs like SAP Retail and Oracle Xstore?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            Yes. ScaleVAI provides robust bi-directional APIs for SAP S/4HANA Retail, Oracle Retail / Xstore, Microsoft Dynamics 365 Commerce, and Shopify POS. This enables unified correlation between footfall traffic, staff hours, and POS cash register conversions.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom CTA Particle Canvas -->
+            <section class="solution-cta-section tw-relative tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <canvas id="solution-cta-canvas" class="solution-cta-canvas" aria-hidden="true"></canvas>
+                <div class="tw-relative tw-z-10 tw-flex tw-w-full tw-max-w-[760px] tw-flex-col tw-place-items-center tw-gap-6 tw-text-center">
+                    <span class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-[0.2em] tw-text-[#c9963a]">Retail Operational Excellence</span>
+                    <h2 class="tw-text-5xl tw-font-semibold tw-leading-tight max-md:tw-text-3xl">
+                        Turn Every Store Footfall into Measurable Revenue
+                    </h2>
+                    <p class="tw-max-w-[560px] tw-text-base tw-text-gray-600 dark:tw-text-gray-300">
+                        Schedule a confidential 30-minute diagnostic session with our retail AI engineering team to evaluate your store camera infrastructure and quantify potential conversion lift.
+                    </p>
+                    <div class="tw-flex max-md:tw-flex-col tw-gap-4 tw-mt-2">
+                        <a href="../contact.html" class="btn tw-flex tw-gap-2">
+                            <span>Schedule Retail Diagnostic</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="../solutions/retail-intelligence.html" class="btn tw-flex tw-gap-2" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.25);">
+                            <span>Explore Retail Intelligence</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="tw-flex tw-w-full tw-place-content-around tw-p-[5%] tw-px-[10%] tw-text-base max-md:tw-flex-col">
+            <!-- Dynamic footer inserted by components.js -->
+        </footer>
+
+        <script src="../scripts/components.js"></script>
+        <script src="../solutions/solutions.js"></script>
+        <script>
+            // Retail Impact & Conversion Estimator Calculator Logic
+            (function initRetailCalculator() {
+                const archetypes = {
+                    'luxury': { conversionLift: 0.185, stockoutFactor: 0.035, agencyFactor: 0.08, defaultStores: 6, defaultFootfall: 14000, defaultAtv: 2400 },
+                    'fashion': { conversionLift: 0.215, stockoutFactor: 0.048, agencyFactor: 0.11, defaultStores: 16, defaultFootfall: 32000, defaultAtv: 420 },
+                    'supermarket': { conversionLift: 0.140, stockoutFactor: 0.028, agencyFactor: 0.09, defaultStores: 8, defaultFootfall: 65000, defaultAtv: 190 },
+                    'electronics': { conversionLift: 0.190, stockoutFactor: 0.042, agencyFactor: 0.07, defaultStores: 10, defaultFootfall: 20000, defaultAtv: 1100 }
+                };
+
+                let currentArchetype = 'luxury';
+
+                const storesSlider = document.getElementById('retail-stores-slider');
+                const storesDisplay = document.getElementById('retail-stores-display');
+                const footfallSlider = document.getElementById('retail-footfall-slider');
+                const footfallDisplay = document.getElementById('retail-footfall-display');
+                const atvSlider = document.getElementById('retail-atv-slider');
+                const atvDisplay = document.getElementById('retail-atv-display');
+
+                const valueDisplay = document.getElementById('retail-value-display');
+                const conversionDisplay = document.getElementById('retail-conversion-display');
+                const stockoutDisplay = document.getElementById('retail-stockout-display');
+
+                const archetypeButtons = document.querySelectorAll('.retail-archetype-btn');
+
+                function calculate() {
+                    if (!storesSlider || !footfallSlider || !atvSlider) return;
+
+                    const stores = parseInt(storesSlider.value, 10);
+                    const footfall = parseInt(footfallSlider.value, 10);
+                    const atv = parseInt(atvSlider.value, 10);
+
+                    const cfg = archetypes[currentArchetype] || archetypes['luxury'];
+
+                    // Annual network shoppers = stores * monthly footfall * 12
+                    const annualShoppers = stores * footfall * 12;
+
+                    // Baseline conversion estimate (typically 12% to 22% in GCC mall retail)
+                    const baselineConversion = 0.14;
+                    const baselineTransactions = annualShoppers * baselineConversion;
+                    const baselineRevenue = baselineTransactions * atv;
+
+                    // Incremental revenue from conversion lift via peak floor coverage and zero unattended customer surges
+                    const incrementalConversionRevenue = baselineRevenue * (cfg.conversionLift * 0.45);
+
+                    // Stockout recovery revenue (prevented walkouts due to on-shelf availability)
+                    const recoveredStockoutRevenue = baselineRevenue * cfg.stockoutFactor;
+
+                    // Agency shift audit savings (audited promoter hours, prevented phantom shifts)
+                    const agencyLaborSavings = stores * 8 * 42000 * cfg.agencyFactor * 0.85;
+
+                    const totalFinancialValue = incrementalConversionRevenue + recoveredStockoutRevenue + agencyLaborSavings;
+
+                    // Update UI displays
+                    storesDisplay.textContent = `${stores} store${stores > 1 ? 's' : ''}`;
+                    footfallDisplay.textContent = `${footfall.toLocaleString()} visitors`;
+                    atvDisplay.textContent = `AED ${atv.toLocaleString()}`;
+
+                    valueDisplay.textContent = `AED ${Math.round(totalFinancialValue).toLocaleString()}`;
+                    conversionDisplay.textContent = `+${(cfg.conversionLift * 100).toFixed(1)}%`;
+                    stockoutDisplay.textContent = `AED ${Math.round(recoveredStockoutRevenue / 1000).toLocaleString()}K`;
+                }
+
+                archetypeButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        archetypeButtons.forEach(b => {
+                            b.classList.remove('is-active', 'tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                            b.classList.add('tw-border-gray-300', 'dark:tw-border-gray-700');
+                        });
+                        btn.classList.add('is-active', 'tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                        btn.classList.remove('tw-border-gray-300', 'dark:tw-border-gray-700');
+
+                        const type = btn.getAttribute('data-type');
+                        currentArchetype = type;
+                        const cfg = archetypes[type];
+                        if (cfg) {
+                            storesSlider.value = cfg.defaultStores;
+                            footfallSlider.value = cfg.defaultFootfall;
+                            atvSlider.value = cfg.defaultAtv;
+                        }
+                        calculate();
+                    });
+                });
+
+                // Set initial active state styling
+                const initialActive = document.querySelector('.retail-archetype-btn.is-active');
+                if (initialActive) {
+                    initialActive.classList.add('tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                }
+
+                if (storesSlider) storesSlider.addEventListener('input', calculate);
+                if (footfallSlider) footfallSlider.addEventListener('input', calculate);
+                if (atvSlider) atvSlider.addEventListener('input', calculate);
+
+                calculate();
+            })();
+        </script>
+    </body>
+</html>

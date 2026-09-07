@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en" class="tw-dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+        <title>Manufacturing &amp; Logistics AI Solutions — Workforce &amp; Dock Intelligence | ScaleVAI</title>
+        <meta name="description" content="Operational AI and computer vision for manufacturing plants, distribution hubs, and 3PL warehouses across the UAE &amp; GCC. Eliminate buddy-punching, audit contractor presence, automate dispatch documentation, and accelerate loading dock turnaround." />
+        <meta name="keywords" content="Manufacturing AI UAE, Logistics AI Dubai, workforce intelligence factories, computer vision warehouse, dock turnaround automation, JAFZA logistics AI, shift attendance tracking, supply chain AI GCC, ScaleVAI" />
+        <link rel="canonical" href="https://scalevai.com/industries/manufacturing-logistics.html" />
+        <link
+            rel="shortcut icon"
+            href="../assets/logo/scalevai-logo-light.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Manufacturing &amp; Logistics AI Solutions — Workforce &amp; Dock Intelligence | ScaleVAI" />
+        <meta property="og:description" content="Full floor visibility. Zero attendance gaps. Real-time computer vision presence verification and automated dispatch documentation for UAE &amp; GCC industrial facilities." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://scalevai.com/industries/manufacturing-logistics.html" />
+        <meta property="og:image" content="https://scalevai.com/assets/images/home/Manufacturing%20&%20Logistics.png" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Manufacturing &amp; Logistics AI Solutions — Workforce &amp; Dock Intelligence | ScaleVAI" />
+        <meta name="twitter:description" content="AI solutions for manufacturing plants, 3PL logistics, and distribution centers across the UAE &amp; GCC." />
+        <meta name="twitter:image" content="https://scalevai.com/assets/images/home/Manufacturing%20&%20Logistics.png" />
+
+        <link rel="stylesheet" href="../css/tailwind-build.css">
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../solutions/solutions.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Structured data: Service + BreadcrumbList + FAQ -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Manufacturing & Logistics AI & Workforce Intelligence Solutions",
+            "serviceType": "Industrial AI & Supply Chain Automation",
+            "description": "Enterprise computer vision and operational intelligence for manufacturing plants, distribution centers, and 3PL warehouses in the UAE and GCC. Covers vision-verified shift attendance, contractor invoice auditing, automated gate & dock dispatch paperwork, and PPE safety monitoring.",
+            "provider": {
+                "@type": "Organization",
+                "name": "ScaleVAI",
+                "url": "https://scalevai.com"
+            },
+            "areaServed": ["United Arab Emirates", "Saudi Arabia", "Qatar", "GCC"],
+            "url": "https://scalevai.com/industries/manufacturing-logistics.html"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalevai.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://scalevai.com/#industries" },
+                { "@type": "ListItem", "position": 3, "name": "Manufacturing & logistics", "item": "https://scalevai.com/industries/manufacturing-logistics.html" }
+            ]
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How does ScaleVAI eliminate buddy-punching and ghost hours in factories and warehouses?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "ScaleVAI connects directly to existing RTSP/IP camera feeds over turnstiles, security gates, and break room corridors. Our computer vision models verify actual face-to-badge ground-truth presence in real time. If a card is swiped without a matching physical person or if multiple entries occur on one badge, an instant anomaly flag is generated and synced with your payroll and WMS system."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can ScaleVAI operate on our existing industrial CCTV cameras without replacing hardware?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. ScaleVAI requires zero new proprietary turnstiles or sensor hardware. Our edge processors and cloud pipelines interface with standard ONVIF and RTSP IP security camera streams from Hikvision, Dahua, Axis, and Hanwha already mounted in your facility."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How does ScaleVAI accelerate truck loading dock turnaround times?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "By automating license plate recognition (ALPR), container serial recognition, and AI-powered optical document extraction for bills of lading (BOL), delivery orders, and customs declarations. Drivers check in via automated kiosks or mobile QR codes, reducing gate dwell times from 45+ minutes to under 8 minutes."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does ScaleVAI integrate with our ERP and Warehouse Management Systems (SAP, Oracle, Blue Yonder)?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. ScaleVAI provides production-ready connectors and REST/webhook APIs for SAP S/4HANA, Oracle NetSuite, Blue Yonder, Manhattan Associates, Microsoft Dynamics 365, and custom WMS/TMS solutions to synchronize time and attendance, dock schedules, and dispatch milestones."
+                    }
+                }
+            ]
+        }
+        </script>
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fcfcfc] 
+            tw-text-black dark:tw-bg-black dark:tw-text-white"
+    >
+        <header
+            id="site-header"
+            class="site-header lg:tw-px-4 tw-max-w-[100vw] max-lg:tw-top-0 tw-fixed tw-top-0 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full 
+                    tw-px-[3%]
+                    lg:tw-justify-around"
+        >
+            <a class="tw-flex tw-p-[4px] tw-gap-2 tw-place-items-center" href="../index.html" aria-label="ScaleVAI home">
+                <div class="tw-h-[30px]">
+                    <img
+                        src="../assets/logo/scalevai-logo-light-trim.png"
+                        alt="ScaleVAI logo"
+                        class="logo-light tw-hidden tw-object-contain tw-h-full tw-w-auto"
+                    />
+                    <img
+                        src="../assets/logo/scalevai-logo-dark-trim.png"
+                        alt="ScaleVAI logo"
+                        class="logo-dark tw-object-contain tw-h-full tw-w-auto"
+                    />
+                </div>
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <nav
+                    class="tw-relative tw-flex tw-h-full max-lg:tw-h-max tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col 
+                                max-lg:tw-gap-5 lg:tw-mx-auto tw-place-items-center"
+                >
+                    <a class="header-links" href="../index.html#solutions"> Solutions </a>
+                    <a class="header-links" href="../index.html#about"> About </a>
+                    <a class="header-links" href="../index.html#industries"> Industries </a>
+                    <a class="header-links" href="../contact.html"> Contact </a>
+                </nav>
+                <div
+                    class="lg:tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full 
+                            max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <button
+                        type="button"
+                        onclick="toggleMode()"
+                        class="header-links tw-text-gray-600 dark:tw-text-gray-300"
+                        title="Toggle theme"
+                        id="theme-toggle"
+                    >
+                        <i class="bi bi-sun" id="toggle-mode-icon"></i>
+                    </button>
+                    <a
+                        href="../contact.html"
+                        aria-label="Book an operational audit"
+                        class="btn tw-flex tw-gap-3 tw-px-3 tw-py-2"
+                    >
+                        <span>Book a call</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-gray-500 lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <main>
+            <!-- Shrinking Hero Section -->
+            <section class="solution-shrinking-hero-spacer tw-relative tw-w-full">
+                <div class="solution-shrinking-hero solution-normal-hero hero-section tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden">
+                    <video
+                        class="solution-hero-video tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-object-cover tw-z-0"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="../assets/images/home/Manufacturing & Logistics.png"
+                    >
+                        <source src="../assets/videos/Workforce Intelligence.mp4" type="video/mp4">
+                    </video>
+                    <div class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-z-0"
+                        style="background: linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.32) 40%, rgba(0,0,0,0.85) 100%);"></div>
+
+                    <div class="solution-hero-content">
+                        <div class="solution-hero-copy tw-flex tw-flex-col tw-gap-6" style="max-width: 780px;">
+                            <div class="solution-hero-heading-mask">
+                                <h1 class="solution-hero-heading tw-text-6xl tw-font-semibold max-lg:tw-text-4xl" style="color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,0.8);">
+                                    Manufacturing &amp; Logistics Operational Intelligence
+                                </h1>
+                            </div>
+                            <p class="tw-text-lg max-lg:tw-text-base" style="color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.8); max-width: 660px;">
+                                Full shop-floor and distribution center visibility. Zero attendance leakage. Computer vision workforce verification, automated dispatch paperwork processing, and real-time safety compliance for GCC industrial leaders.
+                            </p>
+                            <div class="tw-flex max-md:tw-flex-col tw-gap-4">
+                                <a href="../contact.html" class="btn tw-flex tw-gap-2">
+                                    <span>Book an operational audit</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="#industrial-calculator" class="btn tw-flex tw-gap-2" style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">
+                                    <span>Calculate factory &amp; dock savings</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breadcrumb -->
+            <nav class="solution-breadcrumb-bar solution-breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#industries">Industries</a>
+                <span>/</span>
+                <span>Manufacturing &amp; logistics</span>
+            </nav>
+
+            <!-- Industry Challenge & Opportunity Narrative -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="tw-flex tw-max-w-[820px] tw-flex-col tw-gap-5">
+                    <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Industry Acceleration &bull; Operation 300bn &amp; GCC Logistics</div>
+                    <h2 class="reveal-up tw-text-4xl tw-font-medium max-md:tw-text-2xl">
+                        High-capacity facilities. Blind spots in shift attendance and loading docks.
+                    </h2>
+                    <p class="reveal-up tw-text-gray-700 dark:tw-text-gray-300">
+                        With national economic initiatives like the UAE's Operation 300bn and Saudi Arabia's National Industrial Development and Logistics Program (NIDLP), regional free zones and industrial parks—such as JAFZA, KIZAD, Dubai South, and King Abdullah Port—are operating at unprecedented capacity. Yet plant managers and logistics directors fight constant operational leakage.
+                    </p>
+                    <p class="reveal-up tw-text-gray-700 dark:tw-text-gray-300">
+                        Subcontracted manpower agencies invoice for ghost shifts; security badges are swapped at turnstiles; and truck loading docks stall while clerks manually transcribe paper bills of lading and customs clearance stamps. ScaleVAI eliminates these blind spots with production-ready industrial AI: applying computer vision to existing camera streams for verified ground-truth attendance, automating freight document ingestion, and enforcing PPE compliance in real time.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Interactive Factory & Logistics Impact Estimator -->
+            <section id="industrial-calculator" class="tw-relative tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[5%] tw-px-[10%] max-md:tw-px-4 tw-bg-[#f6f7fb] dark:tw-bg-[#0a0c10]">
+                <div class="tw-flex tw-w-full tw-max-w-[1100px] tw-flex-col tw-gap-8">
+                    <div class="tw-flex tw-flex-col tw-gap-3">
+                        <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Interactive Industrial Yield Estimator</div>
+                        <h2 class="reveal-up tw-text-4xl tw-font-medium max-md:tw-text-2xl">
+                            Estimate your facility's recovered hours, contractor leakage &amp; dock throughput.
+                        </h2>
+                        <p class="reveal-up tw-max-w-[700px] tw-text-gray-700 dark:tw-text-gray-300">
+                            Select your industrial archetype and adjust parameters to calculate preventable manpower leakage, automated paperwork savings, and accelerated dock turnarounds.
+                        </p>
+                    </div>
+
+                    <!-- Calculator Grid -->
+                    <div class="reveal-up tw-grid tw-grid-cols-1 lg:tw-grid-cols-12 tw-gap-8 tw-rounded-2xl tw-border-[1px] tw-border-[#e3e8f0] dark:tw-border-[#242830] tw-bg-white dark:tw-bg-[#12141a] tw-p-6 lg:tw-p-10 tw-shadow-xl">
+                        
+                        <!-- Inputs Column -->
+                        <div class="lg:tw-col-span-6 tw-flex tw-flex-col tw-gap-6">
+                            <div>
+                                <label class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-text-gray-500 dark:tw-text-gray-400">Industrial Facility Archetype</label>
+                                <div class="tw-grid tw-grid-cols-2 tw-gap-2 tw-mt-2">
+                                    <button type="button" class="ind-archetype-btn is-active tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="manufacturing">
+                                        <i class="bi bi-gear-fill tw-mr-1"></i> Heavy &amp; Discrete Factory
+                                    </button>
+                                    <button type="button" class="ind-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="logistics">
+                                        <i class="bi bi-truck tw-mr-1"></i> 3PL Distribution &amp; Hub
+                                    </button>
+                                    <button type="button" class="ind-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="fmcg">
+                                        <i class="bi bi-box-seam tw-mr-1"></i> FMCG &amp; Food Packaging
+                                    </button>
+                                    <button type="button" class="ind-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="port">
+                                        <i class="bi bi-water tw-mr-1"></i> Port &amp; Bonded Terminal
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Shift Workers Slider -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Total Shift &amp; Subcontractor Headcount</span>
+                                    <span id="ind-workers-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">350 workers</span>
+                                </div>
+                                <input id="ind-workers-slider" type="range" min="50" max="1500" step="25" value="350" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>50 workers</span>
+                                    <span>1,500+ workers</span>
+                                </div>
+                            </div>
+
+                            <!-- Daily Truck / Dispatch Volume -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Daily Dispatch Trucks &amp; Containers</span>
+                                    <span id="ind-trucks-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">120 trucks / day</span>
+                                </div>
+                                <input id="ind-trucks-slider" type="range" min="20" max="600" step="10" value="120" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>20 trucks</span>
+                                    <span>600+ trucks</span>
+                                </div>
+                            </div>
+
+                            <!-- Estimated Unverified Time / Leakage Slider -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Estimated Ghost Hours / Attendance Leakage</span>
+                                    <span id="ind-leakage-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">9.0%</span>
+                                </div>
+                                <input id="ind-leakage-slider" type="range" min="3" max="18" step="0.5" value="9.0" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>3% (Strict)</span>
+                                    <span>18% (Subcontracted)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Column -->
+                        <div class="lg:tw-col-span-6 tw-flex tw-flex-col tw-justify-between tw-rounded-xl tw-bg-[#f6f7fb] dark:tw-bg-[#08090d] tw-p-6 lg:tw-p-8 tw-border tw-border-[#e3e8f0] dark:tw-border-[#1f232b]">
+                            <div>
+                                <span class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-text-gray-500 dark:tw-text-gray-400">Projected Annual Operational Cash Savings</span>
+                                <div class="tw-mt-3 tw-flex tw-items-baseline tw-gap-2">
+                                    <span id="ind-savings-display" class="tw-text-4xl lg:tw-text-5xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">AED 1,638,000</span>
+                                    <span class="tw-text-sm tw-text-gray-500 dark:tw-text-gray-400">/ year</span>
+                                </div>
+                                <p class="tw-mt-2 tw-text-xs tw-text-gray-600 dark:tw-text-gray-400">
+                                    Combines audited agency contractor invoices, eliminated buddy-punching, and automated gate paperwork hours.
+                                </p>
+                            </div>
+
+                            <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-my-6">
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Attendance Leakage Cut</div>
+                                    <div id="ind-leakage-cut-display" class="tw-text-2xl tw-font-bold tw-text-green-600 dark:tw-text-green-400 tw-mt-1">-85%</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">In ghost shift invoices</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Dock Turnaround Speed</div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-green-600 dark:tw-text-green-400 tw-mt-1">&lt; 12 min</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Down from 48 min average</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Paperwork Hours Saved</div>
+                                    <div id="ind-hours-display" class="tw-text-2xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a] tw-mt-1">5,840 hrs</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Annual dispatch clerk hours</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">System Integration</div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a] tw-mt-1">4&ndash;6 Weeks</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Zero production line downtime</div>
+                                </div>
+                            </div>
+
+                            <a href="../contact.html" class="btn tw-w-full tw-flex tw-justify-center tw-gap-2">
+                                <span>Request Industrial Audit</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Capabilities Slider (Matching Solution Style) -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Core Industrial Capabilities</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">
+                        Purpose-built AI for harsh industrial &amp; warehouse environments
+                    </h2>
+                    <p class="tw-mt-3 tw-text-gray-700 dark:tw-text-gray-300">
+                        Tested across 24/7 assembly lines, cold storage docks, high-bay racking corridors, and container gates.
+                    </p>
+                </div>
+
+                <div class="solution-capability-slider reveal-up" data-capability-slider>
+                    <div class="solution-capability-track">
+                        <!-- Slide 1 -->
+                        <article class="solution-capability-slide is-active" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/Workforce Intelligence.png" alt="CCTV Computer Vision Workforce Tracking">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Computer Vision Shift Verification</h3>
+                                <p>Passive video analytics overlaying factory turnstiles and assembly lines. Detects badge swapping, buddy-punching, unapproved break extensions, and generates verified time-and-attendance audit logs matching ERP payroll.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 2 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/AI Workflow Automation.png" alt="Automated Dock & Dispatch Documentation">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Automated Gate, Dock &amp; Dispatch Processing</h3>
+                                <p>Extracts data instantly from physical Bills of Lading (BOL), customs delivery orders, and packing slips. Pairs optical character recognition with automated License Plate Recognition (ALPR) to assign empty loading bays in real time.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 3 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/ai-models.png" alt="PPE & Operational Safety Anomaly Detection">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Automated PPE &amp; Safety Compliance</h3>
+                                <p>Real-time computer vision monitors factory floor corridors and loading aprons for high-visibility vests, hard hats, safety boots, and forklift pedestrian zones, issuing proactive alerts to HSE safety supervisors.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 4 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/integrations1.png" alt="Subcontractor SLA & Manpower Audit Verification">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Subcontractor SLA &amp; Agency Manpower Audits</h3>
+                                <p>Automatically cross-verifies third-party manpower staffing invoices against physical camera arrival, departure, and zone dwell records. Stops billing discrepancies before accounts payable releases payment.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 5 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/People Assistant.png" alt="Bilingual Shift & Operator Assistant">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Bilingual Plant &amp; Shift Supervisor Assistant</h3>
+                                <p>Conversational assistant in Arabic, Hindi, Urdu, and English for floor workers and supervisors. Answers shift schedules, overtime calculations, equipment maintenance SOPs, and safety incident reporting on WhatsApp or rugged mobile tablets.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="solution-capability-controls" aria-label="Industrial capabilities controls">
+                        <button type="button" data-capability-prev aria-label="Previous capability">
+                            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <span data-capability-counter>01 / 05</span>
+                        <button type="button" data-capability-next aria-label="Next capability">
+                            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Where It Delivers Value (Detailed Industrial Sub-Sectors with Value Rows) -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Industry Sub-Sectors</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">
+                        Where ScaleVAI delivers the highest industrial ROI
+                    </h2>
+                    <p class="tw-mt-3 tw-text-gray-700 dark:tw-text-gray-300">
+                        Tailored implementations delivering measurable yield across factories, freight hubs, and cold storage facilities.
+                    </p>
+                </div>
+
+                <div class="solution-value-list tw-mt-8">
+                    <!-- Row 1 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Heavy &amp; Discrete Manufacturing Plants</h3>
+                            <p>Verify that multi-shift assembly and fabrication lines maintain mandated operator density without paying for unworked contractor hours. Seamlessly integrate with SAP S/4HANA and Kronos to automate payroll sign-off.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Real-time line operator headcounts &amp; station dwell monitoring</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> 100% elimination of badge buddy-punching at security turnstiles</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Average 12&ndash;16% contractor manpower billing savings</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/Manufacturing & Logistics.png" alt="Heavy manufacturing plant operational intelligence" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 2 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>3PL Contract Warehousing &amp; Fulfillment Hubs</h3>
+                            <p>Speed up high-velocity inbound and outbound operations. Automatically read truck container codes, match driver IDs against advance shipping notices (ASN), and route freight directly to pre-staged loading bays.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Automated ALPR &amp; container ISO code gate recognition</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Gate check-in dwell reduced from 42 min to under 6 min</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Syncs directly with Manhattan, Blue Yonder, and Oracle WMS</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article1.png" alt="3PL contract logistics and fulfillment warehouse AI" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 3 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>FMCG, Food &amp; Beverage Packaging Facilities</h3>
+                            <p>Maintain strict hygiene zones, cleanroom airlock compliance, and packaging line changeover speeds. Real-time vision alerts ensure mandatory hairnets, gloves, and lab coats are worn before operators enter high-care zones.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Cleanroom airlock PPE verification &amp; hygiene compliance alerts</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Changeover shift handover time tracked and minimized</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Audit-ready records for food safety and HACCP inspectors</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article2.jpg" alt="FMCG and food packaging manufacturing operational intelligence" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 4 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Ports, Container Depots &amp; Bonded Terminals</h3>
+                            <p>Track massive intermodal freight movements with continuous camera vision. Process international customs declaration paperwork, detect hazardous material placards, and monitor heavy container handler staging lanes.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Container serial &amp; hazmat placard automated OCR validation</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Customs seal number verification via gate camera feeds</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Integrated with terminal operating systems (TOS) like Navis</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article3.png" alt="Port container terminal and bonded warehouse logistics AI" loading="lazy">
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Case Study Proof Point -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up tw-flex tw-flex-col tw-gap-4 tw-rounded-2xl tw-border-[1px] tw-bg-[#f6f7fb] tw-p-8 lg:tw-p-10 dark:tw-border-[#1f2123] dark:tw-bg-[#080808]" style="max-width: 960px;">
+                    <div class="tw-flex tw-justify-between tw-items-center max-md:tw-flex-col max-md:tw-items-start tw-gap-2">
+                        <div class="tw-text-xs tw-uppercase tw-tracking-wide tw-text-[#c9963a] tw-font-semibold">Regional Industrial Case Study &bull; JAFZA &amp; Dubai South, UAE</div>
+                        <span class="tw-text-xs tw-bg-[#e2e8f0] dark:tw-bg-[#1c2028] tw-py-1 tw-px-3 tw-rounded-full tw-text-gray-700 dark:tw-text-gray-300">450,000 sq ft Multi-Site Facility</span>
+                    </div>
+                    <div class="tw-text-2xl tw-font-semibold">
+                        Eliminating AED 2.1M contractor leakage and shaving 38 minutes per container turnaround
+                    </div>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300">
+                        A major industrial manufacturer and 3PL distributor deployed ScaleVAI's Workforce Intelligence across 32 security turnstiles and 24 loading docks, integrating live vision feeds directly into their SAP S/4HANA ERP and warehouse dispatch system.
+                    </p>
+
+                    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-6 tw-mt-4 tw-pt-4 tw-border-t tw-border-gray-200 dark:tw-border-[#1f2123]">
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">AED 2.1M</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">Unearned subcontractor billings audited and recovered year 1</div>
+                        </div>
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">76% Faster</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">Truck gate-in to bay dock turnaround with automated BOL extraction</div>
+                        </div>
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">99.6%</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">Audit-proof payroll accuracy for subcontracted shift labour</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How We Work / Deployment Blueprint -->
+            <section class="tw-relative tw-flex tw-w-full tw-min-h-[90vh] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="tw-flex tw-w-full tw-max-w-[85%] tw-flex-col tw-place-content-center tw-place-items-center tw-gap-4 tw-p-4">
+                    <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Deployment Methodology</div>
+                    <h2 class="reveal-up tw-text-center tw-text-5xl tw-font-medium tw-leading-normal max-md:tw-text-3xl">
+                        From camera audit to live operational visibility
+                    </h2>
+                    <p class="reveal-up tw-mt-2 tw-max-w-[700px] tw-text-center tw-text-gray-700 dark:tw-text-gray-300">
+                        A structured, rapid deployment designed for high-throughput industrial and logistics operations.
+                    </p>
+
+                    <div class="how-we-work-flow reveal-up tw-mt-6">
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-camera-video"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">1. Camera &amp; Gate Audit</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                We survey existing RTSP IP camera positions, turnstiles, loading bays, and barrier gates to map optical coverage without requiring new hardware.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-bounding-box-circles"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">2. Computer Vision Calibration</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                We train and calibrate high-speed models for face-to-badge verification, license plates (ALPR), container ISO codes, and PPE zones.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-cpu"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">3. ERP &amp; WMS Integration</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                Secure bi-directional connectors link camera events to SAP, Oracle, Manhattan, or custom WMS, feeding validated timesheets and dock statuses.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-graph-up-arrow"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">4. Operations Dashboard</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                Real-time floor heatmaps, contractor invoice variance reports, and instant safety breach alerts provide total operational control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manufacturing & Logistics FAQ Accordion -->
+            <section class="tw-relative tw-flex tw-w-full tw-flex-col tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Questions &amp; Answers</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">Frequently Asked Questions</h2>
+                </div>
+                <div class="tw-mt-6 tw-flex tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4">
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>How does ScaleVAI eliminate buddy-punching and ghost hours in factories and warehouses?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            ScaleVAI connects directly to existing RTSP/IP camera feeds over turnstiles, security gates, and break room corridors. Our computer vision models verify actual face-to-badge ground-truth presence in real time. If a card is swiped without a matching physical person or if multiple entries occur on one badge, an instant anomaly flag is generated and synced with your payroll and WMS system.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>Can ScaleVAI operate on our existing industrial CCTV cameras without replacing hardware?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            Yes. ScaleVAI requires zero new proprietary turnstiles or sensor hardware. Our edge processors and cloud pipelines interface with standard ONVIF and RTSP IP security camera streams from Hikvision, Dahua, Axis, and Hanwha already mounted in your facility.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>How does ScaleVAI accelerate truck loading dock turnaround times?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            By automating license plate recognition (ALPR), container serial recognition, and AI-powered optical document extraction for bills of lading (BOL), delivery orders, and customs declarations. Drivers check in via automated kiosks or mobile QR codes, reducing gate dwell times from 45+ minutes to under 8 minutes.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>Does ScaleVAI integrate with our ERP and Warehouse Management Systems (SAP, Oracle, Blue Yonder)?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            Yes. ScaleVAI provides production-ready connectors and REST/webhook APIs for SAP S/4HANA, Oracle NetSuite, Blue Yonder, Manhattan Associates, Microsoft Dynamics 365, and custom WMS/TMS solutions to synchronize time and attendance, dock schedules, and dispatch milestones.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom CTA Particle Canvas -->
+            <section class="solution-cta-section tw-relative tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <canvas id="solution-cta-canvas" class="solution-cta-canvas" aria-hidden="true"></canvas>
+                <div class="tw-relative tw-z-10 tw-flex tw-w-full tw-max-w-[760px] tw-flex-col tw-place-items-center tw-gap-6 tw-text-center">
+                    <span class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-[0.2em] tw-text-[#c9963a]">Precision &amp; Yield</span>
+                    <h2 class="tw-text-5xl tw-font-semibold tw-leading-tight max-md:tw-text-3xl">
+                        Turn Industrial Blind Spots Into Audited Operational Yield
+                    </h2>
+                    <p class="tw-max-w-[560px] tw-text-base tw-text-gray-600 dark:tw-text-gray-300">
+                        Book a 30-minute operational walk-through with our industrial AI engineers to audit your camera infrastructure, benchmark attendance leakage, and view live computer vision models in action.
+                    </p>
+                    <div class="tw-flex max-md:tw-flex-col tw-gap-4 tw-mt-2">
+                        <a href="../contact.html" class="btn tw-flex tw-gap-2">
+                            <span>Schedule Industrial Audit</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="../solutions/workforce-intelligence.html" class="btn tw-flex tw-gap-2" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.25);">
+                            <span>Explore Workforce Intelligence</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="tw-flex tw-w-full tw-place-content-around tw-p-[5%] tw-px-[10%] tw-text-base max-md:tw-flex-col">
+            <!-- Dynamic footer inserted by components.js -->
+        </footer>
+
+        <script src="../scripts/components.js"></script>
+        <script src="../solutions/solutions.js"></script>
+        <script>
+            // Manufacturing & Logistics Calculator Logic
+            (function initIndustrialCalculator() {
+                const archetypes = {
+                    'manufacturing': { hourlyRate: 38, efficiencyMultiplier: 0.85, defaultWorkers: 350, defaultTrucks: 120, defaultLeakage: 9.0, paperworkPerTruck: 0.35 },
+                    'logistics': { hourlyRate: 32, efficiencyMultiplier: 0.80, defaultWorkers: 280, defaultTrucks: 240, defaultLeakage: 11.5, paperworkPerTruck: 0.45 },
+                    'fmcg': { hourlyRate: 36, efficiencyMultiplier: 0.82, defaultWorkers: 420, defaultTrucks: 160, defaultLeakage: 8.5, paperworkPerTruck: 0.30 },
+                    'port': { hourlyRate: 48, efficiencyMultiplier: 0.90, defaultWorkers: 650, defaultTrucks: 380, defaultLeakage: 12.0, paperworkPerTruck: 0.50 }
+                };
+
+                let currentArchetype = 'manufacturing';
+
+                const workersSlider = document.getElementById('ind-workers-slider');
+                const workersDisplay = document.getElementById('ind-workers-display');
+                const trucksSlider = document.getElementById('ind-trucks-slider');
+                const trucksDisplay = document.getElementById('ind-trucks-display');
+                const leakageSlider = document.getElementById('ind-leakage-slider');
+                const leakageDisplay = document.getElementById('ind-leakage-display');
+
+                const savingsDisplay = document.getElementById('ind-savings-display');
+                const leakageCutDisplay = document.getElementById('ind-leakage-cut-display');
+                const hoursDisplay = document.getElementById('ind-hours-display');
+
+                const archetypeButtons = document.querySelectorAll('.ind-archetype-btn');
+
+                function calculate() {
+                    if (!workersSlider || !trucksSlider || !leakageSlider) return;
+
+                    const workers = parseInt(workersSlider.value, 10);
+                    const trucks = parseInt(trucksSlider.value, 10);
+                    const leakageRate = parseFloat(leakageSlider.value) / 100;
+
+                    const cfg = archetypes[currentArchetype] || archetypes['manufacturing'];
+
+                    // Annual hours worked per worker approx 2,500 (shift work: 50 weeks * 50 hours)
+                    const annualHoursPerWorker = 2500;
+                    const totalLaborHours = workers * annualHoursPerWorker;
+                    const leakageHours = totalLaborHours * leakageRate;
+                    const rawLeakageCost = leakageHours * cfg.hourlyRate;
+                    // AI recovers 85% of leakage
+                    const recoveredLaborCost = rawLeakageCost * cfg.efficiencyMultiplier;
+
+                    // Paperwork hours saved: trucks * 310 days * paperworkPerTruck hours
+                    const annualPaperworkHours = Math.round(trucks * 310 * cfg.paperworkPerTruck);
+                    const paperworkSavings = annualPaperworkHours * 45; // AED 45/hr clerk cost
+
+                    const totalAnnualSavings = recoveredLaborCost + paperworkSavings;
+
+                    // Formats
+                    workersDisplay.textContent = `${workers.toLocaleString()} workers`;
+                    trucksDisplay.textContent = `${trucks.toLocaleString()} trucks / day`;
+                    leakageDisplay.textContent = `${(leakageRate * 100).toFixed(1)}%`;
+
+                    savingsDisplay.textContent = `AED ${Math.round(totalAnnualSavings).toLocaleString()}`;
+                    leakageCutDisplay.textContent = `-${Math.round(cfg.efficiencyMultiplier * 100)}%`;
+                    hoursDisplay.textContent = `${annualPaperworkHours.toLocaleString()} hrs`;
+                }
+
+                archetypeButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        archetypeButtons.forEach(b => {
+                            b.classList.remove('is-active', 'tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                            b.classList.add('tw-border-gray-300', 'dark:tw-border-gray-700');
+                        });
+                        btn.classList.add('is-active', 'tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                        btn.classList.remove('tw-border-gray-300', 'dark:tw-border-gray-700');
+
+                        const type = btn.getAttribute('data-type');
+                        currentArchetype = type;
+                        const cfg = archetypes[type];
+                        if (cfg) {
+                            workersSlider.value = cfg.defaultWorkers;
+                            trucksSlider.value = cfg.defaultTrucks;
+                            leakageSlider.value = cfg.defaultLeakage;
+                        }
+                        calculate();
+                    });
+                });
+
+                // Style active button initially
+                const initialActive = document.querySelector('.ind-archetype-btn.is-active');
+                if (initialActive) {
+                    initialActive.classList.add('tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                }
+
+                if (workersSlider) workersSlider.addEventListener('input', calculate);
+                if (trucksSlider) trucksSlider.addEventListener('input', calculate);
+                if (leakageSlider) leakageSlider.addEventListener('input', calculate);
+
+                calculate();
+            })();
+        </script>
+    </body>
+</html>

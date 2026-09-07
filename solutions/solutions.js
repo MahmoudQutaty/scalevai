@@ -63,7 +63,8 @@ window.addEventListener("resize", responsive)
 /** Header starts transparent + full-width, animates to the solid pill on scroll */
 const siteHeader = document.getElementById("site-header")
 function handleHeaderScroll() {
-    siteHeader.classList.toggle("is-scrolled", window.scrollY > 220)
+    const el = siteHeader || document.getElementById("site-header")
+    if (el) el.classList.toggle("is-scrolled", window.scrollY > 220)
 }
 handleHeaderScroll()
 window.addEventListener("scroll", handleHeaderScroll, { passive: true })
@@ -90,15 +91,16 @@ function updateToggleModeBtn() {
     document.querySelectorAll(".logo-light").forEach(img => img.classList.toggle("tw-hidden", isDark))
     document.querySelectorAll(".logo-dark").forEach(img => img.classList.toggle("tw-hidden", !isDark))
 
-    if (isDark) {
-        toggleIcon.classList.remove("bi-sun")
-        toggleIcon.classList.add("bi-moon")
-        localStorage.setItem("color-mode", "dark")
-    } else {
-        toggleIcon.classList.add("bi-sun")
-        toggleIcon.classList.remove("bi-moon")
-        localStorage.setItem("color-mode", "light")
+    if (toggleIcon) {
+        if (isDark) {
+            toggleIcon.classList.remove("bi-sun")
+            toggleIcon.classList.add("bi-moon")
+        } else {
+            toggleIcon.classList.add("bi-sun")
+            toggleIcon.classList.remove("bi-moon")
+        }
     }
+    localStorage.setItem("color-mode", isDark ? "dark" : "light")
 }
 
 if (!window.sharedDropdownMenus && navToggle && navDropdown) {

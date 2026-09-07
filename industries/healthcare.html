@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en" class="tw-dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+        <title>Healthcare AI Solutions — Revenue Cycle, Claims &amp; Clinical Operations | ScaleVAI</title>
+        <meta name="description" content="Enterprise AI solutions for hospitals, polyclinics, and healthcare networks across the UAE &amp; GCC. Prevent insurance claim denials, automate medical coding audits, accelerate cash flow, and deploy 24/7 bilingual patient concierges." />
+        <meta name="keywords" content="Healthcare AI, Revenue Cycle Management, Claim denial prevention UAE, Dubai healthcare AI, DHA claims automation, DoH Malafi integration, medical coding AI, hospital RCM GCC, ScaleVAI" />
+        <link rel="canonical" href="https://scalevai.com/industries/healthcare.html" />
+        <link
+            rel="shortcut icon"
+            href="../assets/logo/scalevai-logo-light.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Healthcare AI Solutions — Revenue Cycle, Claims &amp; Clinical Operations | ScaleVAI" />
+        <meta property="og:description" content="Stop losing millions to claim denials and administrative drag. Autonomous revenue cycle intelligence and clinical operations for UAE &amp; GCC healthcare providers." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://scalevai.com/industries/healthcare.html" />
+        <meta property="og:image" content="https://scalevai.com/assets/images/home/Healthcare.png" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Healthcare AI Solutions — Revenue Cycle, Claims &amp; Clinical Operations | ScaleVAI" />
+        <meta name="twitter:description" content="AI solutions for hospitals, polyclinics, and day surgery centers across the UAE &amp; GCC." />
+        <meta name="twitter:image" content="https://scalevai.com/assets/images/home/Healthcare.png" />
+
+        <link rel="stylesheet" href="../css/tailwind-build.css">
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../solutions/solutions.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Structured data: Service + BreadcrumbList + FAQ -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Healthcare AI & Revenue Cycle Management Solutions",
+            "serviceType": "Healthcare Enterprise AI & RCM Automation",
+            "description": "Enterprise AI solutions for hospitals, polyclinics, and healthcare providers in the UAE and GCC. Features predictive claim denial prevention, automated ICD-10 medical coding audits, 24/7 bilingual patient concierges, and regional payer rulebook integration.",
+            "provider": {
+                "@type": "Organization",
+                "name": "ScaleVAI",
+                "url": "https://scalevai.com"
+            },
+            "areaServed": ["United Arab Emirates", "Saudi Arabia", "Qatar", "GCC"],
+            "url": "https://scalevai.com/industries/healthcare.html"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalevai.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://scalevai.com/#industries" },
+                { "@type": "ListItem", "position": 3, "name": "Healthcare", "item": "https://scalevai.com/industries/healthcare.html" }
+            ]
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How does ScaleVAI reduce insurance claim denials for UAE and GCC healthcare providers?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "ScaleVAI acts as an intelligent pre-submission scrubber. Before claims reach insurance clearinghouses (e.g., eClaimLink for DHA, Shafafiya/Malafi for DoH, or NPHIES in Saudi Arabia), our AI audits every line item against specific payer policies, medical necessity criteria, prior-authorization numbers, and ICD-10-AM / CPT coding pairings. This catches 85%+ of rejection-prone errors before submission."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can ScaleVAI integrate with our existing Hospital Information System (HIS / EHR)?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. ScaleVAI integrates seamlessly with major healthcare platforms including Epic, Cerner Oracle Health, Intersystems TrakCare, Kareo, Meditech, and custom legacy HIS databases via HL7, FHIR, and REST APIs, requiring zero replacement of existing clinical infrastructure."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is patient health data secure and compliant with UAE and regional data regulations?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. ScaleVAI is fully compliant with UAE Federal Health Data Law (Law No. 2 of 2019), Dubai Health Authority (DHA) data privacy standards, Department of Health (DoH) Abu Dhabi policies, and international HIPAA standards. All sensitive patient identifiable data remains encrypted both in transit and at rest within local cloud regions."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How does the AI patient concierge manage bilingual appointments and clinical triage?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Our AI Patient Concierge operates 24/7 across WhatsApp and web portals in native Khaleeji Arabic and English. It books appointments based on doctor specialty, checks insurance eligibility in real time, answers prep instructions for procedures, and sends automated reminder alerts that cut patient no-show rates by up to 45%."
+                    }
+                }
+            ]
+        }
+        </script>
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fcfcfc] 
+            tw-text-black dark:tw-bg-black dark:tw-text-white"
+    >
+        <header
+            id="site-header"
+            class="site-header lg:tw-px-4 tw-max-w-[100vw] max-lg:tw-top-0 tw-fixed tw-top-0 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full 
+                    tw-px-[3%]
+                    lg:tw-justify-around"
+        >
+            <a class="tw-flex tw-p-[4px] tw-gap-2 tw-place-items-center" href="../index.html" aria-label="ScaleVAI home">
+                <div class="tw-h-[30px]">
+                    <img
+                        src="../assets/logo/scalevai-logo-light-trim.png"
+                        alt="ScaleVAI logo"
+                        class="logo-light tw-hidden tw-object-contain tw-h-full tw-w-auto"
+                    />
+                    <img
+                        src="../assets/logo/scalevai-logo-dark-trim.png"
+                        alt="ScaleVAI logo"
+                        class="logo-dark tw-object-contain tw-h-full tw-w-auto"
+                    />
+                </div>
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <nav
+                    class="tw-relative tw-flex tw-h-full max-lg:tw-h-max tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col 
+                                max-lg:tw-gap-5 lg:tw-mx-auto tw-place-items-center"
+                >
+                    <a class="header-links" href="../index.html#solutions"> Solutions </a>
+                    <a class="header-links" href="../index.html#about"> About </a>
+                    <a class="header-links" href="../index.html#industries"> Industries </a>
+                    <a class="header-links" href="../contact.html"> Contact </a>
+                </nav>
+                <div
+                    class="lg:tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full 
+                            max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <button
+                        type="button"
+                        onclick="toggleMode()"
+                        class="header-links tw-text-gray-600 dark:tw-text-gray-300"
+                        title="Toggle theme"
+                        id="theme-toggle"
+                    >
+                        <i class="bi bi-sun" id="toggle-mode-icon"></i>
+                    </button>
+                    <a
+                        href="../contact.html"
+                        aria-label="Book a clinical discovery call"
+                        class="btn tw-flex tw-gap-3 tw-px-3 tw-py-2"
+                    >
+                        <span>Book a call</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-gray-500 lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <main>
+            <!-- Shrinking Hero Section -->
+            <section class="solution-shrinking-hero-spacer tw-relative tw-w-full">
+                <div class="solution-shrinking-hero solution-normal-hero hero-section tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden">
+                    <video
+                        class="solution-hero-video tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-object-cover tw-z-0"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="../assets/images/home/Healthcare.png"
+                    >
+                        <source src="../assets/videos/Revenue Cycle.mp4" type="video/mp4">
+                    </video>
+                    <div class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-z-0"
+                        style="background: linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.32) 40%, rgba(0,0,0,0.85) 100%);"></div>
+
+                    <div class="solution-hero-content">
+                        <div class="solution-hero-copy tw-flex tw-flex-col tw-gap-6" style="max-width: 760px;">
+                            <div class="solution-hero-heading-mask">
+                                <h1 class="solution-hero-heading tw-text-6xl tw-font-semibold max-lg:tw-text-4xl" style="color: #ffffff; text-shadow: 0 2px 20px rgba(0,0,0,0.8);">
+                                    Healthcare Operational &amp; Revenue Intelligence
+                                </h1>
+                            </div>
+                            <p class="tw-text-lg max-lg:tw-text-base" style="color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.8); max-width: 660px;">
+                                Stop losing millions to billing errors, claim rejections, and administrative friction. AI-powered revenue cycle automation, autonomous medical coding audits, and bilingual patient engagement for hospitals and clinics across the UAE &amp; GCC.
+                            </p>
+                            <div class="tw-flex max-md:tw-flex-col tw-gap-4">
+                                <a href="../contact.html" class="btn tw-flex tw-gap-2">
+                                    <span>Book a clinical discovery call</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="#healthcare-calculator" class="btn tw-flex tw-gap-2" style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">
+                                    <span>Estimate claims recovery</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breadcrumb -->
+            <nav class="solution-breadcrumb-bar solution-breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#industries">Industries</a>
+                <span>/</span>
+                <span>Healthcare</span>
+            </nav>
+
+            <!-- Industry Challenge & Opportunity Narrative -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="tw-flex tw-max-w-[820px] tw-flex-col tw-gap-5">
+                    <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Industry Transformation &bull; UAE &amp; GCC Healthcare</div>
+                    <h2 class="reveal-up tw-text-4xl tw-font-medium max-md:tw-text-2xl">
+                        World-class clinical talent. Trapped under administrative drag and claim denials.
+                    </h2>
+                    <p class="reveal-up tw-text-gray-700 dark:tw-text-gray-300">
+                        Healthcare providers across Dubai, Abu Dhabi, Riyadh, and Doha deliver exemplary patient care. However, complex multi-payer environments (DHA eClaimLink, DoH Shafafiya, NPHIES, Daman, NextCare, NAS, Mednet) and tightening clinical guidelines result in 10% to 20% of submitted insurance claims being initially rejected or delayed.
+                    </p>
+                    <p class="reveal-up tw-text-gray-700 dark:tw-text-gray-300">
+                        Physicians spend hours each day completing electronic documentation rather than seeing patients, while medical coders fight an endless backlog of resubmissions and prior-authorization appeals. ScaleVAI deploys specialized clinical AI engines that scrub claims before submission, audit diagnostic and procedural code pairings in real time, and deliver seamless 24/7 bilingual patient intake that slashes clinic no-show rates.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Interactive Healthcare Revenue & Clinical Capacity Estimator -->
+            <section id="healthcare-calculator" class="tw-relative tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[5%] tw-px-[10%] max-md:tw-px-4 tw-bg-[#f6f7fb] dark:tw-bg-[#0a0c10]">
+                <div class="tw-flex tw-w-full tw-max-w-[1100px] tw-flex-col tw-gap-8">
+                    <div class="tw-flex tw-flex-col tw-gap-3">
+                        <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Interactive Claims &amp; Capacity Estimator</div>
+                        <h2 class="reveal-up tw-text-4xl tw-font-medium max-md:tw-text-2xl">
+                            Estimate your healthcare organization's recoverable revenue &amp; time savings.
+                        </h2>
+                        <p class="reveal-up tw-max-w-[700px] tw-text-gray-700 dark:tw-text-gray-300">
+                            Select your healthcare facility archetype and adjust parameters to calculate preventable claim loss recovery, administrative hours restored to care, and cash cycle acceleration.
+                        </p>
+                    </div>
+
+                    <!-- Calculator Grid -->
+                    <div class="reveal-up tw-grid tw-grid-cols-1 lg:tw-grid-cols-12 tw-gap-8 tw-rounded-2xl tw-border-[1px] tw-border-[#e3e8f0] dark:tw-border-[#242830] tw-bg-white dark:tw-bg-[#12141a] tw-p-6 lg:tw-p-10 tw-shadow-xl">
+                        
+                        <!-- Inputs Column -->
+                        <div class="lg:tw-col-span-6 tw-flex tw-flex-col tw-gap-6">
+                            <div>
+                                <label class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-text-gray-500 dark:tw-text-gray-400">Healthcare Facility Archetype</label>
+                                <div class="tw-grid tw-grid-cols-2 tw-gap-2 tw-mt-2">
+                                    <button type="button" class="hc-archetype-btn is-active tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="hospital">
+                                        <i class="bi bi-hospital tw-mr-1"></i> Multi-Specialty Hospital
+                                    </button>
+                                    <button type="button" class="hc-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="surgery">
+                                        <i class="bi bi-heart-pulse tw-mr-1"></i> Day Surgery Center
+                                    </button>
+                                    <button type="button" class="hc-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="polyclinic">
+                                        <i class="bi bi-clipboard2-pulse tw-mr-1"></i> Polyclinic &amp; Outpatient
+                                    </button>
+                                    <button type="button" class="hc-archetype-btn tw-py-2 tw-px-3 tw-rounded-lg tw-text-sm tw-font-medium tw-border tw-text-left tw-transition-all" data-type="diagnostic">
+                                        <i class="bi bi-radioactive tw-mr-1"></i> Diagnostic &amp; Lab Network
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Monthly Claims Slider -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Monthly Insurance Claims Submitted</span>
+                                    <span id="hc-claims-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">18,000 claims</span>
+                                </div>
+                                <input id="hc-claims-slider" type="range" min="2000" max="60000" step="1000" value="18000" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>2,000 claims</span>
+                                    <span>60,000+ claims</span>
+                                </div>
+                            </div>
+
+                            <!-- Average Claim Value Slider -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Average Claim Reimbursement Value</span>
+                                    <span id="hc-value-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">AED 1,250</span>
+                                </div>
+                                <input id="hc-value-slider" type="range" min="300" max="4000" step="50" value="1250" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>AED 300</span>
+                                    <span>AED 4,000+</span>
+                                </div>
+                            </div>
+
+                            <!-- Initial Denial Rate Slider -->
+                            <div class="tw-flex tw-flex-col tw-gap-2">
+                                <div class="tw-flex tw-justify-between tw-items-center">
+                                    <span class="tw-text-sm tw-font-medium">Current First-Pass Denial / Rejection Rate</span>
+                                    <span id="hc-denial-display" class="tw-text-base tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">14.0%</span>
+                                </div>
+                                <input id="hc-denial-slider" type="range" min="5" max="25" step="0.5" value="14.0" class="tw-w-full tw-accent-[#1a2b4a] dark:tw-accent-[#c9963a] tw-cursor-pointer">
+                                <div class="tw-flex tw-justify-between tw-text-xs tw-text-gray-400">
+                                    <span>5% (Low)</span>
+                                    <span>25% (Critical)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Column -->
+                        <div class="lg:tw-col-span-6 tw-flex tw-flex-col tw-justify-between tw-rounded-xl tw-bg-[#f6f7fb] dark:tw-bg-[#08090d] tw-p-6 lg:tw-p-8 tw-border tw-border-[#e3e8f0] dark:tw-border-[#1f232b]">
+                            <div>
+                                <span class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-text-gray-500 dark:tw-text-gray-400">Projected Annual Recovered Cash Flow</span>
+                                <div class="tw-mt-3 tw-flex tw-items-baseline tw-gap-2">
+                                    <span id="hc-recovered-display" class="tw-text-4xl lg:tw-text-5xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">AED 2,835,000</span>
+                                    <span class="tw-text-sm tw-text-gray-500 dark:tw-text-gray-400">/ year</span>
+                                </div>
+                                <p class="tw-mt-2 tw-text-xs tw-text-gray-600 dark:tw-text-gray-400">
+                                    Net cash flow restored through predictive denial prevention, automated prior-authorization scrubbing, and accurate ICD-10-AM / CPT coding.
+                                </p>
+                            </div>
+
+                            <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-my-6">
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Denial Rate Reduction</div>
+                                    <div id="hc-reduction-display" class="tw-text-2xl tw-font-bold tw-text-green-600 dark:tw-text-green-400 tw-mt-1">-72%</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">In initial submission rejections</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Coding Hours Recovered</div>
+                                    <div id="hc-hours-display" class="tw-text-2xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a] tw-mt-1">4,320 hrs</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Annual RCM team capacity freed</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">Payer Reimbursement Cycle</div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-green-600 dark:tw-text-green-400 tw-mt-1">6&ndash;8 Days</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Down from 32+ days average</div>
+                                </div>
+                                <div class="tw-rounded-lg tw-bg-white dark:tw-bg-[#12141a] tw-p-4 tw-border tw-border-[#e3e8f0] dark:tw-border-[#242830]">
+                                    <div class="tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">HIS Deployment Speed</div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a] tw-mt-1">4&ndash;6 Weeks</div>
+                                    <div class="tw-text-[11px] tw-text-gray-500 tw-mt-1">Zero disruption to patient care</div>
+                                </div>
+                            </div>
+
+                            <a href="../contact.html" class="btn tw-w-full tw-flex tw-justify-center tw-gap-2">
+                                <span>Request Healthcare Diagnostic</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Capabilities Slider (Matching Solution Style) -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Core Healthcare Capabilities</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">
+                        Precision AI across the clinical and financial spectrum
+                    </h2>
+                    <p class="tw-mt-3 tw-text-gray-700 dark:tw-text-gray-300">
+                        Engineered to eliminate friction between clinical encounters, insurer clearinghouses, and patient communication.
+                    </p>
+                </div>
+
+                <div class="solution-capability-slider reveal-up" data-capability-slider>
+                    <div class="solution-capability-track">
+                        <!-- Slide 1 -->
+                        <article class="solution-capability-slide is-active" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/Revenue Cycle.png" alt="Autonomous Claim Scrubbing & Denial Prevention">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Predictive Claim Denial Prevention</h3>
+                                <p>Pre-submission AI scrubbing engine that validates clinical documentation, prior authorizations, policy coverage rules, and code combinations before files are dispatched to clearinghouses. Drops first-pass rejections by up to 80%.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 2 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/ai-models.png" alt="Autonomous Medical Coding & ICD-10 Auditing">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Autonomous Medical Coding &amp; Auditing</h3>
+                                <p>Ingests doctor consultation notes, lab results, and discharge summaries to cross-verify ICD-10-AM diagnoses and CPT procedure codes against regional coding guidelines, highlighting missing documentation before billing.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 3 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/People Assistant.png" alt="24/7 Bilingual Patient Concierge">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>24/7 Bilingual Patient Concierge &amp; Triage</h3>
+                                <p>Conversational AI over WhatsApp and clinic portals in Khaleeji Arabic and English. Automates appointment scheduling, pre-visit fasting instructions, insurance eligibility pre-checks, and reduces patient no-shows by up to 45%.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 4 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/integrations1.png" alt="Dynamic Regional Payer Rulebook Engine">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Regional Payer Rulebook &amp; Regulatory Sync</h3>
+                                <p>Continuously updated rule sets reflecting changes from DHA eClaimLink, DoH Shafafiya/Malafi, NPHIES (Saudi Arabia), Daman, NextCare, NAS, and private TPAs. Ensures medical billing staff always submit claims compliant with current mandates.</p>
+                            </div>
+                        </article>
+
+                        <!-- Slide 5 -->
+                        <article class="solution-capability-slide" data-capability-slide>
+                            <div class="solution-capability-image">
+                                <img src="../assets/images/home/Workforce Intelligence.png" alt="Clinical Workforce & Nurse Shift Optimization">
+                            </div>
+                            <div class="solution-capability-content">
+                                <h3>Clinical Workforce &amp; Presence Optimization</h3>
+                                <p>Vision-verified attendance and smart scheduling for nurses, on-call physicians, and allied health staff. Aligns clinical ward coverage with predicted patient census and emergency admission spikes while ensuring DHA/DoH staffing ratios.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="solution-capability-controls" aria-label="Healthcare capabilities controls">
+                        <button type="button" data-capability-prev aria-label="Previous capability">
+                            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <span data-capability-counter>01 / 05</span>
+                        <button type="button" data-capability-next aria-label="Next capability">
+                            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Where It Delivers Value (Detailed Healthcare Sub-Sectors with Value Rows) -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Healthcare Sub-Sectors</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">
+                        Where ScaleVAI delivers the highest clinical &amp; fiscal ROI
+                    </h2>
+                    <p class="tw-mt-3 tw-text-gray-700 dark:tw-text-gray-300">
+                        Tailored implementations designed for the operational demands of hospitals, surgery suites, and diagnostic networks.
+                    </p>
+                </div>
+
+                <div class="solution-value-list tw-mt-8">
+                    <!-- Row 1 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Tertiary Hospitals &amp; Multi-Specialty Health Networks</h3>
+                            <p>Protect hospital margins against complex inpatient claim rejections and DRG disputes. ScaleVAI's AI correlates physician orders, surgical logs, and pharmacy charges to ensure full documentation fidelity prior to clearinghouse submission.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Real-time DRG coding validation &amp; inpatient chart scrubbing</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Integrated with Epic, Cerner, TrakCare, and Meditech</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> 70%+ drop in high-value surgical claim payment disputes</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/Healthcare.png" alt="Hospital and health system revenue cycle intelligence" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 2 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Outpatient Clinics &amp; Polyclinic Networks</h3>
+                            <p>Speed up high-volume outpatient patient turnover. Automate insurance eligibility checks at check-in, eliminate copay calculation errors, and give reception teams instant prior-authorization status in seconds.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Instant member copay &amp; deductible verification</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> WhatsApp appointment confirmation &amp; digital intake forms</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Average 40% reduction in patient front-desk waiting times</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article3.png" alt="Polyclinic and outpatient patient engagement AI" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 3 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Day Surgery &amp; Specialized Surgical Centers</h3>
+                            <p>Surgical suites face strict pre-authorization requirements for implants, anesthesia, and recovery beds. ScaleVAI cross-checks procedural codes against pre-approvals to guarantee zero unrecoverable surgical expenses.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Pre-operative surgical package verification with insurers</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Automated implant code &amp; batch serial verification</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Near-zero denials on pre-authorized day surgical cases</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article2.jpg" alt="Day surgery center operational intelligence" loading="lazy">
+                        </div>
+                    </article>
+
+                    <!-- Row 4 -->
+                    <article class="solution-value-row reveal-up">
+                        <div class="solution-value-copy">
+                            <h3>Diagnostic Imaging &amp; Pathology Laboratories</h3>
+                            <p>Process thousands of daily outpatient test orders without manual coding bottlenecks. AI matches diagnostic requisition orders to valid clinical necessity ICD codes, accelerating batch payer reimbursement.</p>
+                            <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-gray-600 dark:tw-text-gray-300">
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> High-speed batch claim scrubbing for lab &amp; radiology panels</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Automated test-to-diagnosis clinical justification checks</li>
+                                <li><i class="bi bi-check-circle-fill tw-text-[#c9963a] tw-mr-2"></i> Reimbursement remittance accelerated from 45 to 8 days</li>
+                            </ul>
+                        </div>
+                        <div class="solution-value-image">
+                            <img src="../assets/images/home/article1.png" alt="Diagnostic laboratory and pathology claims automation" loading="lazy">
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Case Study Proof Point -->
+            <section class="tw-flex tw-w-full tw-flex-col tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up tw-flex tw-flex-col tw-gap-4 tw-rounded-2xl tw-border-[1px] tw-bg-[#f6f7fb] tw-p-8 lg:tw-p-10 dark:tw-border-[#1f2123] dark:tw-bg-[#080808]" style="max-width: 960px;">
+                    <div class="tw-flex tw-justify-between tw-items-center max-md:tw-flex-col max-md:tw-items-start tw-gap-2">
+                        <div class="tw-text-xs tw-uppercase tw-tracking-wide tw-text-[#c9963a] tw-font-semibold">Regional Healthcare Case Study &bull; UAE</div>
+                        <span class="tw-text-xs tw-bg-[#e2e8f0] dark:tw-bg-[#1c2028] tw-py-1 tw-px-3 tw-rounded-full tw-text-gray-700 dark:tw-text-gray-300">280-Bed Private Hospital Group</span>
+                    </div>
+                    <div class="tw-text-2xl tw-font-semibold">
+                        Slicing claim rejection rates from 16.4% to 2.8% and recovering AED 4.2M annually
+                    </div>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300">
+                        A prominent private healthcare group operating hospitals and polyclinics in Dubai and Abu Dhabi deployed ScaleVAI's predictive Revenue Cycle intelligence integrated into their Intersystems TrakCare electronic health record.
+                    </p>
+
+                    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-6 tw-mt-4 tw-pt-4 tw-border-t tw-border-gray-200 dark:tw-border-[#1f2123]">
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">82.9% Drop</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">In initial insurance claim rejections across all specialties</div>
+                        </div>
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">AED 4.2M</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">Annual cash flow unlocked from previously disputed claims</div>
+                        </div>
+                        <div>
+                            <div class="tw-text-3xl tw-font-bold tw-text-[#1a2b4a] dark:tw-text-[#c9963a]">6.8 Days</div>
+                            <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400 tw-mt-1">Average reimbursement remittance (down from 38 days)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How We Work / Deployment Blueprint -->
+            <section class="tw-relative tw-flex tw-w-full tw-min-h-[90vh] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="tw-flex tw-w-full tw-max-w-[85%] tw-flex-col tw-place-content-center tw-place-items-center tw-gap-4 tw-p-4">
+                    <div class="reveal-up tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Deployment Methodology</div>
+                    <h2 class="reveal-up tw-text-center tw-text-5xl tw-font-medium tw-leading-normal max-md:tw-text-3xl">
+                        From claims historical audit to live autonomous scrubbing
+                    </h2>
+                    <p class="reveal-up tw-mt-2 tw-max-w-[700px] tw-text-center tw-text-gray-700 dark:tw-text-gray-300">
+                        A secure, compliant, zero-downtime implementation framework tailored for clinical environments.
+                    </p>
+
+                    <div class="how-we-work-flow reveal-up tw-mt-6">
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-file-earmark-medical"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">1. Claims Historical Audit</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                We ingest 12&ndash;24 months of anonymized 835/837 claim remittance data to pinpoint the top denial codes, doctor documentation gaps, and specific payer friction points.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-shield-check"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">2. Regional Payer Rules</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                We calibrate clinical validation logic to your exact payer mix (DHA, DoH Malafi, NPHIES, Daman, NextCare, NAS, Mednet) and hospital fee schedules.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-cpu"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">3. EHR &amp; Clearinghouse Hook</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                Non-invasive integration via HL7/FHIR or clearinghouse middleware. Real-time alerts guide billing staff before claims leave the hospital firewall.
+                            </p>
+                        </div>
+
+                        <div class="how-we-work-step">
+                            <div class="step-icon-badge"><i class="bi bi-graph-up-arrow"></i></div>
+                            <h4 class="tw-mt-4 tw-text-xl tw-font-medium">4. Continuous Governance</h4>
+                            <p class="tw-mt-2 tw-text-sm tw-text-gray-700 dark:tw-text-gray-300">
+                                Live executive dashboards track recovered cash flow, physician documentation compliance, and continuous AI learning from every remittance advice file.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Healthcare FAQ Accordion -->
+            <section class="tw-relative tw-flex tw-w-full tw-flex-col tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <div class="reveal-up" style="max-width: 760px;">
+                    <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#c9963a]">Questions &amp; Answers</div>
+                    <h2 class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2">Frequently Asked Questions</h2>
+                </div>
+                <div class="tw-mt-6 tw-flex tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4">
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>How does ScaleVAI reduce insurance claim denials for UAE &amp; GCC healthcare providers?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            ScaleVAI acts as an intelligent pre-submission scrubber. Before claims reach insurance clearinghouses (such as eClaimLink for DHA, Shafafiya/Malafi for DoH, or NPHIES in Saudi Arabia), our AI audits every line item against specific payer policies, medical necessity criteria, prior-authorization numbers, and ICD-10-AM / CPT coding pairings. This catches 85%+ of rejection-prone errors before submission.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>Can ScaleVAI integrate with our existing Hospital Information System (HIS / EHR)?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            Yes. ScaleVAI integrates seamlessly with major healthcare platforms including Epic, Cerner Oracle Health, Intersystems TrakCare, Kareo, Meditech, and custom legacy HIS databases via HL7, FHIR, and secure REST APIs, requiring zero replacement of existing clinical infrastructure.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>Is patient health data secure and compliant with UAE and regional health data laws?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            Yes. ScaleVAI is fully compliant with UAE Federal Health Data Law (Law No. 2 of 2019), Dubai Health Authority (DHA) data privacy standards, Department of Health (DoH) Abu Dhabi policies, and international HIPAA standards. All sensitive patient identifiable data remains encrypted both in transit and at rest within local cloud regions.
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="faq tw-w-full">
+                        <h3 class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg">
+                            <span>How does the AI patient concierge manage bilingual appointments and clinical triage?</span>
+                            <i class="bi bi-plus tw-ml-auto tw-origin-center tw-text-xl tw-font-semibold tw-transition-transform tw-duration-300"></i>
+                        </h3>
+                        <div class="content max-lg:tw-text-sm">
+                            Our AI Patient Concierge operates 24/7 across WhatsApp and clinic web portals in native Khaleeji Arabic and English. It books appointments based on doctor specialty, checks insurance eligibility in real time, answers prep instructions for procedures, and sends automated reminder alerts that cut patient no-show rates by up to 45%.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom CTA Particle Canvas -->
+            <section class="solution-cta-section tw-relative tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-[5%] tw-px-[10%] max-md:tw-px-4">
+                <canvas id="solution-cta-canvas" class="solution-cta-canvas" aria-hidden="true"></canvas>
+                <div class="tw-relative tw-z-10 tw-flex tw-w-full tw-max-w-[760px] tw-flex-col tw-place-items-center tw-gap-6 tw-text-center">
+                    <span class="tw-text-xs tw-font-semibold tw-uppercase tw-tracking-[0.2em] tw-text-[#c9963a]">Clinical &amp; Fiscal Excellence</span>
+                    <h2 class="tw-text-5xl tw-font-semibold tw-leading-tight max-md:tw-text-3xl">
+                        Deploy Healthcare Intelligence That Recovers Millions
+                    </h2>
+                    <p class="tw-max-w-[560px] tw-text-base tw-text-gray-600 dark:tw-text-gray-300">
+                        Schedule a confidential 30-minute diagnostic session with our healthcare AI specialists to evaluate your claims data, identify immediate revenue leakage, and map your deployment path.
+                    </p>
+                    <div class="tw-flex max-md:tw-flex-col tw-gap-4 tw-mt-2">
+                        <a href="../contact.html" class="btn tw-flex tw-gap-2">
+                            <span>Schedule Healthcare Diagnostic</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="../solutions/revenue-cycle.html" class="btn tw-flex tw-gap-2" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.25);">
+                            <span>Explore Revenue Cycle Platform</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="tw-flex tw-w-full tw-place-content-around tw-p-[5%] tw-px-[10%] tw-text-base max-md:tw-flex-col">
+            <!-- Dynamic footer inserted by components.js -->
+        </footer>
+
+        <script src="../scripts/components.js"></script>
+        <script src="../solutions/solutions.js"></script>
+        <script>
+            // Healthcare Impact & Revenue Estimator Calculator Logic
+            (function initHealthcareCalculator() {
+                const archetypes = {
+                    'hospital': { baseMultiplier: 1.0, denialEfficiency: 0.75, hoursRatio: 0.24, defaultClaims: 18000, defaultValue: 1250, defaultDenial: 14.0 },
+                    'surgery': { baseMultiplier: 1.15, denialEfficiency: 0.80, hoursRatio: 0.20, defaultClaims: 6000, defaultValue: 2800, defaultDenial: 16.5 },
+                    'polyclinic': { baseMultiplier: 0.90, denialEfficiency: 0.70, hoursRatio: 0.22, defaultClaims: 24000, defaultValue: 450, defaultDenial: 11.5 },
+                    'diagnostic': { baseMultiplier: 0.85, denialEfficiency: 0.78, hoursRatio: 0.18, defaultClaims: 32000, defaultValue: 380, defaultDenial: 9.5 }
+                };
+
+                let currentArchetype = 'hospital';
+
+                const claimsSlider = document.getElementById('hc-claims-slider');
+                const claimsDisplay = document.getElementById('hc-claims-display');
+                const valueSlider = document.getElementById('hc-value-slider');
+                const valueDisplay = document.getElementById('hc-value-display');
+                const denialSlider = document.getElementById('hc-denial-slider');
+                const denialDisplay = document.getElementById('hc-denial-display');
+
+                const recoveredDisplay = document.getElementById('hc-recovered-display');
+                const reductionDisplay = document.getElementById('hc-reduction-display');
+                const hoursDisplay = document.getElementById('hc-hours-display');
+
+                const archetypeButtons = document.querySelectorAll('.hc-archetype-btn');
+
+                function calculate() {
+                    if (!claimsSlider || !valueSlider || !denialSlider) return;
+
+                    const claims = parseInt(claimsSlider.value, 10);
+                    const avgValue = parseInt(valueSlider.value, 10);
+                    const denialRate = parseFloat(denialSlider.value) / 100;
+
+                    const cfg = archetypes[currentArchetype] || archetypes['hospital'];
+
+                    // Total monthly billed = claims * avgValue
+                    const monthlyBilled = claims * avgValue;
+                    // Monthly at risk = monthlyBilled * denialRate
+                    const monthlyDenials = monthlyBilled * denialRate;
+                    // ScaleVAI prevents 70-80% of preventable denials
+                    const monthlyRecovered = monthlyDenials * cfg.denialEfficiency;
+                    const annualRecovered = monthlyRecovered * 12;
+
+                    // Annual hours saved in coding appeals, prior-auth corrections
+                    const annualHours = Math.round((claims * 12 * denialRate * cfg.hoursRatio));
+
+                    // First pass reduction rate %
+                    const reductionPct = Math.round(cfg.denialEfficiency * 100);
+
+                    // Formats
+                    claimsDisplay.textContent = `${claims.toLocaleString()} claims`;
+                    valueDisplay.textContent = `AED ${avgValue.toLocaleString()}`;
+                    denialDisplay.textContent = `${(denialRate * 100).toFixed(1)}%`;
+
+                    recoveredDisplay.textContent = `AED ${Math.round(annualRecovered).toLocaleString()}`;
+                    reductionDisplay.textContent = `-${reductionPct}%`;
+                    hoursDisplay.textContent = `${annualHours.toLocaleString()} hrs`;
+                }
+
+                archetypeButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        archetypeButtons.forEach(b => {
+                            b.classList.remove('is-active', 'tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                            b.classList.add('tw-border-gray-300', 'dark:tw-border-gray-700');
+                        });
+                        btn.classList.add('is-active', 'tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                        btn.classList.remove('tw-border-gray-300', 'dark:tw-border-gray-700');
+
+                        const type = btn.getAttribute('data-type');
+                        currentArchetype = type;
+                        const cfg = archetypes[type];
+                        if (cfg) {
+                            claimsSlider.value = cfg.defaultClaims;
+                            valueSlider.value = cfg.defaultValue;
+                            denialSlider.value = cfg.defaultDenial;
+                        }
+                        calculate();
+                    });
+                });
+
+                // Style active button initially
+                const initialActive = document.querySelector('.hc-archetype-btn.is-active');
+                if (initialActive) {
+                    initialActive.classList.add('tw-bg-[#1a2b4a]', 'tw-text-white', 'dark:tw-bg-[#c9963a]', 'dark:tw-text-black');
+                }
+
+                if (claimsSlider) claimsSlider.addEventListener('input', calculate);
+                if (valueSlider) valueSlider.addEventListener('input', calculate);
+                if (denialSlider) denialSlider.addEventListener('input', calculate);
+
+                calculate();
+            })();
+        </script>
+    </body>
+</html>

@@ -1,99 +1,119 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="tw-dark">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <title>Contact ScaleVAI — Book an AI Discovery Call</title>
-    <meta name="description" content="Talk to ScaleVAI about practical AI implementation, custom workflows, workforce intelligence, immersive experiences, and measurable business outcomes across the UAE and GCC." />
-    <link rel="canonical" href="https://scalevai.com/contact.html" />
+    <title>ScaleVAI — Contact</title>
+    <meta name="description" content="Talk with ScaleVAI about practical AI implementation and custom business solutions." />
     <link rel="shortcut icon" href="./assets/logo/scalevai-logo-light.png" type="image/x-icon" />
-    <meta property="og:title" content="Contact ScaleVAI — Book an AI Discovery Call" />
-    <meta property="og:description" content="Start a practical conversation about making AI work in your business." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://scalevai.com/contact.html" />
-    <meta property="og:image" content="https://scalevai.com/assets/images/home/Workforce%20Intelligence.png" />
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "name": "Contact ScaleVAI",
-        "description": "Book a discovery call with ScaleVAI about practical AI implementation and custom business solutions.",
-        "url": "https://scalevai.com/contact.html",
-        "mainEntity": { "@type": "Organization", "name": "ScaleVAI", "url": "https://scalevai.com", "email": "saba@scalevai.com", "areaServed": ["United Arab Emirates", "GCC"] }
-    }
-    </script>
+
     <link rel="stylesheet" href="./css/tailwind-build.css">
     <link rel="stylesheet" href="./css/index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="contact-page tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fcfcfc] tw-text-black dark:tw-bg-black dark:tw-text-white">
-    <header id="site-header" class="site-header tw-fixed tw-top-0 tw-left-0 tw-z-50 tw-w-full"></header>
+<body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fcfcfc] tw-text-black dark:tw-bg-black dark:tw-text-white">
+    <header id="site-header" class="site-header lg:tw-px-4 tw-max-w-[100vw] max-lg:tw-top-0 tw-fixed tw-top-0 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-px-[3%] lg:tw-justify-around"></header>
 
     <main class="contact-main">
-        <section class="contact-intro tw-relative tw-overflow-hidden">
-            <canvas id="solution-particle-canvas" aria-hidden="true"></canvas>
+        <section class="contact-intro">
+            <canvas id="solution-particle-canvas"></canvas>
             <div class="contact-intro-content">
-                <div class="contact-eyebrow">Start a useful conversation</div>
                 <h1>Make AI work in your business.</h1>
-                <p>Tell us what you are trying to improve. We will help you understand where AI can create practical value, what implementation involves, and what a sensible first step looks like.</p>
+                <p>Tell us what you are trying to improve. We will help you understand where AI creates practical value, what system integrations require, and what a measurable 30-day proof-of-value looks like.</p>
             </div>
         </section>
 
         <section class="contact-workspace">
             <div class="contact-details">
-                <div class="contact-detail-label">ScaleVAI</div>
+                <div class="contact-detail-label">Direct Consultation</div>
                 <h2>No pitch. No pressure. Just a clear first conversation.</h2>
-                <p>We work with enterprises across the UAE and GCC on implementation, custom AI solutions, workflow automation, workforce intelligence, and immersive experiences.</p>
+                <p>We work directly with enterprise executives and operations heads across the UAE and GCC on high-impact AI implementation, agentic workflow automation, workforce intelligence, and edge vision systems.</p>
                 <div class="contact-detail-list">
-                    <div><span>Location</span><strong>Dubai, UAE</strong></div>
-                    <div><span>Email</span><a href="mailto:saba@scalevai.com">saba@scalevai.com</a></div>
-                    <div><span>Best for</span><strong>AI discovery, implementation, and delivery</strong></div>
+                    <div>
+                        <span>Email</span>
+                        <a href="mailto:saba@scalevai.com">saba@scalevai.com</a>
+                    </div>
+                    <div>
+                        <span>Location</span>
+                        <strong>Dubai, UAE</strong>
+                    </div>
+                    <div>
+                        <span>Response Time</span>
+                        <strong>Within 1 business day</strong>
+                    </div>
                 </div>
             </div>
 
             <div class="contact-form-panel">
                 <div class="contact-form-heading">
-                    <span>Book a discovery call</span>
+                    <span>Send a message</span>
                     <small>We usually reply within one business day.</small>
                 </div>
-                <form id="contact-page-form" class="contact-page-form">
+
+                <form class="contact-page-form" id="contact-page-form">
                     <div class="contact-form-grid">
-                        <label>Full name<input type="text" name="name" autocomplete="name" required /></label>
-                        <label>Company<input type="text" name="company" autocomplete="organization" required /></label>
+                        <label for="name">Full name
+                            <input type="text" id="name" name="name" placeholder="John Doe" required />
+                        </label>
+                        <label for="company">Company
+                            <input type="text" id="company" name="company" placeholder="Company Name" required />
+                        </label>
                     </div>
+
                     <div class="contact-form-grid">
-                        <label>Email address<input type="email" name="email" autocomplete="email" required /></label>
-                        <label>Phone number <span>(optional)</span><input type="tel" name="phone" autocomplete="tel" /></label>
+                        <label for="email">Work email
+                            <input type="email" id="email" name="email" placeholder="john@company.com" required />
+                        </label>
+                        <label for="phone">Phone <span>(optional)</span>
+                            <input type="tel" id="phone" name="phone" placeholder="+971 50 123 4567" />
+                        </label>
                     </div>
-                    <label>What can we help with?
-                        <select name="industry" required>
-                            <option value="" selected disabled>Select an area</option>
-                            <option>Workforce Intelligence</option>
-                            <option>Immersive Showroom or Virtual Experience</option>
-                            <option>Talent Intelligence</option>
-                            <option>Revenue Cycle</option>
-                            <option>Workflow automation</option>
-                            <option>Something else</option>
+
+                    <label for="interest">Area of interest
+                        <select id="interest" name="interest">
+                            <option value="AI Workflow Automation">AI Workflow Automation</option>
+                            <option value="Workforce Intelligence">Workforce Intelligence</option>
+                            <option value="Retail Intelligence">Retail Intelligence</option>
+                            <option value="Audience Intelligence">Audience Intelligence</option>
+                            <option value="People Assistant">People Assistant</option>
+                            <option value="Business Efficiency Consulting">Business Efficiency Consulting</option>
+                            <option value="Immersive Showroom">Immersive Showroom</option>
+                            <option value="Other">Other</option>
                         </select>
                     </label>
-                    <label>Tell us a little about the challenge<textarea name="message" rows="5" placeholder="What are you trying to improve?" required></textarea></label>
-                    <button type="submit" class="contact-submit">Send request <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
-                    <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+
+                    <label for="message">How can we help?
+                        <textarea id="message" name="message" placeholder="Tell us about what you want to achieve or improve..." required></textarea>
+                    </label>
+
+                    <button type="submit" class="contact-submit" id="contact-submit-btn">
+                        <span>Send Message</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                    <p class="contact-form-status" id="contact-form-status">Thank you! Your message has been received. We will get back to you shortly.</p>
                 </form>
             </div>
         </section>
 
+        <section class="contact-bottom-cta">
+            <h2>Ready to get started?</h2>
+            <p>Explore our solutions or reach out to our team directly.</p>
+            <a href="./index.html#solutions" class="btn tw-flex tw-gap-3 tw-px-4 tw-py-2.5">
+                <span>Explore Solutions</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </section>
     </main>
 
     <div class="vai-launcher" style="bottom:28px;right:28px;z-index:9999"></div>
     <div id="vai-widget" class="vai-widget tw-fixed tw-bg-white dark:tw-bg-black tw-border-[1px] dark:tw-border-[#36393c] tw-rounded-xl tw-shadow-2xl tw-overflow-hidden tw-flex tw-flex-col" style="bottom:96px;right:24px;z-index:9999">
         <div class="tw-flex tw-place-items-center tw-p-3 tw-bg-[#1A2B4A] tw-text-white"><span class="tw-font-semibold tw-text-sm"><i class="bi bi-chat-dots-fill"></i> VAI &mdash; ScaleVAI Assistant</span><button type="button" onclick="toggleVaiWidget()" class="tw-ml-auto tw-text-lg" aria-label="Close VAI chat"><i class="bi bi-x-lg"></i></button></div>
         <div class="prompt-container tw-overflow-y-auto tw-p-3 scrollbar tw-w-full tw-h-full tw-flex tw-flex-col tw-gap-2" id="chat-messages"><div class="tw-w-fit tw-mr-auto tw-p-2 tw-text-sm">Hi, I'm VAI. Ask me anything about ScaleVAI's solutions, industries, or how we work.</div></div>
-        <form id="chat-form" class="tw-flex tw-h-[50px] tw-gap-1 tw-bg-[#f3f4f6] tw-p-1"><input placeholder="Ask VAI a question..." type="text" class="tw-w-full tw-bg-transparent tw-p-2" id="chat-input" autocomplete="off"><button type="submit" class="btn !tw-bg-[#6366f1] !tw-p-2 !tw-px-3 !tw-text-white" aria-label="Send message"><i class="bi bi-arrow-up"></i></button></form>
+        <form id="chat-form" class="tw-flex tw-h-[50px] tw-gap-1 tw-bg-[#f3f4f6] dark:tw-bg-[#181a20] tw-p-1"><input placeholder="Ask VAI a question..." type="text" class="tw-w-full tw-bg-transparent tw-p-2 tw-text-black dark:tw-text-white" id="chat-input" autocomplete="off"><button type="submit" class="btn !tw-bg-[#6366f1] !tw-p-2 !tw-px-3 !tw-text-white" aria-label="Send message"><i class="bi bi-arrow-up"></i></button></form>
     </div>
 
-    <footer></footer>
+    <footer id="site-footer"></footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -102,14 +122,13 @@
     <script src="./solutions/particle-field.js"></script>
     <script src="./vai-widget.js"></script>
     <script>
-        const contactForm = document.querySelector('#contact-page-form')
-        const contactStatus = document.querySelector('#contact-form-status')
-        contactForm?.addEventListener('submit', (event) => {
-            event.preventDefault()
-            contactStatus.textContent = 'Thanks. Your request is ready to send. We will be in touch within one business day.'
-            contactStatus.classList.add('is-visible')
-            contactForm.reset()
-        })
+        const form = document.querySelector('#contact-page-form');
+        const status = document.querySelector('#contact-form-status');
+        form?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            status?.classList.add('is-visible');
+            form.reset();
+        });
     </script>
 </body>
 </html>
