@@ -40,7 +40,12 @@ function toggleHeader() {
 }
 
 function responsive() {
-    if (!isHeaderCollapsed) {
+    if (window.innerWidth >= RESPONSIVE_WIDTH) {
+        isHeaderCollapsed = false
+        collapseHeaderItems.style.height = ""
+        collapseHeaderItems.classList.remove("max-lg:!tw-opacity-100", "tw-min-h-[90vh]")
+        document.body.classList.remove("modal-open")
+    } else if (!isHeaderCollapsed) {
         toggleHeader()
     }
 

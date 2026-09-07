@@ -226,6 +226,28 @@ class Prompt{
                 </nav>
             </div>`
 
+        const desktopClassicMenu = (id, label, items, viewAllHref) => `
+            <div class="nav-dropdown-wrapper tw-relative tw-flex tw-flex-col tw-items-center" data-menu-id="${id}">
+                <a href="${viewAllHref}" class="header-links tw-flex tw-items-center tw-gap-1">
+                    <span>${label}</span>
+                    <i class="bi bi-chevron-down tw-text-sm"></i>
+                </a>
+                <nav id="nav-dropdown-list-${id}" data-open="false" class="classic-menu-panel">
+                    <div class="classic-menu-grid">
+                        ${items.map(item => `
+                            <a class="classic-menu-item" href="${item.href}">
+                                <i class="bi ${item.icon}"></i>
+                                <span>
+                                    <strong>${item.title}</strong>
+                                    <small>${item.description}</small>
+                                </span>
+                            </a>
+                        `).join('')}
+                    </div>
+                    <a class="classic-menu-directory" href="${viewAllHref}">View all ${label.toLowerCase()} <i class="bi bi-arrow-right"></i></a>
+                </nav>
+            </div>`
+
         header.outerHTML = `
             <header id="site-header" class="site-header lg:tw-px-4 tw-max-w-[100vw] max-lg:tw-top-0 tw-fixed tw-top-0 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-px-[3%] lg:tw-justify-around">
                 <a class="tw-flex tw-p-[4px] tw-gap-2 tw-place-items-center" href="${assetRoot}index.html" aria-label="ScaleVAI home">
@@ -236,10 +258,10 @@ class Prompt{
                 </a>
                 <div class="collapsible-header animated-collapse max-lg:tw-shadow-md" id="collapsed-header-items">
                     <!-- Desktop Navigation Bar -->
-                    <nav class="tw-relative tw-hidden lg:tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base lg:tw-mx-auto tw-place-items-center">
-                        ${desktopMegaMenu(1, 'Solutions', solutions, `${assetRoot}solutions.html`, 'View all solutions', 'Enterprise Systems', 'bi-cpu')}
+                    <nav class="site-primary-nav tw-relative tw-hidden tw-h-full tw-w-max tw-gap-5 tw-text-base lg:tw-mx-auto tw-place-items-center">
+                        ${desktopClassicMenu(1, 'Solutions', solutions, `${assetRoot}solutions.html`)}
                         <a class="header-links" href="${assetRoot}index.html#about">About</a>
-                        ${desktopMegaMenu(0, 'Industries', industries, `${assetRoot}industries.html`, 'View all industries', 'Industry Blueprints', 'bi-building')}
+                        ${desktopClassicMenu(0, 'Industries', industries, `${assetRoot}industries.html`)}
                         <a class="header-links" href="${assetRoot}contact.html">Contact</a>
                     </nav>
 
@@ -423,4 +445,16 @@ class Prompt{
         launcher.outerHTML = `
             <div class="vai-launcher" style="bottom:28px;right:28px;z-index:9999"><div class="vai-tooltip">Chat with VAI</div><div class="vai-ring"><button type="button" onclick="toggleVaiWidget()" id="vai-launcher" class="vai-btn" aria-label="Chat with VAI"><span class="vai-icon-wrap"><svg viewBox="0 0 26 30" aria-hidden="true"><defs><linearGradient id="vaiChevronGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c9963a"/><stop offset="100%" stop-color="#30a9d8"/></linearGradient></defs><path class="vai-chevron" d="M7 4 L19 15 L7 26"/></svg><span class="vai-status-dot"></span></span><span class="vai-wordmark">AI</span></button></div></div>`
     }
+
+    // Keep legacy anchors from sending visitors back to homepage sections.
+    document.querySelectorAll('a[href$="#solutions"], a[href$="#industries"]').forEach(link => {
+        const target = link.getAttribute('href')
+        const page = target.endsWith('#solutions') ? 'solutions.html' : 'industries.html'
+        link.setAttribute('href', `${assetRoot}${page}`)
+    })
+
+    const calendlyScript = document.createElement('script')
+    calendlyScript.src = `${assetRoot}scripts/calendly.js`
+    calendlyScript.defer = true
+    document.body.appendChild(calendlyScript)
 })()

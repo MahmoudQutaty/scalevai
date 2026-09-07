@@ -49,7 +49,12 @@ function toggleHeader() {
 }
 
 function responsive() {
-    if (!isHeaderCollapsed){
+    if (window.innerWidth >= RESPONSIVE_WIDTH) {
+        isHeaderCollapsed = false
+        collapseHeaderItems.style.height = ""
+        collapseHeaderItems.classList.remove("max-lg:!tw-opacity-100", "tw-min-h-[90vh]")
+        document.body.classList.remove("modal-open")
+    } else if (!isHeaderCollapsed) {
         toggleHeader()
     }
 
@@ -59,7 +64,7 @@ function responsive() {
         navToggle.addEventListener("mouseenter", openNavDropdown)
         navToggle.addEventListener("mouseleave", navMouseLeave)
 
-    } else {
+    } else if (navToggle) {
         isHeaderCollapsed = true
         navToggle.removeEventListener("mouseenter", openNavDropdown)
         navToggle.removeEventListener("mouseleave", navMouseLeave)
@@ -147,7 +152,7 @@ function updateToggleModeBtn(){
 }
 
 
-if (!window.sharedDropdownMenus) {
+if (!window.sharedDropdownMenus && navToggle && navDropdown) {
     navToggle.addEventListener("click", toggleNavDropdown)
     navDropdown.addEventListener("mouseleave", closeNavDropdown)
 }

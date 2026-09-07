@@ -2,8 +2,10 @@
 // wake up into ScaleVAI brand colors and get pushed away from the cursor as it passes nearby.
 // Self-contained: no-ops if the target canvas isn't on the page.
 (function () {
-    const canvas = document.getElementById("solution-particle-canvas")
-    if (!canvas) return
+    const canvases = document.querySelectorAll("#solution-particle-canvas, .solution-particle-canvas")
+    if (!canvases.length) return
+
+    canvases.forEach((canvas) => {
 
     const ctx = canvas.getContext("2d")
 
@@ -172,4 +174,5 @@
     resize()
     dots = Array.from({ length: DOT_COUNT }, makeDot)
     requestAnimationFrame(tick)
+    })
 })()
