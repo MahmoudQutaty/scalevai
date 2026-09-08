@@ -1,7 +1,7 @@
 /* Central Calendly booking configuration. Replace this URL with your public Calendly event URL. */
-window.SCALEVAI_CALENDLY_URL = "https://calendly.com/your-account/discovery-call"
+window.SCALEVAI_CALENDLY_URL = "https://calendly.com/your-account/discovery-call";
 
-(function () {
+;(function () {
     const calendlyUrl = window.SCALEVAI_CALENDLY_URL
     if (!calendlyUrl || calendlyUrl.includes("your-account")) return
 

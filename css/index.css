@@ -1821,12 +1821,14 @@ html.tw-dark .catalog-hero p,
     border-radius: 0;
     background: transparent;
     box-shadow: none;
+    padding-bottom: 1rem;
 }
 
 #solutions-grid .solution-item > a:first-child {
     display: block;
-    min-height: 26rem;
-    height: 100%;
+    min-height: 24rem;
+    height: calc(100% - 2.5rem);
+    margin-bottom: 2.5rem;
     border-radius: 0.75rem;
 }
 
@@ -1934,6 +1936,7 @@ html.tw-dark .catalog-hero p,
     #solutions-grid .solution-item {
         display: flex;
         flex-direction: column;
+        padding-bottom: 1.5rem;
     }
 
     #solutions-grid .solution-item > a:first-child,
@@ -1945,10 +1948,12 @@ html.tw-dark .catalog-hero p,
 
     #solutions-grid .solution-item > a:first-child {
         min-height: 14rem;
+        height: auto;
+        margin-bottom: 1.5rem;
     }
 
     #solutions-grid .solution-item > div {
-        padding: 1.5rem 0 2rem;
+        padding: 0 0 1.5rem;
     }
 
     .industry-directory > div > div > div:first-child,
