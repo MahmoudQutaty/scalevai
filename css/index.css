@@ -460,6 +460,17 @@ hr{
     .solution-shrinking-hero {
         height: 80vh;
     }
+
+    /* Homepage hero also carries .solution-shrinking-hero* for shared JS/animation;
+       restore its own full-height sizing so it doesn't shrink to 80vh and spill past its spacer. */
+    .homepage-hero-spacer {
+        height: 100vh;
+    }
+
+    .homepage-shrinking-hero {
+        height: 100vh;
+        min-height: 100svh;
+    }
 }
 
 .solution-breadcrumb-bar {
@@ -687,11 +698,33 @@ hr{
     }
 }
 
-@media (max-width: 480px) {
-    .vai-launcher { right: 16px; bottom: 16px; }
-    .vai-btn { padding: 11px 18px 11px 11px; font-size: 15px; }
-    .vai-icon-wrap { width: 26px; height: 26px; }
-    .vai-tooltip { display: none; }
+@media (max-width: 640px) {
+    .vai-launcher {
+        right: 16px !important;
+        bottom: 16px !important;
+    }
+    .vai-ring {
+        width: 56px;
+        height: 56px;
+        padding: 3px;
+    }
+    .vai-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0 !important;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+    }
+    .vai-icon-wrap {
+        width: 22px;
+        height: 24px;
+    }
+    .vai-tooltip {
+        display: none !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -825,20 +858,30 @@ hr{
     .how-we-work-flow {
         flex-direction: column;
         align-items: center;
-        gap: 2.5rem;
+        gap: 3rem;
     }
+    /* Straight line would run under each step's text; replaced by a wavy connector confined to the gap below. */
     .how-we-work-flow::before {
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        right: auto;
-        width: 2px;
-        height: auto;
-        background-image: repeating-linear-gradient(180deg, #C9963A 0 8px, transparent 8px 16px);
-        background-size: 100% 32px;
-        animation: how-we-work-line-y 2.5s linear infinite;
+        content: none;
     }
     .how-we-work-step { max-width: 320px; }
+    .how-we-work-step:not(:last-child) {
+        position: relative;
+    }
+    .how-we-work-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -3rem;
+        width: 32px;
+        height: 3rem;
+        transform: translateX(-50%);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='48' viewBox='0 0 32 48'%3E%3Cpath d='M16 2 C2 13 30 19 16 30 C6 38 26 42 16 46' fill='none' stroke='%23C9963A' stroke-width='2.5' stroke-linecap='round' stroke-dasharray='0.1 11'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 0;
+        pointer-events: none;
+    }
 }
 
 @keyframes how-we-work-line-y {
@@ -1661,17 +1704,16 @@ html.tw-dark .catalog-hero p,
     flex: 1 1 auto;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .vai-widget {
         right: 16px !important;
-        bottom: 88px !important;
-        width: calc(100vw - 32px);
-        height: min(520px, calc(100vh - 112px));
-    }
-
-    #vai-launcher {
-        right: 16px !important;
-        bottom: 16px !important;
+        left: 16px !important;
+        bottom: 80px !important;
+        width: calc(100vw - 32px) !important;
+        max-width: 380px !important;
+        height: min(520px, calc(100vh - 96px)) !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
     }
 }
 
