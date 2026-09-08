@@ -271,3 +271,132 @@ sections.forEach((sec) => {
 
 
 })
+
+// ------------- interactive draggable carousel -------------
+function initInteractiveCarousel() {
+    const container = document.querySelector(".carousel-container");
+    const carousel = document.querySelector(".carousel");
+    if (!container || !carousel) return;
+
+    // Ensure we have at least 4 duplicated groups for seamless infinite dragging in both directions
+    const initialGroups = carousel.querySelectorAll(".carousel-group");
+    if (initialGroups.length > 0 && initialGroups.length < 4) {
+        const template = initialGroups[0];
+        while (carousel.querySelectorAll(".carousel-group").length < 4) {
+            const clone = template.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+            carousel.appendChild(clone);
+        }
+    }
+
+    // Disable CSS keyframe animation to let JS drive transform
+    carousel.style.animation = "none";
+
+    let offset = 0;
+    let isDragging = false;
+    let isHovered = false;
+    let dragStartX = 0;
+    let dragStartOffset = 0;
+    let lastX = 0;
+    let lastTime = 0;
+    let velocity = 0;
+    const baseSpeed = 50; // pixels per second (~18s loop)
+
+    container.addEventListener("mouseenter", () => { isHovered = true; });
+    container.addEventListener("mouseleave", () => { isHovered = false; });
+
+    function getGroupWidth() {
+        const firstGroup = carousel.querySelector(".carousel-group");
+        return firstGroup ? firstGroup.getBoundingClientRect().width : 1000;
+    }
+
+    function normalizeOffset() {
+        const gw = getGroupWidth();
+        if (gw <= 0) return;
+        while (offset <= -gw) {
+            offset += gw;
+            dragStartOffset += gw;
+        }
+        while (offset > 0) {
+            offset -= gw;
+            dragStartOffset -= gw;
+        }
+    }
+
+    let lastFrame = performance.now();
+    function render(now) {
+        const dt = Math.min((now - lastFrame) / 1000, 0.1);
+        lastFrame = now;
+
+        if (!isDragging) {
+            if (Math.abs(velocity) > 5) {
+                offset += velocity * dt;
+                velocity *= Math.pow(0.88, dt * 60);
+                normalizeOffset();
+                carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
+            } else if (!isHovered) {
+                velocity = 0;
+                offset -= baseSpeed * dt;
+                normalizeOffset();
+                carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
+            }
+        }
+
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+
+    // Prevent default browser image dragging
+    container.addEventListener("dragstart", (e) => e.preventDefault());
+    container.querySelectorAll("img").forEach((img) => img.setAttribute("draggable", "false"));
+
+    container.addEventListener("pointerdown", (e) => {
+        if (e.pointerType === "mouse" && e.button !== 0) return;
+        isDragging = true;
+        dragStartX = e.clientX;
+        lastX = e.clientX;
+        dragStartOffset = offset;
+        lastTime = performance.now();
+        velocity = 0;
+        container.classList.add("is-dragging");
+        try {
+            container.setPointerCapture(e.pointerId);
+        } catch (err) {}
+    });
+
+    container.addEventListener("pointermove", (e) => {
+        if (!isDragging) return;
+        const currentX = e.clientX;
+        const now = performance.now();
+        const dt = Math.max((now - lastTime) / 1000, 0.001);
+        velocity = (currentX - lastX) / dt;
+        lastX = currentX;
+        lastTime = now;
+
+        const deltaX = currentX - dragStartX;
+        offset = dragStartOffset + deltaX;
+        normalizeOffset();
+        carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
+    });
+
+    function handleDragEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        container.classList.remove("is-dragging");
+        try {
+            if (e && e.pointerId && container.hasPointerCapture(e.pointerId)) {
+                container.releasePointerCapture(e.pointerId);
+            }
+        } catch (err) {}
+    }
+
+    container.addEventListener("pointerup", handleDragEnd);
+    container.addEventListener("pointercancel", handleDragEnd);
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initInteractiveCarousel);
+} else {
+    initInteractiveCarousel();
+}
+

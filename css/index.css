@@ -992,14 +992,22 @@ hr{
     white-space: nowrap;
     width: 100%;
     max-width: 800px;
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.carousel-container.is-dragging,
+.carousel-container.is-dragging * {
+    cursor: grabbing !important;
 }
   
 .carousel {
     display: flex;
     width: max-content;
     gap: 0;
-    animation: scroll 18s linear infinite;
     will-change: transform;
+    user-select: none;
 }
 
 .carousel-group {
@@ -1009,19 +1017,51 @@ hr{
 }
   
 .carousel-img {
-    display: inline-block;
-    margin: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 24px;
+    height: 32px;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
-.droidal-logo {
-    box-sizing: border-box;
-    padding: 3px 8px;
-    border-radius: 5px;
-    background: #1b1f1f;
+.carousel-img img {
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: auto;
+    filter: grayscale(100%);
+    opacity: 0.72;
+    transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 100%;
+    width: auto;
 }
 
-.tw-dark .droidal-logo {
-    background: transparent;
+/* On hover over the image or container: reveal vibrant brand colors */
+.carousel-img:hover img,
+.carousel-img img:hover {
+    filter: grayscale(0%) !important;
+    opacity: 1 !important;
+    transform: scale(1.05);
+}
+
+/* Light / Dark mode logo switching for dual-mode brand logos (like Droidal) */
+html.tw-dark .carousel-img .logo-light,
+html.dark .carousel-img .logo-light {
+    display: none !important;
+}
+
+html.tw-dark .carousel-img .logo-dark,
+html.dark .carousel-img .logo-dark {
+    display: block !important;
+}
+
+html:not(.tw-dark):not(.dark) .carousel-img .logo-dark {
+    display: none !important;
+}
+
+html:not(.tw-dark):not(.dark) .carousel-img .logo-light {
+    display: block !important;
 }
 
 .contact-main {
