@@ -51,6 +51,12 @@ const chatInput = document.querySelector("#chat-input")
 
 let chatHistory = []
 
+if (chatMessages) {
+    chatMessages.querySelectorAll(".tw-mr-auto").forEach(el => {
+        el.classList.add("vai-chat-bubble-ai")
+    })
+}
+
 function addChatBubble(text, role){
     if (chatMessages.dataset.cleared !== "true"){
         chatMessages.innerHTML = ""
@@ -58,11 +64,11 @@ function addChatBubble(text, role){
     }
 
     const bubble = document.createElement("div")
-    bubble.classList.add("tw-w-fit", "tw-p-2", "tw-max-w-[80%]")
+    bubble.classList.add("tw-w-fit", "tw-max-w-[85%]", "tw-p-2.5", "tw-px-3.5", "tw-rounded-xl", "tw-text-sm", "tw-leading-relaxed", "tw-shadow-sm")
     if (role === "user"){
-        bubble.classList.add("tw-ml-auto", "tw-rounded-xl", "tw-bg-gray-100", "dark:tw-bg-[#171717]")
+        bubble.classList.add("vai-chat-bubble-user", "tw-ml-auto", "tw-bg-[#6366f1]", "tw-text-white")
     } else {
-        bubble.classList.add("tw-mr-auto")
+        bubble.classList.add("vai-chat-bubble-ai", "tw-mr-auto", "tw-bg-gray-100", "dark:tw-bg-[#1c1f26]", "tw-border", "tw-border-gray-200/90", "dark:tw-border-[#2c303b]", "tw-text-gray-900", "dark:tw-text-gray-100")
     }
     bubble.innerText = text
     chatMessages.appendChild(bubble)

@@ -339,16 +339,24 @@ hr{
 }
 
 /* Closing CTA: full-bleed section with an interactive canvas dot field behind the text.
-   Background matches the page body exactly, with a soft top/bottom fade so the section
-   blends into whatever comes before/after it instead of a hard color edge. */
+   Styled with a dedicated colored background and subtle line break border for clear visual grounding. */
 .solution-particle-cta {
     position: relative;
-    background-color: #fcfcfc;
-    min-height: 70vh;
+    background-color: #f4f6fb;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .tw-dark .solution-particle-cta {
-    background-color: #000000;
+    background-color: #0c1017;
+    border-top: 1px solid #1a2233;
+    border-bottom: 1px solid #1a2233;
 }
 
 .solution-particle-cta::before,
@@ -357,54 +365,128 @@ hr{
     position: absolute;
     left: 0;
     right: 0;
-    height: 140px;
-    z-index: 2;
+    height: 120px;
+    z-index: 1;
     pointer-events: none;
 }
 
 .solution-particle-cta::before {
     top: 0;
-    background: linear-gradient(180deg, #fcfcfc 0%, rgba(252, 252, 252, 0) 100%);
+    background: linear-gradient(180deg, #f4f6fb 0%, rgba(244, 246, 251, 0) 100%);
 }
 
 .solution-particle-cta::after {
     bottom: 0;
-    background: linear-gradient(0deg, #fcfcfc 0%, rgba(252, 252, 252, 0) 100%);
+    background: linear-gradient(0deg, #f4f6fb 0%, rgba(244, 246, 251, 0) 100%);
 }
 
 .tw-dark .solution-particle-cta::before {
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, #0c1017 0%, rgba(12, 16, 23, 0) 100%);
 }
 
 .tw-dark .solution-particle-cta::after {
-    background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, #0c1017 0%, rgba(12, 16, 23, 0) 100%);
 }
 
-#solution-particle-canvas {
+#solution-particle-canvas,
+.solution-particle-canvas {
     display: block;
     cursor: default;
+    z-index: 0;
 }
 
 .solution-particle-content {
-    z-index: 1;
-    justify-content: flex-end;
-    min-height: 70vh;
+    position: relative;
+    z-index: 10 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 860px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 5rem 1.5rem !important;
+    min-height: 55vh;
 }
 
 .solution-particle-heading {
-    color: #0f172a;
+    color: #0b0f19 !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 760px !important;
+    font-weight: 600 !important;
+    font-size: clamp(2rem, 4vw, 3.25rem) !important;
+    letter-spacing: -0.025em !important;
+    line-height: 1.18 !important;
+    opacity: 1 !important;
 }
 
 .tw-dark .solution-particle-heading {
-    color: #ffffff;
+    color: #ffffff !important;
+    opacity: 1 !important;
 }
 
 .solution-particle-subtext {
-    color: rgba(15, 23, 42, 0.65);
+    color: #1e293b !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 1rem !important;
+    max-width: 620px !important;
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+    font-weight: 450 !important;
+    opacity: 1 !important;
 }
 
 .tw-dark .solution-particle-subtext {
-    color: rgba(255, 255, 255, 0.7);
+    color: #f3f4f6 !important;
+    opacity: 1 !important;
+}
+
+.solution-particle-content .btn {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 2rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+    padding: 14px 30px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    background-color: #000000 !important;
+    border: 1px solid #000000 !important;
+    border-radius: 10px !important;
+    opacity: 1 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    width: max-content !important;
+}
+
+.solution-particle-content .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+    background-color: #1a1a1a !important;
+}
+
+.tw-dark .solution-particle-content .btn {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.18) !important;
+    opacity: 1 !important;
+}
+
+.tw-dark .solution-particle-content .btn:hover {
+    background-color: #f4f4f5 !important;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3) !important;
 }
 
 .solution-shrinking-hero-spacer {
@@ -907,6 +989,70 @@ hr{
     align-items: center;
     display: flex;
     cursor: pointer;
+}
+
+#newsletter-signup-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 440px;
+}
+
+#newsletter-email-input {
+    height: 48px !important;
+    min-height: 48px !important;
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 16px !important;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+    box-sizing: border-box !important;
+}
+
+#newsletter-signup-btn {
+    height: 48px !important;
+    min-height: 48px !important;
+    min-width: 140px !important;
+    width: auto !important;
+    padding: 0 24px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    border-radius: 10px !important;
+    border: none !important;
+    font-family: inherit !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+    color: var(--btn-color) !important;
+    background-color: var(--btn-bg) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease !important;
+}
+
+#newsletter-signup-btn:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22) !important;
+}
+
+@media (max-width: 767px) {
+    #newsletter-signup-form {
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    #newsletter-email-input {
+        width: 100% !important;
+    }
+    #newsletter-signup-btn {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
 }
 
 .btn:hover{
@@ -1440,23 +1586,52 @@ html.tw-dark .catalog-hero p,
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
     padding: 6rem 5%;
-    background: #f6f7fb;
+    background-color: #f4f6fb;
+    border-top: 1px solid #e2e8f0;
     text-align: center;
 }
 
 .tw-dark .contact-bottom-cta {
-    background: #0d0d0d;
+    background-color: #0c1017;
+    border-top: 1px solid #1a2233;
 }
 
 .contact-bottom-cta h2 {
     font-size: clamp(2rem, 4vw, 3.25rem);
-    font-weight: 500;
+    font-weight: 600;
+    color: #0b0f19;
+}
+
+.tw-dark .contact-bottom-cta h2 {
+    color: #ffffff;
 }
 
 .contact-bottom-cta p {
-    color: #6b7280;
+    color: #1e293b;
+    font-size: 1.125rem;
+    max-width: 540px;
+}
+
+.tw-dark .contact-bottom-cta p {
+    color: #f3f4f6;
+}
+
+.contact-bottom-cta .btn {
+    padding: 13px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #000000;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.tw-dark .contact-bottom-cta .btn {
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.16);
 }
 
 @media (max-width: 800px) {
@@ -1553,29 +1728,126 @@ html.tw-dark .catalog-hero p,
 }
 
 
-/* Style for the collapsible content such as faq commonly known as: accordion */
+/* Style for the collapsible content such as FAQ commonly known as: accordion */
+
+.faq {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    margin-bottom: 0.85rem;
+}
+
+.faq:hover {
+    border-color: rgba(99, 102, 241, 0.35);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.faq.active,
+.faq:has(.faq-accordion.active) {
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.08);
+}
+
+.tw-dark .faq {
+    background-color: #121418;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tw-dark .faq:hover {
+    border-color: rgba(99, 102, 241, 0.45);
+    background-color: #15181f;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.tw-dark .faq.active,
+.tw-dark .faq:has(.faq-accordion.active) {
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.2);
+}
 
 .faq-accordion {
-    background-color: inherit;
+    background-color: transparent;
     color: var(--faq-h-text);
     cursor: pointer;
-    padding: 15px 18px;
+    padding: 18px 22px;
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
-    transition: height 0.4s;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.faq-accordion:hover {
+    background-color: rgba(99, 102, 241, 0.02);
+}
+
+.tw-dark .faq-accordion:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.faq-accordion span {
+    flex: 1;
+    font-weight: 500;
+}
+
+.faq-accordion .bi-plus {
+    font-size: 1.25rem;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: rgba(99, 102, 241, 0.08);
+    color: #6366f1;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, color 0.25s ease;
+}
+
+.tw-dark .faq-accordion .bi-plus {
+    background-color: rgba(99, 102, 241, 0.16);
+    color: #818cf8;
+}
+
+.faq-accordion.active .bi-plus {
+    background-color: #6366f1;
+    color: #ffffff;
+    transform: rotate(45deg);
 }
 
 .faq .content {
-    padding: 0px 18px;
+    padding: 0px 22px;
     color: var(--faq-content-text);
     height: max-content;
     overflow: hidden;
     background-color: transparent;
-    text-align: justify;
+    text-align: left;
+    line-height: 1.65;
+    font-size: 0.975rem;
     max-height: 0px;
-    transition: max-height 0.4s, padding 0.4s;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide horizontal rules between FAQ rounded boxes */
+.faq + hr,
+hr:has(+ .faq),
+.tw-gap-4 > hr,
+section:has(.faq) hr {
+    display: none !important;
+}
+
+/* FAQ titles styling - ensure rest of title retains normal title casing */
+.faq-title {
+    text-transform: none;
+    letter-spacing: -0.01em;
 }
 
 
@@ -1984,4 +2256,284 @@ html.tw-dark .catalog-hero p,
     color: #a5b4fc;
     border-color: rgba(129, 140, 248, 0.25);
 }
+
+/* "Book a discovery call" button: white in white mode, dark in dark mode */
+.btn-discovery-call,
+a.btn[data-discovery-btn="true"],
+a.btn[aria-label*="discovery call" i],
+.hero-section a.btn[href*="contact"],
+.catalog-hero a.btn[href*="contact"] {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid rgba(0, 0, 0, 0.16) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-discovery-call span,
+.btn-discovery-call i,
+a.btn[data-discovery-btn="true"] span,
+a.btn[data-discovery-btn="true"] i,
+a.btn[aria-label*="discovery call" i] span,
+a.btn[aria-label*="discovery call" i] i,
+.hero-section a.btn[href*="contact"] span,
+.hero-section a.btn[href*="contact"] i,
+.catalog-hero a.btn[href*="contact"] span,
+.catalog-hero a.btn[href*="contact"] i {
+    color: #111827 !important;
+}
+
+.btn-discovery-call:hover,
+a.btn[data-discovery-btn="true"]:hover,
+a.btn[aria-label*="discovery call" i]:hover,
+.hero-section a.btn[href*="contact"]:hover,
+.catalog-hero a.btn[href*="contact"]:hover {
+    background-color: #f3f4f6 !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.28) !important;
+}
+
+.btn-discovery-call:hover span,
+.btn-discovery-call:hover i,
+a.btn[data-discovery-btn="true"]:hover span,
+a.btn[data-discovery-btn="true"]:hover i,
+a.btn[aria-label*="discovery call" i]:hover span,
+a.btn[aria-label*="discovery call" i]:hover i,
+.hero-section a.btn[href*="contact"]:hover span,
+.hero-section a.btn[href*="contact"]:hover i,
+.catalog-hero a.btn[href*="contact"]:hover span,
+.catalog-hero a.btn[href*="contact"]:hover i {
+    color: #000000 !important;
+}
+
+.tw-dark .btn-discovery-call,
+.tw-dark a.btn[data-discovery-btn="true"],
+.tw-dark a.btn[aria-label*="discovery call" i],
+.tw-dark .hero-section a.btn[href*="contact"],
+.tw-dark .catalog-hero a.btn[href*="contact"] {
+    background-color: #111318 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+}
+
+.tw-dark .btn-discovery-call span,
+.tw-dark .btn-discovery-call i,
+.tw-dark a.btn[data-discovery-btn="true"] span,
+.tw-dark a.btn[data-discovery-btn="true"] i,
+.tw-dark a.btn[aria-label*="discovery call" i] span,
+.tw-dark a.btn[aria-label*="discovery call" i] i,
+.tw-dark .hero-section a.btn[href*="contact"] span,
+.tw-dark .hero-section a.btn[href*="contact"] i,
+.tw-dark .catalog-hero a.btn[href*="contact"] span,
+.tw-dark .catalog-hero a.btn[href*="contact"] i {
+    color: #ffffff !important;
+}
+
+.tw-dark .btn-discovery-call:hover,
+.tw-dark a.btn[data-discovery-btn="true"]:hover,
+.tw-dark a.btn[aria-label*="discovery call" i]:hover,
+.tw-dark .hero-section a.btn[href*="contact"]:hover,
+.tw-dark .catalog-hero a.btn[href*="contact"]:hover {
+    background-color: #1c1f28 !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.tw-dark .btn-discovery-call:hover span,
+.tw-dark .btn-discovery-call:hover i,
+.tw-dark a.btn[data-discovery-btn="true"]:hover span,
+.tw-dark a.btn[data-discovery-btn="true"]:hover i,
+.tw-dark a.btn[aria-label*="discovery call" i]:hover span,
+.tw-dark a.btn[aria-label*="discovery call" i]:hover i,
+.tw-dark .hero-section a.btn[href*="contact"]:hover span,
+.tw-dark .hero-section a.btn[href*="contact"]:hover i,
+.tw-dark .catalog-hero a.btn[href*="contact"]:hover span,
+.tw-dark .catalog-hero a.btn[href*="contact"]:hover i {
+    color: #ffffff !important;
+}
+
+/* Secondary hero outlined button (Explore directory, View all sectors, See how it works, etc.) */
+.btn-hero-outline,
+.catalog-hero a[href^="#"],
+.contact-intro-content a[href^="#"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding: 10px 20px !important;
+    min-height: 48px !important;
+    border-radius: 10px !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    color: #111827 !important;
+    border: 1.5px solid rgba(17, 24, 39, 0.38) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.btn-hero-outline span,
+.btn-hero-outline i,
+.catalog-hero a[href^="#"] span,
+.catalog-hero a[href^="#"] i,
+.contact-intro-content a[href^="#"] span,
+.contact-intro-content a[href^="#"] i {
+    color: #111827 !important;
+    transition: color 0.25s ease !important;
+}
+
+.btn-hero-outline:hover,
+.catalog-hero a[href^="#"]:hover,
+.contact-intro-content a[href^="#"]:hover {
+    background-color: rgba(99, 102, 241, 0.08) !important;
+    color: #4f46e5 !important;
+    border-color: #6366f1 !important;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.18) !important;
+    transform: translateY(-1px) !important;
+}
+
+.btn-hero-outline:hover span,
+.btn-hero-outline:hover i,
+.catalog-hero a[href^="#"]:hover span,
+.catalog-hero a[href^="#"]:hover i,
+.contact-intro-content a[href^="#"]:hover span,
+.contact-intro-content a[href^="#"]:hover i {
+    color: #4f46e5 !important;
+}
+
+.tw-dark .btn-hero-outline,
+.tw-dark .catalog-hero a[href^="#"],
+.tw-dark .contact-intro-content a[href^="#"] {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.tw-dark .btn-hero-outline span,
+.tw-dark .btn-hero-outline i,
+.tw-dark .catalog-hero a[href^="#"] span,
+.tw-dark .catalog-hero a[href^="#"] i,
+.tw-dark .contact-intro-content a[href^="#"] span,
+.tw-dark .contact-intro-content a[href^="#"] i {
+    color: #ffffff !important;
+}
+
+.tw-dark .btn-hero-outline:hover,
+.tw-dark .catalog-hero a[href^="#"]:hover,
+.tw-dark .contact-intro-content a[href^="#"]:hover {
+    background-color: rgba(99, 102, 241, 0.24) !important;
+    color: #ffffff !important;
+    border-color: #818cf8 !important;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35) !important;
+    transform: translateY(-1px) !important;
+}
+
+.tw-dark .btn-hero-outline:hover span,
+.tw-dark .btn-hero-outline:hover i,
+.tw-dark .catalog-hero a[href^="#"]:hover span,
+.tw-dark .catalog-hero a[href^="#"]:hover i,
+.tw-dark .contact-intro-content a[href^="#"]:hover span,
+.tw-dark .contact-intro-content a[href^="#"]:hover i {
+    color: #ffffff !important;
+}
+
+/* For video hero sections on detail pages (solutions & industries detail pages) */
+.solution-shrinking-hero .btn-hero-outline,
+.solution-normal-hero .btn-hero-outline,
+.hero-section .btn-hero-outline,
+.solution-shrinking-hero a[href^="#"].btn,
+.solution-normal-hero a[href^="#"].btn,
+.hero-section a[href^="#"].btn {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.72) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    backdrop-filter: blur(8px) !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}
+
+.solution-shrinking-hero .btn-hero-outline span,
+.solution-shrinking-hero .btn-hero-outline i,
+.solution-normal-hero .btn-hero-outline span,
+.solution-normal-hero .btn-hero-outline i,
+.hero-section .btn-hero-outline span,
+.hero-section .btn-hero-outline i,
+.solution-shrinking-hero a[href^="#"].btn span,
+.solution-shrinking-hero a[href^="#"].btn i,
+.solution-normal-hero a[href^="#"].btn span,
+.solution-normal-hero a[href^="#"].btn i,
+.hero-section a[href^="#"].btn span,
+.hero-section a[href^="#"].btn i {
+    color: #ffffff !important;
+}
+
+.solution-shrinking-hero .btn-hero-outline:hover,
+.solution-normal-hero .btn-hero-outline:hover,
+.hero-section .btn-hero-outline:hover,
+.solution-shrinking-hero a[href^="#"].btn:hover,
+.solution-normal-hero a[href^="#"].btn:hover,
+.hero-section a[href^="#"].btn:hover {
+    background: rgba(255, 255, 255, 0.26) !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* VAI Chat Widget - AI & User Chat Boxes */
+#chat-messages .tw-mr-auto,
+.vai-chat-bubble-ai {
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 85%;
+    padding: 0.65rem 0.95rem;
+    border-radius: 0.9rem;
+    border-top-left-radius: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    background-color: #f1f3f7;
+    border: 1px solid #e2e6ed;
+    color: #111827;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-right: auto;
+    word-break: break-word;
+}
+
+.tw-dark #chat-messages .tw-mr-auto,
+.tw-dark .vai-chat-bubble-ai {
+    background-color: #1c1f26;
+    border-color: #2c303b;
+    color: #f3f4f6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#chat-messages .tw-ml-auto,
+.vai-chat-bubble-user {
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 85%;
+    padding: 0.65rem 0.95rem;
+    border-radius: 0.9rem;
+    border-top-right-radius: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    background-color: #6366f1;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(99, 102, 241, 0.25);
+    margin-left: auto;
+    word-break: break-word;
+}
+
 

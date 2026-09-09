@@ -97,12 +97,12 @@ class Prompt{
 
         const text = document.createElement("div")
 
-        text.classList.add("tw-w-fit", "tw-ml-auto", "tw-p-2", "tw-rounded-xl", 
-                            "tw-bg-gray-100", "dark:tw-bg-[#171717]")
+        text.classList.add("tw-w-fit", "tw-ml-auto", "tw-p-2.5", "tw-px-3.5", "tw-rounded-xl", 
+                            "tw-bg-[#6366f1]", "tw-text-white", "tw-text-sm", "tw-shadow-sm")
         text.innerText = msg
 
         const promptELement = `
-            <div class="tw-w-full tw-flex tw-p-2">
+            <div class="tw-w-full tw-flex tw-p-1">
                 ${text.outerHTML.toString()}
             </div>
         `
@@ -126,11 +126,12 @@ class Prompt{
         }[this.chatModel]
 
         const text = document.createElement("div")
-        text.classList.add("tw-w-fit", "tw-mr-auto", "tw-p-2")
+        text.classList.add("vai-chat-bubble-ai", "tw-w-fit", "tw-mr-auto", "tw-p-2.5", "tw-px-3.5", "tw-rounded-xl",
+                           "tw-bg-gray-100", "dark:tw-bg-[#1c1f26]", "tw-border", "tw-border-gray-200/90", "dark:tw-border-[#2c303b]", "tw-text-gray-900", "dark:tw-text-gray-100", "tw-text-sm", "tw-shadow-sm")
         text.innerText = msg
 
         const promptELement = `
-            <div class="tw-w-full tw-flex tw-p-2">
+            <div class="tw-w-full tw-flex tw-p-1">
                 ${text.outerHTML.toString()}
             </div>
         `
@@ -260,9 +261,9 @@ class Prompt{
                     <!-- Desktop Navigation Bar -->
                     <nav class="site-primary-nav tw-relative tw-hidden tw-h-full tw-w-max tw-gap-5 tw-text-base lg:tw-mx-auto tw-place-items-center">
                         ${desktopClassicMenu(1, 'Solutions', solutions, `${assetRoot}solutions.html`)}
-                        <a class="header-links" href="${assetRoot}index.html#about">About</a>
+                        <a class="header-links" href="${assetRoot}index.html#about">About us</a>
                         ${desktopClassicMenu(0, 'Industries', industries, `${assetRoot}industries.html`)}
-                        <a class="header-links" href="${assetRoot}contact.html">Contact</a>
+                        <a class="header-links" href="${assetRoot}contact.html">Contact us</a>
                     </nav>
 
                     <!-- Mobile Navigation Accordion (< 1024px) -->
@@ -318,8 +319,8 @@ class Prompt{
                         </div>
 
                         <!-- Mobile About & Contact Links -->
-                        <a href="${assetRoot}index.html#about" class="tw-p-2.5 tw-text-base tw-font-semibold tw-text-black dark:tw-text-white hover:tw-text-[#6366f1] tw-text-center tw-rounded-lg hover:tw-bg-gray-100 dark:hover:tw-bg-[#1d1f26]">About</a>
-                        <a href="${assetRoot}contact.html" class="tw-p-2.5 tw-text-base tw-font-semibold tw-text-black dark:tw-text-white hover:tw-text-[#6366f1] tw-text-center tw-rounded-lg hover:tw-bg-gray-100 dark:hover:tw-bg-[#1d1f26]">Contact</a>
+                        <a href="${assetRoot}index.html#about" class="tw-p-2.5 tw-text-base tw-font-semibold tw-text-black dark:tw-text-white hover:tw-text-[#6366f1] tw-text-center tw-rounded-lg hover:tw-bg-gray-100 dark:hover:tw-bg-[#1d1f26]">About us</a>
+                        <a href="${assetRoot}contact.html" class="tw-p-2.5 tw-text-base tw-font-semibold tw-text-black dark:tw-text-white hover:tw-text-[#6366f1] tw-text-center tw-rounded-lg hover:tw-bg-gray-100 dark:hover:tw-bg-[#1d1f26]">Contact us</a>
                     </div>
 
                     <div class="lg:tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center">
@@ -424,7 +425,7 @@ class Prompt{
     const footer = document.querySelector('footer')
     if (footer) {
         footer.outerHTML = `
-            <footer class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-4 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] tw-text-black dark:tw-text-white">
+            <footer class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-4 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] tw-text-black dark:tw-text-white tw-bg-[#f4f6fb] dark:tw-bg-[#0c1017] tw-border-t tw-border-gray-200 dark:tw-border-[#1a2233]">
                 <div class="tw-flex max-md:tw-flex-col max-md:tw-gap-6 tw-gap-3 tw-w-full tw-place-content-around">
                     <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full">
                         <a href="${assetRoot}index.html" class="tw-w-full tw-place-items-center tw-flex tw-flex-col tw-gap-6"><img src="${logoPath}scalevai-logo-light-trim.png" alt="ScaleVAI logo" class="logo-light tw-hidden tw-h-[50px] tw-w-auto" /><img src="${logoPath}scalevai-logo-dark-trim.png" alt="ScaleVAI logo" class="logo-dark tw-h-[50px] tw-w-auto" /></a>
@@ -432,11 +433,11 @@ class Prompt{
                     </div>
                     <div class="tw-flex max-md:tw-flex-col tw-flex-wrap tw-gap-6 tw-h-full tw-w-full tw-justify-around">
                         <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Solutions</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}solutions/workforce-intelligence.html" class="footer-link">Workforce Intelligence</a><a href="${assetRoot}solutions/immersive-showroom.html" class="footer-link">Immersive Showroom</a><a href="${assetRoot}solutions/talent-intelligence.html" class="footer-link">Talent Intelligence</a><a href="${assetRoot}solutions/revenue-cycle.html" class="footer-link">Revenue Cycle</a><a href="${assetRoot}solutions/business-efficiency-consulting.html" class="footer-link">Business Efficiency</a><a href="${assetRoot}solutions.html" class="footer-link tw-font-medium tw-text-[#6366f1] dark:tw-text-[#818cf8]">All solutions &rarr;</a></div></div>
-                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Company</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}index.html#about" class="footer-link">About</a><a href="${assetRoot}contact.html" class="footer-link">Contact</a></div></div>
-                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Industries</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}industries/real-estate.html" class="footer-link">Real estate</a><a href="${assetRoot}industries/healthcare.html" class="footer-link">Healthcare</a><a href="${assetRoot}industries/manufacturing-logistics.html" class="footer-link">Manufacturing &amp; logistics</a><a href="${assetRoot}industries/hospitality.html" class="footer-link">Hospitality</a><a href="${assetRoot}industries/retail.html" class="footer-link">Retail</a><a href="${assetRoot}industries/financial-services.html" class="footer-link">Financial services</a><a href="${assetRoot}industries.html" class="footer-link tw-font-medium tw-text-[#6366f1] dark:tw-text-[#818cf8]">All industries &rarr;</a></div></div>
+                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Company</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}index.html#about" class="footer-link">About us</a><a href="${assetRoot}contact.html" class="footer-link">Contact us</a></div></div>
+                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Industries</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}industries/real-estate.html" class="footer-link">Real Estate</a><a href="${assetRoot}industries/healthcare.html" class="footer-link">Healthcare</a><a href="${assetRoot}industries/manufacturing-logistics.html" class="footer-link">Manufacturing &amp; Logistics</a><a href="${assetRoot}industries/hospitality.html" class="footer-link">Hospitality</a><a href="${assetRoot}industries/retail.html" class="footer-link">Retail</a><a href="${assetRoot}industries/financial-services.html" class="footer-link">Financial Services</a><a href="${assetRoot}industries.html" class="footer-link tw-font-medium tw-text-[#6366f1] dark:tw-text-[#818cf8]">All industries &rarr;</a></div></div>
                     </div>
                 </div>
-                <hr class="tw-mt-8"><div class="tw-mt-2 tw-flex tw-gap-2 tw-flex-col tw-text-gray-700 dark:tw-text-gray-300 tw-place-items-center tw-text-[12px] tw-w-full tw-text-center"><span>Dubai, UAE &middot; saba@scalevai.com</span><span>Copyright &#169; 2026 ScaleVAI. All rights reserved.</span></div>
+                <hr class="tw-mt-8"><div class="tw-mt-2 tw-flex tw-gap-2 tw-flex-col tw-text-gray-700 dark:tw-text-gray-300 tw-place-items-center tw-text-[12px] tw-w-full tw-text-center"><span>Dubai, UAE &middot; scale@scalevai.com</span><span>Copyright &#169; 2026 ScaleVAI. All rights reserved.</span></div>
             </footer>`
     }
 
@@ -451,6 +452,49 @@ class Prompt{
         const target = link.getAttribute('href')
         const page = target.endsWith('#solutions') ? 'solutions.html' : 'industries.html'
         link.setAttribute('href', `${assetRoot}${page}`)
+    })
+
+    // Ensure any "Book a discovery call" / hero primary action button receives the dedicated discovery call styling
+    document.querySelectorAll('a, button').forEach(el => {
+        const text = (el.textContent || '').trim().toLowerCase()
+        const aria = (el.getAttribute('aria-label') || '').toLowerCase()
+        if (text.includes('discovery call') || aria.includes('discovery call') || text.includes('industry consultation') || (text.includes('book a call') && !text.includes('saba') && el.closest('.hero-section, .catalog-hero, .solution-shrinking-hero'))) {
+            el.classList.add('btn-discovery-call')
+            el.setAttribute('data-discovery-btn', 'true')
+        }
+    })
+
+    // Ensure secondary hero action button has clear button shape outline and buttons are aligned
+    document.querySelectorAll('.catalog-hero, .hero-section, .solution-shrinking-hero').forEach(hero => {
+        const btnContainers = hero.querySelectorAll('.tw-flex.tw-gap-4, .tw-flex.tw-flex-wrap')
+        btnContainers.forEach(container => {
+            container.classList.add('tw-items-center')
+        })
+        hero.querySelectorAll('a[href^="#"]').forEach(secondaryBtn => {
+            secondaryBtn.classList.add('btn-hero-outline')
+        })
+    })
+
+    // Ensure initial greeting message inside #chat-messages is styled as an AI chat box
+    document.querySelectorAll('#chat-messages .tw-mr-auto').forEach(el => {
+        el.classList.add('vai-chat-bubble-ai')
+    })
+
+    // Ensure all FAQ section titles are capitalized
+    document.querySelectorAll('h1, h2, h3, h4').forEach(h => {
+        const text = (h.textContent || '').trim()
+        if (/^faq$/i.test(text)) {
+            h.textContent = 'FAQ'
+            h.classList.add('faq-title')
+        } else if (/\bfaq\b/i.test(text)) {
+            h.innerHTML = h.innerHTML.replace(/\bFaq\b/g, 'FAQ').replace(/\bfaq\b/g, 'FAQ')
+            h.classList.add('faq-title')
+        }
+    })
+
+    // Ensure all question boxes have rounded corners class
+    document.querySelectorAll('.faq').forEach(faq => {
+        faq.classList.add('tw-rounded-xl', 'tw-overflow-hidden')
     })
 
     const calendlyScript = document.createElement('script')
