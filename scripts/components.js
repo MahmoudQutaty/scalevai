@@ -151,6 +151,7 @@ class Prompt{
         document.body.classList.add('solution-page')
     }
 
+    const isDark = document.documentElement.classList.contains('tw-dark')
     const header = document.querySelector('#site-header')
     if (header) {
         const industries = [
@@ -253,8 +254,8 @@ class Prompt{
             <header id="site-header" class="site-header lg:tw-px-4 tw-max-w-[100vw] max-lg:tw-top-0 tw-fixed tw-top-0 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-px-[3%] lg:tw-justify-around">
                 <a class="tw-flex tw-p-[4px] tw-gap-2 tw-place-items-center" href="${assetRoot}index.html" aria-label="ScaleVAI home">
                     <div class="tw-h-[30px]">
-                        <img src="${logoPath}scalevai-logo-light-trim.png" alt="ScaleVAI logo" class="logo-light tw-hidden tw-object-contain tw-h-full tw-w-auto" />
-                        <img src="${logoPath}scalevai-logo-dark-trim.png" alt="ScaleVAI logo" class="logo-dark tw-object-contain tw-h-full tw-w-auto" />
+                        <img src="${logoPath}scalevai-logo-light-trim.png" alt="ScaleVAI logo" class="logo-light ${isDark ? 'tw-hidden' : ''} tw-object-contain tw-h-full tw-w-auto" />
+                        <img src="${logoPath}scalevai-logo-dark-trim.png" alt="ScaleVAI logo" class="logo-dark ${isDark ? '' : 'tw-hidden'} tw-object-contain tw-h-full tw-w-auto" />
                     </div>
                 </a>
                 <div class="collapsible-header animated-collapse max-lg:tw-shadow-md" id="collapsed-header-items">
@@ -428,7 +429,7 @@ class Prompt{
             <footer class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-4 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] tw-text-black dark:tw-text-white tw-bg-[#f1f4f9] dark:tw-bg-[#0b0f17] tw-border-t tw-border-gray-200 dark:tw-border-[#1a2233]">
                 <div class="tw-flex max-md:tw-flex-col max-md:tw-gap-6 tw-gap-3 tw-w-full tw-place-content-around">
                     <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full">
-                        <a href="${assetRoot}index.html" class="tw-w-full tw-place-items-center tw-flex tw-flex-col tw-gap-6"><img src="${logoPath}scalevai-logo-light-trim.png" alt="ScaleVAI logo" class="logo-light tw-hidden tw-h-[50px] tw-w-auto" /><img src="${logoPath}scalevai-logo-dark-trim.png" alt="ScaleVAI logo" class="logo-dark tw-h-[50px] tw-w-auto" /></a>
+                        <a href="${assetRoot}index.html" class="tw-w-full tw-place-items-center tw-flex tw-flex-col tw-gap-6"><img src="${logoPath}scalevai-logo-light-trim.png" alt="ScaleVAI logo" class="logo-light ${isDark ? 'tw-hidden' : ''} tw-h-[50px] tw-w-auto" /><img src="${logoPath}scalevai-logo-dark-trim.png" alt="ScaleVAI logo" class="logo-dark ${isDark ? '' : 'tw-hidden'} tw-h-[50px] tw-w-auto" /></a>
                         <div class="tw-flex tw-gap-4 tw-text-lg"><a href="https://x.com/" aria-label="Twitter"><i class="bi bi-twitter"></i></a><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></div>
                     </div>
                     <div class="tw-flex max-md:tw-flex-col tw-flex-wrap tw-gap-6 tw-h-full tw-w-full tw-justify-around">

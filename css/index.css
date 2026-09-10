@@ -192,6 +192,35 @@ hr{
     color: #818cf8;
 }
 
+@media (min-width: 1024px) {
+    header > .collapsible-header,
+    .site-header .collapsible-header,
+    .site-header .site-primary-nav {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Logo variant visibility in site-header across light and dark modes */
+html.tw-dark .site-header .logo-light,
+.tw-dark .site-header .logo-light {
+    display: none !important;
+}
+
+html.tw-dark .site-header .logo-dark,
+.tw-dark .site-header .logo-dark {
+    display: block !important;
+}
+
+html:not(.tw-dark) .site-header .logo-dark {
+    display: none !important;
+}
+
+html:not(.tw-dark) .site-header .logo-light {
+    display: block !important;
+}
+
 @media (min-width: 640px) {
     .site-header {
         max-width: 68rem;
