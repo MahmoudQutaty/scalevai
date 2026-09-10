@@ -40,6 +40,10 @@
             gtag('config', 'G-');
         </script>
 
+        <!-- Calendly Embed Assets -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
     </head>
     <body
         class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fcfcfc] 
@@ -1021,55 +1025,22 @@
         </section>
 
         <section
-            class="tw-relative tw-flex tw-p-2  tw-w-full tw-min-h-[60vh]  tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden"
+            class="tw-relative tw-flex tw-p-2 tw-w-full tw-min-h-[60vh] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden"
+            id="contact"
         >   
-             <div class="reveal-up tw-w-full tw-h-full tw-min-h-[450px] max-lg:tw-max-w-full tw-rounded-md lg:tw-py-[5%] tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-place-content-center tw-items-center 
-                        tw-flex tw-flex-col tw-max-w-[80%] tw-gap-4 tw-p-4">
+             <div class="reveal-up tw-w-full tw-h-full tw-min-h-[450px] max-lg:tw-max-w-full tw-rounded-2xl lg:tw-py-8 tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-place-content-center tw-items-center 
+                        tw-flex tw-flex-col tw-max-w-[960px] tw-gap-4 tw-p-4 sm:tw-p-6">
                
                 <h3 class="reveal-up tw-text-5xl tw-font-medium max-md:tw-text-3xl tw-text-center tw-leading-normal">
-                    Request a call
+                    Book a discovery call
                 </h3>
-                <p class="reveal-up tw-mt-3 tw-max-w-[600px] tw-text-center">
-                    No pitch, no pressure. An honest conversation about what AI can do for your business.
+                <p class="reveal-up tw-mt-2 tw-max-w-[600px] tw-text-center tw-opacity-80">
+                    No pitch, no pressure. Select a 30-minute time slot directly on our calendar below.
                 </p>
 
-                <form class="reveal-up tw-mt-8 tw-w-full tw-max-w-[650px] tw-flex tw-flex-col tw-gap-4" id="contact" onsubmit="return false;">
-
-                    <div class="tw-grid tw-grid-cols-2 max-md:tw-grid-cols-1 tw-gap-4">
-                        <input type="text" name="name" placeholder="Full name" required
-                            class="tw-p-3 tw-rounded-md tw-border-[1px] dark:tw-border-[#1f2123] tw-bg-transparent !tw-outline-none tw-w-full" />
-                        <input type="text" name="company" placeholder="Company" required
-                            class="tw-p-3 tw-rounded-md tw-border-[1px] dark:tw-border-[#1f2123] tw-bg-transparent !tw-outline-none tw-w-full" />
-                    </div>
-
-                    <div class="tw-grid tw-grid-cols-2 max-md:tw-grid-cols-1 tw-gap-4">
-                        <input type="email" name="email" placeholder="Email address" required
-                            class="tw-p-3 tw-rounded-md tw-border-[1px] dark:tw-border-[#1f2123] tw-bg-transparent !tw-outline-none tw-w-full" />
-                        <input type="tel" name="phone" placeholder="Phone number (optional)"
-                            class="tw-p-3 tw-rounded-md tw-border-[1px] dark:tw-border-[#1f2123] tw-bg-transparent !tw-outline-none tw-w-full" />
-                    </div>
-
-                    <select name="industry" required
-                        class="tw-p-3 tw-rounded-md tw-border-[1px] dark:tw-border-[#1f2123] tw-bg-transparent !tw-outline-none tw-w-full dark:tw-bg-[#171717]">
-                        <option value="" selected disabled>Industry</option>
-                        <option>Real Estate</option>
-                        <option>Healthcare</option>
-                        <option>Manufacturing &amp; Logistics</option>
-                        <option>Hospitality</option>
-                        <option>Retail</option>
-                        <option>Financial Services</option>
-                        <option>Other</option>
-                    </select>
-
-                    <textarea name="message" placeholder="Tell us a bit about what you're looking to solve..." rows="4"
-                        style="resize:none;" required
-                        class="tw-p-3 tw-rounded-md tw-border-[1px] dark:tw-border-[#1f2123] tw-bg-transparent !tw-outline-none tw-w-full"></textarea>
-
-                    <button type="submit" class="tw-shadow-md hover:tw-shadow-xl dark:tw-shadow-gray-800 tw-transition-all tw-duration-300 
-                                        tw-border-[1px] tw-p-3 tw-px-4 tw-border-black dark:tw-border-white tw-rounded-md tw-w-full tw-bg-transparent">
-                        Request a discovery call
-                    </button>
-                </form>
+                <div class="reveal-up tw-mt-4 tw-w-full tw-rounded-xl tw-overflow-hidden tw-shadow-sm tw-bg-white dark:tw-bg-[#111214]" style="min-height: 700px;">
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/qutatym129/30min" style="min-width:320px;width:100%;height:700px;"></div>
+                </div>
 
             </div>
         </section>

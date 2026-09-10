@@ -1,5 +1,5 @@
 /* ScaleVAI Calendly Integration */
-window.SCALEVAI_CALENDLY_URL = window.SCALEVAI_CALENDLY_URL || "https://calendly.com/qutatym129/new-meeting";
+window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
 
 (function () {
     // 1. Ensure Calendly widget stylesheet is loaded
@@ -14,12 +14,13 @@ window.SCALEVAI_CALENDLY_URL = window.SCALEVAI_CALENDLY_URL || "https://calendly
     fetch('/api/calendly/config')
         .then((res) => res.json())
         .then((data) => {
-            if (data && data.url) {
+            if (data && data.url && !data.url.includes("new-meeting")) {
                 window.SCALEVAI_CALENDLY_URL = data.url;
             }
+            updateInlineWidgets();
         })
         .catch(() => {
-            // Ignore if backend config is unavailable
+            // Fallback to default
         });
 
     // 3. Preload or dynamically load the Calendly script
@@ -32,7 +33,10 @@ window.SCALEVAI_CALENDLY_URL = window.SCALEVAI_CALENDLY_URL || "https://calendly
             const script = document.createElement("script");
             script.src = "https://assets.calendly.com/assets/external/widget.js";
             script.async = true;
-            script.onload = () => resolve(window.Calendly);
+            script.onload = () => {
+                updateInlineWidgets();
+                resolve(window.Calendly);
+            };
             script.onerror = reject;
             document.head.appendChild(script);
         });
@@ -40,12 +44,17 @@ window.SCALEVAI_CALENDLY_URL = window.SCALEVAI_CALENDLY_URL || "https://calendly
         return calendlyLoadingPromise;
     }
 
-    // Preload script in background after page load
-    if (document.readyState === "complete") {
-        setTimeout(loadCalendlyScript, 1000);
-    } else {
-        window.addEventListener("load", () => setTimeout(loadCalendlyScript, 1000));
+    function updateInlineWidgets() {
+        const url = window.SCALEVAI_CALENDLY_URL;
+        document.querySelectorAll('.calendly-inline-widget').forEach((el) => {
+            if (!el.getAttribute('data-url') || el.getAttribute('data-url').includes('new-meeting')) {
+                el.setAttribute('data-url', url);
+            }
+        });
     }
+
+    // Preload script immediately so inline widgets and popups render with zero delay
+    loadCalendlyScript();
 
     // 4. Open Calendly popup widget
     window.openScalevaiCalendly = function (event) {

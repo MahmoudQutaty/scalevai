@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/tailwind-build.css">
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fcfcfc] tw-text-black dark:tw-bg-black dark:tw-text-white">
     <header id="site-header" class="site-header lg:tw-px-4 tw-max-w-[100vw] max-lg:tw-top-0 tw-fixed tw-top-0 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-px-[3%] lg:tw-justify-around"></header>
@@ -42,65 +44,10 @@
                         <strong>Within 1 business day</strong>
                     </div>
                 </div>
-
-                <div class="tw-mt-8 tw-pt-6 tw-border-t tw-border-black/10 dark:tw-border-white/10">
-                    <button type="button" class="btn btn-discovery-call tw-flex tw-items-center tw-gap-2 tw-px-5 tw-py-3" data-calendly-booking aria-label="Book a discovery call">
-                        <i class="bi bi-calendar-check"></i>
-                        <span>Book a discovery call directly</span>
-                    </button>
-                    <small class="tw-block tw-mt-2 tw-opacity-60 tw-text-xs">Select a 30-min time slot on our calendar instantly</small>
-                </div>
             </div>
 
-            <div class="contact-form-panel">
-                <div class="contact-form-heading">
-                    <span>Send a message</span>
-                    <small>We usually reply within one business day.</small>
-                </div>
-
-                <form class="contact-page-form" id="contact-page-form">
-                    <div class="contact-form-grid">
-                        <label for="name">Full name
-                            <input type="text" id="name" name="name" placeholder="John Doe" required />
-                        </label>
-                        <label for="company">Company
-                            <input type="text" id="company" name="company" placeholder="Company Name" required />
-                        </label>
-                    </div>
-
-                    <div class="contact-form-grid">
-                        <label for="email">Work email
-                            <input type="email" id="email" name="email" placeholder="john@company.com" required />
-                        </label>
-                        <label for="phone">Phone <span>(optional)</span>
-                            <input type="tel" id="phone" name="phone" placeholder="+971 50 123 4567" />
-                        </label>
-                    </div>
-
-                    <label for="interest">Area of interest
-                        <select id="interest" name="interest">
-                            <option value="AI Workflow Automation">AI Workflow Automation</option>
-                            <option value="Workforce Intelligence">Workforce Intelligence</option>
-                            <option value="Retail Intelligence">Retail Intelligence</option>
-                            <option value="Audience Intelligence">Audience Intelligence</option>
-                            <option value="People Assistant">People Assistant</option>
-                            <option value="Business Efficiency Consulting">Business Efficiency Consulting</option>
-                            <option value="Immersive Showroom">Immersive Showroom</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </label>
-
-                    <label for="message">How can we help?
-                        <textarea id="message" name="message" placeholder="Tell us about what you want to achieve or improve..." required></textarea>
-                    </label>
-
-                    <button type="submit" class="contact-submit" id="contact-submit-btn">
-                        <span>Send Message</span>
-                        <i class="bi bi-arrow-right"></i>
-                    </button>
-
-                    <p class="contact-form-status" id="contact-form-status">Thank you! Your message has been received. We will get back to you shortly.</p>
-                </form>
+            <div class="contact-form-panel" style="padding: 0 !important; overflow: hidden; min-height: 700px;">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/qutatym129/30min" style="min-width:320px;width:100%;height:700px;"></div>
             </div>
         </section>
 
@@ -135,14 +82,5 @@
     <script src="./solutions/solutions.js"></script>
     <script src="./solutions/particle-field.js"></script>
     <script src="./vai-widget.js"></script>
-    <script>
-        const form = document.querySelector('#contact-page-form');
-        const status = document.querySelector('#contact-form-status');
-        form?.addEventListener('submit', (e) => {
-            e.preventDefault();
-            status?.classList.add('is-visible');
-            form.reset();
-        });
-    </script>
 </body>
 </html>
