@@ -339,12 +339,11 @@ hr{
 }
 
 /* Closing CTA: full-bleed section with an interactive canvas dot field behind the text.
-   Styled with a dedicated colored background and subtle line break border for clear visual grounding. */
+   Styled with the same background as other sections so it blends seamlessly with the page layout. */
 .solution-particle-cta {
     position: relative;
-    background-color: #f4f6fb;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
+    background-color: #fcfcfc;
+    border: none;
     min-height: 60vh;
     display: flex;
     flex-direction: column;
@@ -353,10 +352,11 @@ hr{
     text-align: center;
 }
 
-.tw-dark .solution-particle-cta {
-    background-color: #0c1017;
-    border-top: 1px solid #1a2233;
-    border-bottom: 1px solid #1a2233;
+.tw-dark .solution-particle-cta,
+html.tw-dark .solution-particle-cta,
+.dark .solution-particle-cta {
+    background-color: #000000;
+    border: none;
 }
 
 .solution-particle-cta::before,
@@ -372,20 +372,41 @@ hr{
 
 .solution-particle-cta::before {
     top: 0;
-    background: linear-gradient(180deg, #f4f6fb 0%, rgba(244, 246, 251, 0) 100%);
+    background: linear-gradient(180deg, #fcfcfc 0%, rgba(252, 252, 252, 0) 100%);
 }
 
 .solution-particle-cta::after {
     bottom: 0;
-    background: linear-gradient(0deg, #f4f6fb 0%, rgba(244, 246, 251, 0) 100%);
+    background: linear-gradient(0deg, #fcfcfc 0%, rgba(252, 252, 252, 0) 100%);
 }
 
-.tw-dark .solution-particle-cta::before {
-    background: linear-gradient(180deg, #0c1017 0%, rgba(12, 16, 23, 0) 100%);
+.tw-dark .solution-particle-cta::before,
+html.tw-dark .solution-particle-cta::before,
+.dark .solution-particle-cta::before {
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-.tw-dark .solution-particle-cta::after {
-    background: linear-gradient(0deg, #0c1017 0%, rgba(12, 16, 23, 0) 100%);
+.tw-dark .solution-particle-cta::after,
+html.tw-dark .solution-particle-cta::after,
+.dark .solution-particle-cta::after {
+    background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Site Footer: distinct background color with a clean separating line break (top border) */
+footer,
+#site-footer {
+    background-color: #f1f4f9 !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+.tw-dark footer,
+.tw-dark #site-footer,
+html.tw-dark footer,
+html.tw-dark #site-footer,
+.dark footer,
+.dark #site-footer {
+    background-color: #0b0f17 !important;
+    border-top: 1px solid #1a2233 !important;
 }
 
 #solution-particle-canvas,
@@ -996,14 +1017,15 @@ hr{
     align-items: center;
     gap: 12px;
     width: 100%;
-    max-width: 440px;
+    max-width: 540px;
 }
 
 #newsletter-email-input {
     height: 48px !important;
     min-height: 48px !important;
     flex: 1 1 auto;
-    min-width: 0;
+    width: 100%;
+    min-width: 220px;
     padding: 0 16px !important;
     border-radius: 10px !important;
     font-size: 15px !important;
@@ -1032,6 +1054,7 @@ hr{
     cursor: pointer !important;
     white-space: nowrap !important;
     box-sizing: border-box !important;
+    flex-shrink: 0 !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease !important;
 }
 
@@ -1040,14 +1063,23 @@ hr{
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22) !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
+    #newsletter-signup-form {
+        max-width: 540px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 639px) {
     #newsletter-signup-form {
         flex-direction: column !important;
         width: 100% !important;
         max-width: 100% !important;
+        gap: 10px !important;
     }
     #newsletter-email-input {
         width: 100% !important;
+        min-width: 0 !important;
     }
     #newsletter-signup-btn {
         width: 100% !important;

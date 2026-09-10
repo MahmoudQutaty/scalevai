@@ -1093,11 +1093,11 @@
         </section>
 
         <section
-            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-2"
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-p-[5%] tw-px-[5%] md:tw-px-[8%] lg:tw-px-[10%]"
         >
             <div
-                class="tw-flex tw-w-full tw-max-w-[80%] tw-place-content-center tw-place-items-center tw-justify-between tw-gap-3 
-                        tw-rounded-lg tw-bg-[#F6F7FB] dark:tw-bg-[#171717] tw-p-6 max-md:tw-max-w-full max-md:tw-flex-col"
+                class="tw-flex tw-w-full tw-max-w-5xl tw-place-content-center tw-place-items-center tw-justify-between tw-gap-6 
+                        tw-rounded-lg tw-bg-[#F6F7FB] dark:tw-bg-[#171717] tw-p-6 sm:tw-p-8 max-lg:tw-flex-col max-lg:tw-text-center"
             >
                 <div class="tw-flex tw-flex-col max-lg:tw-text-center tw-gap-1">
                     <h2 class="tw-text-2xl tw-text-gray-800 dark:tw-text-gray-200 max-md:tw-text-xl">
@@ -1108,7 +1108,7 @@
 
                 <form
                     id="newsletter-signup-form"
-                    class="tw-flex tw-w-full md:tw-w-auto md:tw-min-w-[400px] lg:tw-min-w-[440px] tw-items-center tw-gap-3 max-md:tw-flex-col"
+                    class="tw-flex tw-w-full sm:tw-w-auto sm:tw-min-w-[420px] lg:tw-min-w-[460px] tw-items-center tw-gap-3 max-sm:tw-flex-col"
                     onsubmit="event.preventDefault(); const btn=document.getElementById('newsletter-signup-btn'); const input=document.getElementById('newsletter-email-input'); if(input && input.value){ const prev=btn.innerHTML; btn.innerHTML='<span>Subscribed ✓</span>'; btn.disabled=true; setTimeout(()=>{ btn.innerHTML=prev; btn.disabled=false; input.value=''; }, 2500); }"
                 >
                     <input
@@ -1122,7 +1122,7 @@
                     <button
                         id="newsletter-signup-btn"
                         type="submit"
-                        class="btn tw-group tw-h-[48px] tw-w-full md:tw-w-auto md:tw-min-w-[140px] tw-px-6 tw-flex tw-items-center tw-justify-center tw-gap-2 tw-whitespace-nowrap tw-text-[15px] tw-font-semibold !tw-rounded-[10px] tw-shadow-md hover:tw-shadow-xl tw-transition-all tw-duration-300 hover:tw-translate-x-0.5"
+                        class="btn tw-group tw-h-[48px] tw-w-full sm:tw-w-auto sm:tw-min-w-[140px] tw-px-6 tw-flex tw-items-center tw-justify-center tw-gap-2 tw-whitespace-nowrap tw-text-[15px] tw-font-semibold !tw-rounded-[10px] tw-shadow-md hover:tw-shadow-xl tw-transition-all tw-duration-300 hover:tw-translate-x-0.5"
                         aria-label="Sign Up"
                     >
                         <span>Sign Up</span>
@@ -1134,7 +1134,7 @@
 
         <footer
             class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-4 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] 
-                    tw-text-black dark:tw-text-white tw-bg-[#f4f6fb] dark:tw-bg-[#0c1017] tw-border-t tw-border-gray-200 dark:tw-border-[#1a2233] max-md:tw-flex-col"
+                    tw-text-black dark:tw-text-white tw-bg-[#f1f4f9] dark:tw-bg-[#0b0f17] tw-border-t tw-border-gray-200 dark:tw-border-[#1a2233] max-md:tw-flex-col"
         >
             <div class="tw-flex max-md:tw-flex-col max-md:tw-gap-6 tw-gap-3 tw-w-full tw-place-content-around">
                 <div

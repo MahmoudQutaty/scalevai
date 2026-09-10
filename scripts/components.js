@@ -425,7 +425,7 @@ class Prompt{
     const footer = document.querySelector('footer')
     if (footer) {
         footer.outerHTML = `
-            <footer class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-4 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] tw-text-black dark:tw-text-white tw-bg-[#f4f6fb] dark:tw-bg-[#0c1017] tw-border-t tw-border-gray-200 dark:tw-border-[#1a2233]">
+            <footer class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-4 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] tw-text-black dark:tw-text-white tw-bg-[#f1f4f9] dark:tw-bg-[#0b0f17] tw-border-t tw-border-gray-200 dark:tw-border-[#1a2233]">
                 <div class="tw-flex max-md:tw-flex-col max-md:tw-gap-6 tw-gap-3 tw-w-full tw-place-content-around">
                     <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full">
                         <a href="${assetRoot}index.html" class="tw-w-full tw-place-items-center tw-flex tw-flex-col tw-gap-6"><img src="${logoPath}scalevai-logo-light-trim.png" alt="ScaleVAI logo" class="logo-light tw-hidden tw-h-[50px] tw-w-auto" /><img src="${logoPath}scalevai-logo-dark-trim.png" alt="ScaleVAI logo" class="logo-dark tw-h-[50px] tw-w-auto" /></a>
