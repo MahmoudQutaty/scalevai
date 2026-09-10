@@ -2,6 +2,30 @@
 window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
 
 (function () {
+    function isDarkModeActive() {
+        return document.documentElement.classList.contains("tw-dark") ||
+            localStorage.getItem("color-mode") === "dark" ||
+            (!("color-mode" in localStorage) && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+
+    function getThemedCalendlyUrl(isDark) {
+        const rawUrl = window.SCALEVAI_CALENDLY_URL || "https://calendly.com/qutatym129/30min";
+        const baseUrl = rawUrl.split("?")[0];
+        const params = new URLSearchParams();
+
+        if (isDark) {
+            params.set("background_color", "111111");
+            params.set("text_color", "ffffff");
+            params.set("primary_color", "6366f1");
+        } else {
+            params.set("background_color", "ffffff");
+            params.set("text_color", "111827");
+            params.set("primary_color", "003060");
+        }
+
+        return `${baseUrl}?${params.toString()}`;
+    }
+
     // 1. Ensure Calendly widget stylesheet is loaded
     if (!document.querySelector('link[href*="widget.css"]')) {
         const link = document.createElement("link");
@@ -45,18 +69,99 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
     }
 
     function updateInlineWidgets() {
-        const url = window.SCALEVAI_CALENDLY_URL;
+        const isDark = isDarkModeActive();
+        const themedUrl = getThemedCalendlyUrl(isDark);
+
         document.querySelectorAll('.calendly-inline-widget').forEach((el) => {
-            if (!el.getAttribute('data-url') || el.getAttribute('data-url').includes('new-meeting')) {
-                el.setAttribute('data-url', url);
+            el.setAttribute('data-url', themedUrl);
+            
+            const iframe = el.querySelector('iframe');
+            if (iframe) {
+                iframe.setAttribute('scrolling', 'no');
+                iframe.style.setProperty('overflow', 'hidden', 'important');
+                iframe.style.setProperty('border', 'none', 'important');
+                iframe.style.setProperty('width', '100%', 'important');
+                iframe.style.setProperty('height', '100%', 'important');
+
+                const currentSrc = iframe.getAttribute('src') || '';
+                const currentIsDark = currentSrc.includes('background_color=111111');
+                if (currentIsDark !== isDark || !currentSrc.includes('background_color')) {
+                    iframe.src = themedUrl;
+                }
+            }
+        });
+
+        document.querySelectorAll('.calendly-container-box').forEach((box) => {
+            if (isDark) {
+                box.style.backgroundColor = '#111111';
+                box.style.borderColor = '#242424';
+            } else {
+                box.style.backgroundColor = '#ffffff';
+                box.style.borderColor = 'rgba(0, 0, 0, 0.08)';
             }
         });
     }
 
-    // Preload script immediately so inline widgets and popups render with zero delay
+    // Set initial themed URL before Calendly widget.js auto-injects
+    updateInlineWidgets();
+
+    // Preload script immediately
     loadCalendlyScript();
 
-    // 4. Open Calendly popup widget
+    // 4. Dynamic height adaptation from Calendly to eliminate any internal scrolling
+    window.addEventListener('message', function (e) {
+        if (e.data && e.data.event === 'calendly.page_height' && e.data.payload) {
+            const rawHeight = e.data.payload.height;
+            const numHeight = typeof rawHeight === 'number' ? rawHeight : parseInt(rawHeight, 10);
+            if (!isNaN(numHeight) && numHeight > 0) {
+                const fitHeight = Math.max(numHeight + 16, 750) + 'px';
+                document.querySelectorAll('.calendly-inline-widget').forEach((widget) => {
+                    widget.style.setProperty('height', fitHeight, 'important');
+                    widget.style.setProperty('min-height', fitHeight, 'important');
+                    widget.style.setProperty('overflow', 'hidden', 'important');
+
+                    if (widget.parentElement) {
+                        widget.parentElement.style.setProperty('min-height', fitHeight, 'important');
+                        widget.parentElement.style.setProperty('height', 'auto', 'important');
+                        widget.parentElement.style.setProperty('overflow', 'hidden', 'important');
+                    }
+                });
+
+                document.querySelectorAll('.calendly-inline-widget iframe').forEach((iframe) => {
+                    iframe.setAttribute('scrolling', 'no');
+                    iframe.style.setProperty('overflow', 'hidden', 'important');
+                });
+            }
+        }
+    });
+
+    // 5. Watch for theme changes (e.g. user toggles dark / light mode)
+    const themeObserver = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+            if (m.attributeName === 'class') {
+                updateInlineWidgets();
+            }
+        }
+    });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    // 6. Watch for iframe insertion to enforce scrolling="no" immediately
+    const widgetDomObserver = new MutationObserver(() => {
+        document.querySelectorAll('.calendly-inline-widget iframe').forEach((iframe) => {
+            if (iframe.getAttribute('scrolling') !== 'no') {
+                iframe.setAttribute('scrolling', 'no');
+                iframe.style.setProperty('overflow', 'hidden', 'important');
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.calendly-inline-widget').forEach((el) => {
+            widgetDomObserver.observe(el, { childList: true, subtree: true });
+        });
+        updateInlineWidgets();
+    });
+
+    // 7. Open Calendly popup widget (with dark/light theme support)
     window.openScalevaiCalendly = function (event) {
         if (event && typeof event.preventDefault === "function") {
             event.preventDefault();
@@ -64,30 +169,30 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
 
         const url = window.SCALEVAI_CALENDLY_URL;
 
-        // If no URL or placeholder, show prompt to provide link
         if (!url || url.includes("your-account") || url.includes("your-username")) {
             showCalendlySetupNotice();
             return;
         }
 
+        const isDark = isDarkModeActive();
+        const themedUrl = getThemedCalendlyUrl(isDark);
+
         loadCalendlyScript()
             .then((Calendly) => {
                 Calendly.initPopupWidget({
-                    url: url
+                    url: themedUrl
                 });
             })
             .catch(() => {
-                // Fallback to direct redirect if widget fails
-                window.location.href = url;
+                window.location.href = themedUrl;
             });
     };
 
     function showCalendlySetupNotice() {
-        // Remove existing notice if present
         const existing = document.getElementById("calendly-setup-modal");
         if (existing) existing.remove();
 
-        const isDark = document.documentElement.classList.contains("tw-dark");
+        const isDark = isDarkModeActive();
         const modal = document.createElement("div");
         modal.id = "calendly-setup-modal";
         modal.className = "tw-fixed tw-inset-0 tw-z-[999999] tw-flex tw-items-center tw-place-content-center tw-p-4";
@@ -125,7 +230,7 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
         };
     }
 
-    // 5. Wire buttons across all pages via event delegation
+    // 8. Wire buttons across all pages
     document.addEventListener("click", function (event) {
         const target = event.target.closest("a, button");
         if (!target) return;
@@ -144,6 +249,15 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
             (text.includes("book a call") && !text.includes("saba") && (target.closest(".hero-section, .catalog-hero, .solution-shrinking-hero, .site-header, header") || href.includes("#contact") || href.includes("contact.html")));
 
         if (isDiscoveryCall) {
+            // If on home page and clicking a link to #contact, smoothly scroll to embedded box
+            if (href.includes("#contact") && document.getElementById("contact")) {
+                const contactEl = document.getElementById("contact");
+                if (contactEl) {
+                    event.preventDefault();
+                    contactEl.scrollIntoView({ behavior: "smooth" });
+                    return;
+                }
+            }
             window.openScalevaiCalendly(event);
         }
     });

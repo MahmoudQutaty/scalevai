@@ -498,8 +498,10 @@ class Prompt{
         faq.classList.add('tw-rounded-xl', 'tw-overflow-hidden')
     })
 
-    const calendlyScript = document.createElement('script')
-    calendlyScript.src = `${assetRoot}scripts/calendly.js`
-    calendlyScript.defer = true
-    document.body.appendChild(calendlyScript)
+    if (!document.querySelector('script[src*="calendly.js"]')) {
+        const calendlyScript = document.createElement('script')
+        calendlyScript.src = `${assetRoot}scripts/calendly.js`
+        calendlyScript.defer = true
+        document.body.appendChild(calendlyScript)
+    }
 })()
