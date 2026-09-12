@@ -1,5 +1,229 @@
 /* Shared styles for individual solution detail pages (Workforce Intelligence, etc.) */
 
+/* Solutions directory cards: video and text sit side by side in one row on
+   large screens (video left, text right), stacking into a single column
+   on mobile. The video box has a fixed aspect ratio so it is always fully
+   filled with no empty space, independent of how long the text next to it
+   is. */
+.solution-card > .tw-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.solution-card-media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.solution-card-media a,
+.solution-card-media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .solution-card > .tw-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto !important;
+        align-items: start !important;
+        gap: 2.5rem !important;
+    }
+
+    .solution-card-media {
+        grid-column: 1 / 2 !important;
+        grid-row: 1 !important;
+        aspect-ratio: 4 / 3;
+    }
+
+    .solution-card-content {
+        grid-column: 2 / 3 !important;
+        grid-row: 1 !important;
+    }
+}
+
+/* Solutions directory cards: simplified, clean basic list with dots.
+   Capability items are a minimal, unboxed vertical list with a subtle dot
+   instead of cards or borders. Spacing is tightened so the text column
+   reads calm and organized next to the video. */
+.solution-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.solution-features-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.solution-features-wrap > .tw-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+}
+
+.solution-features-wrap > .tw-grid > div {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 0 0 1.15rem !important;
+    position: relative !important;
+    display: block !important;
+}
+
+.solution-features-wrap > .tw-grid > div::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0.15rem !important;
+    top: 0.45rem !important;
+    width: 5px !important;
+    height: 5px !important;
+    border-radius: 50% !important;
+    background-color: #6366f1 !important;
+}
+
+.tw-dark .solution-features-wrap > .tw-grid > div::before {
+    background-color: #818cf8 !important;
+}
+
+.solution-card-footer {
+    margin-top: 0.25rem;
+}
+
+/* Hide eyebrow badge widget completely */
+.catalog-card-badge {
+    display: none !important;
+}
+
+/* Scroll-linked feature section: text steps on the left fade in as they
+   become active, sticky media on the right swaps to match. Simple design —
+   plain headings, plain checkmarks, no icon badges. */
+.scrolly-feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    width: 100%;
+}
+
+.scrolly-track {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.scrolly-step {
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+}
+
+.scrolly-step.is-active {
+    opacity: 1;
+}
+
+.scrolly-step h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.scrolly-step p {
+    margin: 0 0 1rem;
+    color: rgba(15, 23, 42, 0.74);
+    line-height: 1.65;
+}
+
+.tw-dark .scrolly-step p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.scrolly-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.scrolly-checklist li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: rgba(15, 23, 42, 0.74);
+    line-height: 1.5;
+}
+
+.tw-dark .scrolly-checklist li {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.scrolly-checklist li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: rgba(15, 23, 42, 0.4);
+}
+
+.tw-dark .scrolly-checklist li::before {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.scrolly-sticky {
+    position: relative;
+    display: none;
+}
+
+.scrolly-media {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.scrolly-media.is-active {
+    opacity: 1;
+    position: relative;
+}
+
+.scrolly-media video,
+.scrolly-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .scrolly-feature {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+    }
+
+    .scrolly-sticky {
+        display: block;
+        position: sticky;
+        top: 100px;
+        height: 480px;
+    }
+
+    .scrolly-media {
+        position: absolute;
+    }
+
+    .scrolly-media.is-active {
+        position: absolute;
+    }
+}
+
 .solution-breadcrumb {
     display: flex;
     align-items: center;
@@ -848,6 +1072,3 @@
     border-color: #2e3238;
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.45);
 }
-
-
-

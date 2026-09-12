@@ -945,7 +945,6 @@
 
 
             <div class="reveal-up tw-mb-2">
-                <div class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-[0.18em] tw-text-[#6366f1]">Questions &amp; Answers</div>
                 <h2
                     class="tw-text-4xl tw-font-medium max-md:tw-text-2xl tw-mt-2 faq-title"
                 >
@@ -1025,23 +1024,36 @@
         </section>
 
         <section
-            class="tw-relative tw-flex tw-p-2 tw-w-full tw-min-h-[60vh] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden"
+            class="tw-relative tw-flex tw-w-full tw-min-h-[60vh] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-py-16 sm:tw-py-20 tw-px-4 sm:tw-px-6"
             id="contact"
         >   
-             <div class="reveal-up tw-w-full tw-h-full tw-min-h-[450px] max-lg:tw-max-w-full tw-rounded-2xl lg:tw-py-8 tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-place-content-center tw-items-center 
-                        tw-flex tw-flex-col tw-max-w-[960px] tw-gap-4 tw-p-4 sm:tw-p-6">
-               
-                <h3 class="reveal-up tw-text-5xl tw-font-medium max-md:tw-text-3xl tw-text-center tw-leading-normal">
+            <div class="tw-w-full tw-max-w-[1020px] tw-flex tw-flex-col tw-items-center tw-text-center tw-gap-4 tw-mb-4">
+                <h3 class="tw-text-4xl sm:tw-text-5xl tw-font-medium max-md:tw-text-3xl tw-leading-normal">
                     Book a discovery call
                 </h3>
-                <p class="reveal-up tw-mt-2 tw-max-w-[600px] tw-text-center tw-opacity-80">
+                <p class="tw-max-w-[620px] tw-opacity-80 tw-text-base sm:tw-text-lg">
                     No pitch, no pressure. Select a 30-minute time slot directly on our calendar below.
                 </p>
+            </div>
 
-                <div class="calendly-container-box reveal-up tw-mt-4 tw-w-full tw-rounded-2xl tw-overflow-hidden tw-shadow-sm tw-bg-white dark:tw-bg-[#111111] tw-border tw-border-black/5 dark:tw-border-[#242424]" style="min-height: 760px; overflow: hidden;">
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/qutatym129/30min" style="min-width:320px;width:100%;height:760px;overflow:hidden;"></div>
-                </div>
+            <iframe 
+                id="home-calendly-iframe"
+                class="calendly-iframe tw-w-full tw-max-w-[1020px]"
+                src="https://calendly.com/qutatym129/30min?embed_domain=scalevai.com&amp;embed_type=Inline&amp;background_color=000000&amp;text_color=ffffff&amp;primary_color=6366f1&amp;hide_gdpr_banner=1"
+                width="100%"
+                height="680"
+                frameborder="0"
+                scrolling="no"
+                title="Book a Discovery Call - ScaleVAI"
+                style="min-width:320px;width:100%;height:680px;border:none;background:transparent;"
+            ></iframe>
 
+            <div class="tw-mt-3 tw-flex tw-items-center tw-justify-center tw-flex-wrap tw-gap-2 tw-text-xs tw-text-gray-500 dark:tw-text-gray-400">
+                <span class="tw-inline-flex tw-items-center tw-gap-1.5"><i class="bi bi-shield-check tw-text-emerald-500"></i> Instant confirmation &amp; Google Meet invite sent automatically.</span>
+                <span class="tw-opacity-40 max-sm:tw-hidden">&middot;</span>
+                <a href="https://calendly.com/qutatym129/30min" target="_blank" rel="noopener noreferrer" class="tw-text-indigo-600 dark:tw-text-indigo-400 hover:tw-underline tw-font-medium">
+                    Open direct link <i class="bi bi-box-arrow-up-right tw-text-[10px]"></i>
+                </a>
             </div>
         </section>
 
@@ -1050,13 +1062,13 @@
             <canvas id="solution-particle-canvas" class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full"></canvas>
 
             <div class="solution-particle-content tw-relative tw-flex tw-h-full tw-w-full tw-flex-col tw-items-center tw-justify-center tw-text-center tw-p-[5%] max-lg:tw-p-6 tw-mx-auto">
-                <h2 class="solution-particle-heading reveal-up tw-text-5xl tw-font-medium max-md:tw-text-3xl tw-text-center tw-mx-auto" style="max-width: 760px;">
+                <h2 class="solution-particle-heading tw-text-5xl tw-font-medium max-md:tw-text-3xl tw-text-center tw-mx-auto" style="max-width: 760px;">
                     We do not sell software.<br />We make it work.
                 </h2>
-                <p class="solution-particle-subtext reveal-up tw-mt-4 tw-text-center tw-mx-auto" style="max-width: 620px;">
+                <p class="solution-particle-subtext tw-text-center tw-mx-auto" style="max-width: 620px;">
                     Talk to ScaleVAI about implementing AI solutions built for your business.
                 </p>
-                <a href="#contact" class="reveal-up tw-group btn tw-mt-8 tw-flex tw-gap-2 tw-mx-auto tw-justify-center" style="width: max-content;">
+                <a href="#contact" class="tw-group btn tw-flex tw-gap-2 tw-mx-auto tw-justify-center" style="width: max-content;">
                     <span>Book a call</span>
                     <i class="bi bi-arrow-right tw-duration-300 group-hover:tw-translate-x-1"></i>
                 </a>

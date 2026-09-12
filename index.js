@@ -212,13 +212,20 @@ const typed = new Typed('#prompts-sample', {
 
 // VAI chat widget logic lives in ./vai-widget.js (shared across every page)
 
-gsap.registerPlugin(ScrollTrigger)
+if (typeof gsap !== 'undefined') {
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger)
+    }
 
+    const revealTargets = document.querySelectorAll(
+        ".reveal-up:not(.solution-particle-cta *):not(.solution-particle-heading):not(.solution-particle-subtext)"
+    )
 
-gsap.to(".reveal-up", {
-    opacity: 0,
-    y: "100%",
-})
+    gsap.set(revealTargets, {
+        opacity: 0,
+        y: 28,
+    })
+}
 
 
 const faqAccordion = document.querySelectorAll('.faq-accordion')
@@ -250,27 +257,28 @@ faqAccordion.forEach(function (btn) {
 
 // ------------- reveal section animations ---------------
 
-const sections = gsap.utils.toArray("section")
+const sections = (typeof gsap !== 'undefined') ? gsap.utils.toArray("section:not(.solution-particle-cta)") : []
 
 sections.forEach((sec) => {
+    const targets = sec.querySelectorAll(
+        ".reveal-up:not(.solution-particle-cta *):not(.solution-particle-heading):not(.solution-particle-subtext)"
+    )
+    if (!targets.length) return
 
-    const revealUptimeline = gsap.timeline({paused: true, 
-                                            scrollTrigger: {
-                                                            trigger: sec,
-                                                            start: "10% 80%", // top of trigger hits the top of viewport
-                                                            end: "20% 90%",
-                                                            // markers: true,
-                                                            // scrub: 1,
-                                                        }})
-
-    revealUptimeline.to(sec.querySelectorAll(".reveal-up"), {
-        opacity: 1,
-        duration: 0.8,
-        y: "0%",
-        stagger: 0.2,
+    const revealUptimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: sec,
+            start: "top 85%",
+            toggleActions: "play none none none"
+        }
     })
 
-
+    revealUptimeline.to(targets, {
+        opacity: 1,
+        duration: 0.8,
+        y: 0,
+        stagger: 0.15,
+    })
 })
 
 // ------------- interactive draggable carousel -------------
