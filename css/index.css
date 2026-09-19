@@ -602,16 +602,14 @@ html.tw-dark #site-footer,
 }
 
 .solution-shrinking-hero-spacer {
-    height: 80vh;
+    display: contents;
 }
 
 .solution-shrinking-hero {
-    position: sticky;
-    top: 0;
+    position: relative;
     height: 80vh;
-    min-height: 90px;
+    min-height: 520px;
     overflow: hidden;
-    transition: height 0.18s ease-out;
 }
 
 /* Standard hero content wrapper for every solution page: keeps copy pinned to the
@@ -633,37 +631,17 @@ html.tw-dark #site-footer,
     }
 }
 
-.homepage-shrinking-hero {
-    transition: height 0.18s ease-out;
-}
-
-.homepage-hero-spacer {
-    height: 100vh;
-}
-
-.homepage-shrinking-hero {
-    height: 100vh;
+.homepage-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
     min-height: 100svh;
 }
 
 @media (max-width: 768px) {
-    .solution-shrinking-hero-spacer {
-        height: 80vh;
-    }
-
     .solution-shrinking-hero {
-        height: 80vh;
-    }
-
-    /* Homepage hero also carries .solution-shrinking-hero* for shared JS/animation;
-       restore its own full-height sizing so it doesn't shrink to 80vh and spill past its spacer. */
-    .homepage-hero-spacer {
-        height: 100vh;
-    }
-
-    .homepage-shrinking-hero {
-        height: 100vh;
-        min-height: 100svh;
+        height: 75vh;
+        min-height: 480px;
     }
 }
 

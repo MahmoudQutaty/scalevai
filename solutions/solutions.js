@@ -260,32 +260,4 @@ if (typeof gsap !== 'undefined') {
     })
 }
 
-const shrinkingHero = document.querySelector(".solution-shrinking-hero")
-const shrinkingHeroSpacer = document.querySelector(".solution-shrinking-hero-spacer")
-
-function resolveHeroLength(value, fallback) {
-    const probe = document.createElement("div")
-    probe.style.height = value
-    document.body.appendChild(probe)
-    const resolved = probe.offsetHeight || fallback
-    probe.remove()
-    return resolved
-}
-
-function updateSolutionHero() {
-    if (!shrinkingHero || !shrinkingHeroSpacer) return
-
-    const maxHeight = resolveHeroLength("80vh", window.innerHeight * 0.8)
-    const minHeight = resolveHeroLength("90px", 90)
-    const rect = shrinkingHeroSpacer.getBoundingClientRect()
-    const scrollRange = Math.max(1, shrinkingHeroSpacer.offsetHeight - minHeight)
-    const progress = Math.min(Math.max(-rect.top / scrollRange, 0), 1)
-
-    shrinkingHero.style.height = `${maxHeight - (maxHeight - minHeight) * progress}px`
-}
-
-updateSolutionHero()
-window.addEventListener("scroll", updateSolutionHero, { passive: true })
-window.addEventListener("resize", updateSolutionHero)
-
 

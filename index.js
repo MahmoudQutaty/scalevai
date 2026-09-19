@@ -81,37 +81,6 @@ function handleHeaderScroll() {
 handleHeaderScroll()
 window.addEventListener("scroll", handleHeaderScroll, { passive: true })
 
-const shrinkingHero = document.querySelector(".homepage-shrinking-hero")
-const shrinkingHeroSpacer = document.querySelector(".homepage-hero-spacer")
-
-function resolveHeroLength(value, fallback) {
-    const probe = document.createElement("div")
-    probe.style.height = value
-    document.body.appendChild(probe)
-    const resolved = probe.offsetHeight || fallback
-    probe.remove()
-    return resolved
-}
-
-function updateHomepageHero() {
-    if (!shrinkingHero || !shrinkingHeroSpacer) return
-
-    const maxHeight = resolveHeroLength("100svh", window.innerHeight)
-    const minHeight = resolveHeroLength("90px", 90)
-    const rect = shrinkingHeroSpacer.getBoundingClientRect()
-    const scrollRange = Math.max(180, window.innerHeight * 0.7)
-    const progress = Math.min(Math.max((-rect.top) / scrollRange, 0), 1)
-    const easedProgress = 1 - Math.pow(1 - progress, 2)
-
-    shrinkingHero.style.height = `${maxHeight - (maxHeight - minHeight) * easedProgress}px`
-    const heroText = shrinkingHero.querySelector("h2")
-    if (heroText) heroText.style.opacity = `${Math.max(0, 1 - easedProgress * 1.3)}`
-}
-
-updateHomepageHero()
-window.addEventListener("scroll", updateHomepageHero, { passive: true })
-window.addEventListener("resize", updateHomepageHero)
-
 /** Dark and light theme */
 if (localStorage.getItem('color-mode') === 'dark' || (!('color-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('tw-dark')

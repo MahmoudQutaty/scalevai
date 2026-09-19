@@ -249,10 +249,9 @@
 }
 
 .solution-shrinking-hero {
-    position: sticky;
-    top: 0;
+    position: relative;
     height: 80vh;
-    min-height: 90px;
+    min-height: 520px;
     overflow: hidden;
 }
 
