@@ -143,9 +143,18 @@ class Prompt{
 
 /** Shared header, footer, and VAI launcher markup for every ScaleVAI page. */
 (function mountSharedSiteChrome() {
-    const isSubdir = window.location.pathname.includes('/solutions/') || window.location.pathname.includes('/industries/')
+    const isSubdir = window.location.pathname.includes('/solutions/') || window.location.pathname.includes('/industries/') || window.location.pathname.includes('/vai/')
     const assetRoot = isSubdir ? '../' : './'
     const logoPath = `${assetRoot}assets/logo/`
+
+    const pathLower = window.location.pathname.toLowerCase().replace(/\/$/, '')
+    const segments = pathLower.split('/').filter(Boolean)
+    const isHome = !isSubdir && (
+        segments.length === 0 ||
+        (segments[segments.length - 1] === 'index.html' && !segments.some(s => ['solutions', 'industries', 'vai', 'blog'].includes(s))) ||
+        (!pathLower.includes('contact.html') && !pathLower.includes('solutions') && !pathLower.includes('industries') && !pathLower.includes('vai'))
+    )
+    const bookCallHref = isHome ? '#contact' : `${assetRoot}contact.html`
 
     if (isSubdir) {
         document.body.classList.add('solution-page')
@@ -326,7 +335,7 @@ class Prompt{
 
                     <div class="lg:tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center">
                         <button type="button" onclick="toggleMode()" class="header-links tw-text-gray-600 dark:tw-text-gray-300" title="Toggle theme" id="theme-toggle"><i class="bi bi-sun" id="toggle-mode-icon"></i></button>
-                        <a href="${assetRoot}contact.html" aria-label="Book a discovery call" class="btn tw-flex tw-gap-3 tw-px-3 tw-py-2"><span>Book a call</span><i class="bi bi-arrow-right"></i></a>
+                        <a href="${bookCallHref}" aria-label="Book a discovery call" class="btn tw-flex tw-gap-3 tw-px-3 tw-py-2"><span>Book a call</span><i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
                 <button class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-gray-500 lg:tw-hidden" onclick="toggleHeader()" aria-label="menu" id="collapse-btn"></button>

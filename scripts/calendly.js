@@ -247,10 +247,41 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
         }
     }
 
+    function isCurrentPageHome() {
+        const p = window.location.pathname.toLowerCase().replace(/\/$/, "");
+        const segments = p.split("/").filter(Boolean);
+        if (segments.length === 0) return true; // "/"
+        const last = segments[segments.length - 1];
+        const subdirs = ["solutions", "industries", "vai", "blog"];
+        if (last === "index.html" && !segments.some(seg => subdirs.includes(seg))) {
+            return true;
+        }
+        if (!p.includes("contact.html") && !p.includes("solutions") && !p.includes("industries") && !p.includes("vai")) {
+            return true;
+        }
+        return false;
+    }
+
+    function isCurrentPageContact() {
+        const p = window.location.pathname.toLowerCase();
+        return p.includes("contact.html") || !!document.getElementById("contact-calendly-iframe") || !!document.querySelector(".contact-workspace");
+    }
+
+    function getContactPageHref() {
+        const isSubdir = window.location.pathname.includes("/solutions/") ||
+                         window.location.pathname.includes("/industries/") ||
+                         window.location.pathname.includes("/vai/");
+        return isSubdir ? "../contact.html" : "./contact.html";
+    }
+
     // Expose functions globally
     window.openScalevaiCalendly = function (event) {
         if (event && typeof event.preventDefault === "function") {
             event.preventDefault();
+        }
+        if (!isCurrentPageHome() && !isCurrentPageContact()) {
+            window.location.href = getContactPageHref();
+            return;
         }
         openBookingModal();
     };
@@ -273,39 +304,68 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
             target.hasAttribute("data-calendly-modal") ||
             aria.includes("discovery call") ||
             aria.includes("book a call") ||
+            aria.includes("book an advisory") ||
+            aria.includes("book an audit") ||
+            aria.includes("schedule a call") ||
             text.includes("book a discovery call") ||
-            (text.includes("book a call") && !text.includes("saba") && (target.closest(".hero-section, .catalog-hero, .solution-shrinking-hero, .site-header, header, .solution-particle-cta, .contact-bottom-cta") || href.includes("#contact") || href.includes("contact.html")));
+            text.includes("book a call") ||
+            text.includes("book an advisory call") ||
+            text.includes("book an advisory session") ||
+            text.includes("book an audit") ||
+            text.includes("schedule a discovery call") ||
+            text.includes("schedule an industry consultation") ||
+            text.includes("schedule industrial audit") ||
+            text.includes("schedule banking discovery call") ||
+            text.includes("schedule an architecture discovery call") ||
+            (text.includes("book") && text.includes("call") && !text.includes("saba")) ||
+            (href.includes("contact.html") && (text.includes("call") || aria.includes("call") || target.classList.contains("btn"))) ||
+            (href.includes("#contact"));
 
         if (!isDiscoveryCall) return;
 
-        // If explicitly requesting modal dialog via attribute
+        // 1. If user is NOT on the home page:
+        if (!isCurrentPageHome()) {
+            // If already on the contact page:
+            if (isCurrentPageContact()) {
+                if (target.hasAttribute("data-calendly-modal")) {
+                    event.preventDefault();
+                    openBookingModal();
+                    return;
+                }
+                const contactTarget = document.getElementById("contact-calendly-iframe") || document.querySelector(".contact-workspace");
+                if (contactTarget) {
+                    event.preventDefault();
+                    contactTarget.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+                return;
+            }
+
+            // User is NOT on the home page: redirect directly to the contact page (not home page contact section)
+            event.preventDefault();
+            const contactUrl = (href && href.includes("contact.html") && !href.includes("index.html"))
+                ? target.getAttribute("href")
+                : getContactPageHref();
+            window.location.href = contactUrl;
+            return;
+        }
+
+        // 2. User IS on the home page:
         if (target.hasAttribute("data-calendly-modal")) {
             event.preventDefault();
             openBookingModal();
             return;
         }
 
-        // Check if an embedded calendar or contact section is on the current page:
-        const homeIframe = document.getElementById("home-calendly-iframe");
-        const contactIframe = document.getElementById("contact-calendly-iframe");
-        const contactSection = document.getElementById("contact") || document.querySelector(".contact-workspace");
-        const embeddedTarget = homeIframe || contactIframe || contactSection;
-
-        if (embeddedTarget) {
+        // Scroll to the home page contact section:
+        const homeContact = document.getElementById("contact") || document.getElementById("home-calendly-iframe");
+        if (homeContact) {
             event.preventDefault();
-            embeddedTarget.scrollIntoView({ behavior: "smooth", block: "center" });
+            homeContact.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (window.history && window.history.pushState) {
+                window.history.pushState(null, "", "#contact");
+            }
             return;
         }
-
-        // If on a page without an embedded calendar card (e.g., solution detail sub-pages)
-        // and link points to contact.html or #contact: let standard link navigation proceed
-        if (href.includes("contact.html") || href.includes("#contact")) {
-            return;
-        }
-
-        // Otherwise open the instant booking modal
-        event.preventDefault();
-        openBookingModal();
     });
 
     // Run listeners
