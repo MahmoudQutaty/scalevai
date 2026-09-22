@@ -151,9 +151,9 @@ class Prompt{
     const segments = pathLower.split('/').filter(Boolean)
     const isHome = !isSubdir && (
         segments.length === 0 ||
-        (segments[segments.length - 1] === 'index.html' && !segments.some(s => ['solutions', 'industries', 'vai', 'blog'].includes(s))) ||
-        (!pathLower.includes('contact.html') && !pathLower.includes('solutions') && !pathLower.includes('industries') && !pathLower.includes('vai'))
-    )
+        segments[segments.length - 1] === 'index.html' ||
+        segments[segments.length - 1] === ''
+    ) && !pathLower.includes('contact.html') && !pathLower.includes('solutions') && !pathLower.includes('industries') && !pathLower.includes('vai')
     const bookCallHref = isHome ? '#contact' : `${assetRoot}contact.html`
 
     if (isSubdir) {
@@ -164,12 +164,12 @@ class Prompt{
     const header = document.querySelector('#site-header')
     if (header) {
         const industries = [
-            { title: 'Real Estate & Development', icon: 'bi-building', description: 'Smart buildings, automated leasing operations, and 3D conversions.', href: `${assetRoot}industries/real-estate.html` },
-            { title: 'Healthcare & Life Sciences', icon: 'bi-heart-pulse', description: 'Prevent claim denials, accelerate collections, and automate RCM.', href: `${assetRoot}industries/healthcare.html` },
-            { title: 'Manufacturing & Logistics', icon: 'bi-gear-fill', description: 'Computer vision floor safety, shift reconciliation, and inventory tracking.', href: `${assetRoot}industries/manufacturing-logistics.html` },
-            { title: 'Hospitality & Luxury Venues', icon: 'bi-cup-hot-fill', description: 'Direct 3D suite reservations and 24/7 multilingual guest AI.', href: `${assetRoot}industries/hospitality.html` },
-            { title: 'Retail & Store Operations', icon: 'bi-shop', description: 'Shrinkage prevention, inventory stock-outs, and planogram grading.', href: `${assetRoot}industries/retail.html` },
-            { title: 'Financial Services & Banking', icon: 'bi-bank', description: 'Automated KYC extraction, 3-way invoice matching, and compliance audits.', href: `${assetRoot}industries/financial-services.html` },
+            { title: 'Real Estate & Development', icon: 'bi-building', description: 'Smart buildings, automated leasing operations, and 3D conversions.', href: 'javascript:void(0)' },
+            { title: 'Healthcare & Life Sciences', icon: 'bi-heart-pulse', description: 'Prevent claim denials, accelerate collections, and automate RCM.', href: 'javascript:void(0)' },
+            { title: 'Manufacturing & Logistics', icon: 'bi-gear-fill', description: 'Computer vision floor safety, shift reconciliation, and inventory tracking.', href: 'javascript:void(0)' },
+            { title: 'Hospitality & Luxury Venues', icon: 'bi-cup-hot-fill', description: 'Direct 3D suite reservations and 24/7 multilingual guest AI.', href: 'javascript:void(0)' },
+            { title: 'Retail & Store Operations', icon: 'bi-shop', description: 'Shrinkage prevention, inventory stock-outs, and planogram grading.', href: 'javascript:void(0)' },
+            { title: 'Financial Services & Banking', icon: 'bi-bank', description: 'Automated KYC extraction, 3-way invoice matching, and compliance audits.', href: 'javascript:void(0)' },
         ]
 
         const solutions = [
@@ -444,7 +444,7 @@ class Prompt{
                     <div class="tw-flex max-md:tw-flex-col tw-flex-wrap tw-gap-6 tw-h-full tw-w-full tw-justify-around">
                         <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Solutions</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}solutions/workforce-intelligence.html" class="footer-link">Workforce Intelligence</a><a href="${assetRoot}solutions/immersive-showroom.html" class="footer-link">Immersive Showroom</a><a href="${assetRoot}solutions/talent-intelligence.html" class="footer-link">Talent Intelligence</a><a href="${assetRoot}solutions/revenue-cycle.html" class="footer-link">Revenue Cycle</a><a href="${assetRoot}solutions/business-efficiency-consulting.html" class="footer-link">Business Efficiency</a><a href="${assetRoot}solutions.html" class="footer-link tw-font-medium tw-text-[#6366f1] dark:tw-text-[#818cf8]">All solutions &rarr;</a></div></div>
                         <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Company</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}index.html#about" class="footer-link">About us</a><a href="${assetRoot}contact.html" class="footer-link">Contact us</a></div></div>
-                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Industries</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="${assetRoot}industries/real-estate.html" class="footer-link">Real Estate</a><a href="${assetRoot}industries/healthcare.html" class="footer-link">Healthcare</a><a href="${assetRoot}industries/manufacturing-logistics.html" class="footer-link">Manufacturing &amp; Logistics</a><a href="${assetRoot}industries/hospitality.html" class="footer-link">Hospitality</a><a href="${assetRoot}industries/retail.html" class="footer-link">Retail</a><a href="${assetRoot}industries/financial-services.html" class="footer-link">Financial Services</a><a href="${assetRoot}industries.html" class="footer-link tw-font-medium tw-text-[#6366f1] dark:tw-text-[#818cf8]">All industries &rarr;</a></div></div>
+                        <div class="tw-flex tw-h-full tw-w-[200px] tw-flex-col tw-gap-4"><h2 class="tw-text-xl">Industries</h2><div class="tw-flex tw-flex-col tw-gap-3"><a href="javascript:void(0)" class="footer-link">Real Estate</a><a href="javascript:void(0)" class="footer-link">Healthcare</a><a href="javascript:void(0)" class="footer-link">Manufacturing &amp; Logistics</a><a href="javascript:void(0)" class="footer-link">Hospitality</a><a href="javascript:void(0)" class="footer-link">Retail</a><a href="javascript:void(0)" class="footer-link">Financial Services</a><a href="${assetRoot}industries.html" class="footer-link tw-font-medium tw-text-[#6366f1] dark:tw-text-[#818cf8]">All industries &rarr;</a></div></div>
                     </div>
                 </div>
                 <hr class="tw-mt-8"><div class="tw-mt-2 tw-flex tw-gap-2 tw-flex-col tw-text-gray-700 dark:tw-text-gray-300 tw-place-items-center tw-text-[12px] tw-w-full tw-text-center"><span>Dubai, UAE &middot; scale@scalevai.com</span><span>Copyright &#169; 2026 ScaleVAI. All rights reserved.</span></div>
@@ -463,6 +463,25 @@ class Prompt{
         const page = target.endsWith('#solutions') ? 'solutions.html' : 'industries.html'
         link.setAttribute('href', `${assetRoot}${page}`)
     })
+
+    // If not on the homepage, ensure any Book a Call or #contact links point directly to contact.html
+    if (!isHome) {
+        document.querySelectorAll('a[href$="#contact"], a[href*="index.html#contact"]').forEach(link => {
+            link.setAttribute('href', `${assetRoot}contact.html`)
+        })
+
+        // Also normalize any Book a call link hrefs on non-homepage
+        document.querySelectorAll('a').forEach(link => {
+            const text = (link.textContent || '').trim().toLowerCase()
+            const aria = (link.getAttribute('aria-label') || '').toLowerCase()
+            if (text.includes('book a call') || text.includes('book a discovery call') || aria.includes('book a call') || aria.includes('discovery call')) {
+                const currentHref = link.getAttribute('href') || ''
+                if (currentHref === '#contact' || currentHref.endsWith('#contact') || currentHref.includes('index.html')) {
+                    link.setAttribute('href', `${assetRoot}contact.html`)
+                }
+            }
+        })
+    }
 
     // Ensure any "Book a discovery call" / hero primary action button receives the dedicated discovery call styling
     document.querySelectorAll('a, button').forEach(el => {

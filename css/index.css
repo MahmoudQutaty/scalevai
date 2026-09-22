@@ -3192,13 +3192,13 @@ html.tw-dark .scalevai-modal-close:hover,
     flex: 1;
     min-height: 620px;
     overflow: hidden;
-    background: #ffffff;
+    background: #ffffff !important;
 }
 
 .tw-dark .scalevai-modal-body,
 html.tw-dark .scalevai-modal-body,
 .dark .scalevai-modal-body {
-    background: #0f1115;
+    background: #ffffff !important;
 }
 
 .scalevai-modal-spinner {
@@ -3286,5 +3286,146 @@ html.tw-dark .scalevai-modal-footer,
         text-align: center;
     }
 }
+
+/* ==========================================================================
+   Industry Calculator Dark Mode Styles
+   Fixes contrast across all industry estimate pricing / ROI calculators:
+   #fin-calculator, #healthcare-calculator, #hospitality-calculator,
+   #industrial-calculator, #real-estate-calculator, #retail-calculator
+   ========================================================================== */
+
+/* Dark mode for entire section wrapper */
+.tw-dark section[id$="-calculator"],
+html.tw-dark section[id$="-calculator"] {
+    background-color: #0a0c10 !important;
+    color: #f3f4f6 !important;
+}
+
+/* Section heading & description */
+.tw-dark section[id$="-calculator"] h2,
+html.tw-dark section[id$="-calculator"] h2 {
+    color: #ffffff !important;
+}
+
+.tw-dark section[id$="-calculator"] p,
+html.tw-dark section[id$="-calculator"] p {
+    color: #d1d5db !important;
+}
+
+/* Main calculator card container */
+.tw-dark section[id$="-calculator"] .tw-rounded-2xl.tw-bg-white,
+html.tw-dark section[id$="-calculator"] .tw-rounded-2xl.tw-bg-white,
+.tw-dark section[id$="-calculator"] [class*="tw-rounded-2xl"][class*="tw-bg-white"],
+html.tw-dark section[id$="-calculator"] [class*="tw-rounded-2xl"][class*="tw-bg-white"] {
+    background-color: #12141a !important;
+    border-color: #242830 !important;
+}
+
+/* Inputs column labels & text */
+.tw-dark section[id$="-calculator"] label,
+html.tw-dark section[id$="-calculator"] label {
+    color: #9ca3af !important;
+}
+
+.tw-dark section[id$="-calculator"] .tw-text-sm.tw-font-medium,
+html.tw-dark section[id$="-calculator"] .tw-text-sm.tw-font-medium {
+    color: #f3f4f6 !important;
+}
+
+/* Archetype buttons in inactive state */
+.tw-dark section[id$="-calculator"] button[class*="-archetype-btn"],
+html.tw-dark section[id$="-calculator"] button[class*="-archetype-btn"] {
+    background-color: #161820 !important;
+    border-color: #2a2f3a !important;
+    color: #d1d5db !important;
+}
+
+.tw-dark section[id$="-calculator"] button[class*="-archetype-btn"]:hover,
+html.tw-dark section[id$="-calculator"] button[class*="-archetype-btn"]:hover {
+    background-color: #1e222c !important;
+    border-color: #3f4554 !important;
+    color: #ffffff !important;
+}
+
+/* Archetype buttons in active state */
+.tw-dark section[id$="-calculator"] button[class*="-archetype-btn"].is-active,
+html.tw-dark section[id$="-calculator"] button[class*="-archetype-btn"].is-active {
+    background-color: #c9963a !important;
+    border-color: #c9963a !important;
+    color: #000000 !important;
+}
+
+.tw-dark section[id$="-calculator"] button[class*="-archetype-btn"].is-active i,
+html.tw-dark section[id$="-calculator"] button[class*="-archetype-btn"].is-active i {
+    color: #000000 !important;
+}
+
+/* Slider values / accents in dark mode */
+.tw-dark section[id$="-calculator"] input[type="range"],
+html.tw-dark section[id$="-calculator"] input[type="range"] {
+    accent-color: #c9963a !important;
+}
+
+/* Results column container */
+.tw-dark section[id$="-calculator"] .tw-rounded-xl.tw-bg-\[\#f6f7fb\],
+html.tw-dark section[id$="-calculator"] .tw-rounded-xl.tw-bg-\[\#f6f7fb\],
+.tw-dark section[id$="-calculator"] [class*="tw-rounded-xl"][class*="tw-bg-\[\#f6f7fb\]"],
+html.tw-dark section[id$="-calculator"] [class*="tw-rounded-xl"][class*="tw-bg-\[\#f6f7fb\]"] {
+    background-color: #08090d !important;
+    border-color: #1f232b !important;
+}
+
+/* Metric cards inside results column */
+.tw-dark section[id$="-calculator"] .tw-rounded-lg.tw-bg-white,
+html.tw-dark section[id$="-calculator"] .tw-rounded-lg.tw-bg-white,
+.tw-dark section[id$="-calculator"] [class*="tw-rounded-lg"][class*="tw-bg-white"],
+html.tw-dark section[id$="-calculator"] [class*="tw-rounded-lg"][class*="tw-bg-white"] {
+    background-color: #12141a !important;
+    border-color: #242830 !important;
+}
+
+/* Metric card labels and notes in dark mode */
+.tw-dark section[id$="-calculator"] .tw-rounded-lg .tw-text-xs,
+html.tw-dark section[id$="-calculator"] .tw-rounded-lg .tw-text-xs {
+    color: #9ca3af !important;
+}
+
+.tw-dark section[id$="-calculator"] .tw-rounded-lg .tw-text-\[11px\],
+html.tw-dark section[id$="-calculator"] .tw-rounded-lg .tw-text-\[11px\] {
+    color: #6b7280 !important;
+}
+
+/* Metric values inside results cards */
+.tw-dark section[id$="-calculator"] .tw-rounded-lg .tw-text-2xl,
+html.tw-dark section[id$="-calculator"] .tw-rounded-lg .tw-text-2xl {
+    color: #c9963a !important;
+}
+
+.tw-dark section[id$="-calculator"] .tw-rounded-lg .tw-text-2xl[class*="tw-text-green"],
+html.tw-dark section[id$="-calculator"] .tw-rounded-lg .tw-text-2xl[class*="tw-text-green"] {
+    color: #4ade80 !important;
+}
+
+/* Results column big savings number */
+.tw-dark section[id$="-calculator"] [id$="-display"].tw-text-4xl,
+.tw-dark section[id$="-calculator"] [id$="-display"].tw-text-5xl,
+html.tw-dark section[id$="-calculator"] [id$="-display"].tw-text-4xl,
+html.tw-dark section[id$="-calculator"] [id$="-display"].tw-text-5xl {
+    color: #c9963a !important;
+}
+
+/* Disabled/Unclickable Industry Links */
+.industry-unclickable,
+a[data-industry-disabled="true"],
+.industry-card-cta.industry-unclickable {
+    pointer-events: none !important;
+    cursor: default !important;
+    text-decoration: none !important;
+}
+
+.industry-card-cta.industry-unclickable {
+    opacity: 0.9;
+}
+
 
 

@@ -9,34 +9,17 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
     }
     window.__SCALEVAI_CALENDLY_INITIALIZED = true;
 
-    function isDarkModeActive() {
-        return (
-            document.documentElement.classList.contains("tw-dark") ||
-            document.documentElement.classList.contains("dark") ||
-            localStorage.getItem("color-mode") === "dark" ||
-            (!("color-mode" in localStorage) &&
-                window.matchMedia &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches)
-        );
-    }
-
-    function getThemedCalendlyUrl(isDark, embedType = "Inline") {
+    // Calendly widget is locked to clean white styling so it never reloads when the user toggles dark/light mode
+    function getCalendlyUrl(embedType = "Inline") {
         const rawUrl = window.SCALEVAI_CALENDLY_URL || "https://calendly.com/qutatym129/30min";
         const baseUrl = rawUrl.split("?")[0];
         const params = new URLSearchParams();
 
         params.set("embed_domain", window.location.hostname || "scalevai.com");
         params.set("embed_type", embedType);
-
-        if (isDark) {
-            params.set("background_color", "000000");
-            params.set("text_color", "ffffff");
-            params.set("primary_color", "6366f1");
-        } else {
-            params.set("background_color", "fcfcfc");
-            params.set("text_color", "111827");
-            params.set("primary_color", "003060");
-        }
+        params.set("background_color", "ffffff");
+        params.set("text_color", "111827");
+        params.set("primary_color", "6366f1");
         params.set("hide_gdpr_banner", "1");
 
         return `${baseUrl}?${params.toString()}`;
@@ -49,7 +32,7 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
             if (data && data.url && !data.url.includes("new-meeting") && !data.url.includes("your-account")) {
                 if (data.url !== window.SCALEVAI_CALENDLY_URL) {
                     window.SCALEVAI_CALENDLY_URL = data.url;
-                    syncAllCalendlyIframes(true);
+                    syncAllCalendlyIframes();
                 }
             }
         })
@@ -57,18 +40,15 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
             // Keep default URL
         });
 
-    // 2. Synchronize all inline iframes to correct theme (only when necessary to avoid reloading)
-    function syncAllCalendlyIframes(force = false) {
-        const isDark = isDarkModeActive();
-        const themedUrl = getThemedCalendlyUrl(isDark, "Inline");
-        const targetBg = isDark ? 'background_color=000000' : 'background_color=fcfcfc';
+    // 2. Ensure all inline iframes have the white Calendly URL loaded without duplicate loads
+    function syncAllCalendlyIframes() {
+        const whiteUrl = getCalendlyUrl("Inline");
 
         document.querySelectorAll('.calendly-iframe').forEach((iframe) => {
             try {
                 const currentSrc = iframe.getAttribute('src') || '';
-                // Only change src if it doesn't already match the current theme or if forced
-                if (force || !currentSrc.includes(targetBg)) {
-                    iframe.src = themedUrl;
+                if (!currentSrc || currentSrc.includes('background_color=000000') || !currentSrc.includes('background_color=ffffff')) {
+                    iframe.src = whiteUrl;
                 }
             } catch (e) {
                 // Ignore URL parsing errors
@@ -123,22 +103,16 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
         }
     });
 
-    // 5. Watch for theme changes (dark/light mode toggles)
-    const themeObserver = new MutationObserver(() => {
-        syncAllCalendlyIframes(false);
-    });
-    if (document.documentElement) {
-        themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    }
+    // 5. Theme change handling: Calendly is locked to white mode, so themeObserver does NOT reload the iframe
+    // This prevents double-loading and screen flashing when toggling dark/light mode
 
-    // 6. Instant Booking Modal
+    // 6. Instant Booking Modal (Always white, matching widget consistency and zero reloads)
     let modalElement = null;
 
     function createBookingModal() {
         if (modalElement) return modalElement;
 
-        const isDark = isDarkModeActive();
-        const themedUrl = getThemedCalendlyUrl(isDark, "PopupWidget");
+        const whiteUrl = getCalendlyUrl("PopupWidget");
 
         const modal = document.createElement("div");
         modal.id = "scalevai-booking-modal";
@@ -172,7 +146,7 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
                     <iframe 
                         id="scalevai-modal-iframe" 
                         class="scalevai-modal-iframe" 
-                        src="${themedUrl}" 
+                        src="${whiteUrl}" 
                         frameborder="0" 
                         scrolling="no" 
                         title="Book a Discovery Call - ScaleVAI"
@@ -217,15 +191,13 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
 
     function openBookingModal() {
         const modal = createBookingModal();
-        const isDark = isDarkModeActive();
-        const themedUrl = getThemedCalendlyUrl(isDark, "PopupWidget");
+        const whiteUrl = getCalendlyUrl("PopupWidget");
 
         const iframe = modal.querySelector("#scalevai-modal-iframe");
         if (iframe) {
             const currentSrc = iframe.getAttribute("src") || "";
-            const targetBg = isDark ? "background_color=0f1115" : "background_color=ffffff";
-            if (!currentSrc.includes(targetBg)) {
-                iframe.src = themedUrl;
+            if (!currentSrc || currentSrc.includes("background_color=000000") || !currentSrc.includes("background_color=ffffff")) {
+                iframe.src = whiteUrl;
             }
         }
 
@@ -252,11 +224,8 @@ window.SCALEVAI_CALENDLY_URL = "https://calendly.com/qutatym129/30min";
         const segments = p.split("/").filter(Boolean);
         if (segments.length === 0) return true; // "/"
         const last = segments[segments.length - 1];
-        const subdirs = ["solutions", "industries", "vai", "blog"];
-        if (last === "index.html" && !segments.some(seg => subdirs.includes(seg))) {
-            return true;
-        }
-        if (!p.includes("contact.html") && !p.includes("solutions") && !p.includes("industries") && !p.includes("vai")) {
+        if (last === "index.html" && segments.length === 1) return true;
+        if ((last === "index.html" || last === "") && !segments.some(seg => ["solutions", "industries", "vai", "blog"].includes(seg))) {
             return true;
         }
         return false;
