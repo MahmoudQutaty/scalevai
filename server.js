@@ -4,11 +4,12 @@ const path = require('path');
 const SYSTEM_PROMPT = require('./api/shared/vai-system-prompt');
 const { verifyCalendlySignature } = require('./api/shared/calendly-signature');
 const { isRateLimited } = require('./api/shared/rate-limiter');
+const { callGemini } = require('./api/shared/gemini-client');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
 
 // Calendly configurations
 const CALENDLY_URL = (process.env.CALENDLY_URL && !process.env.CALENDLY_URL.includes('new-meeting'))
@@ -31,7 +32,7 @@ app.use(express.static(__dirname));
 
 app.post('/api/chat', async (req, res) => {
     try {
-        if (!OPENAI_API_KEY) {
+        if (!GEMINI_API_KEY) {
             return res.status(500).json({ error: 'The assistant is not configured yet. Please configure your API key.' });
         }
 
@@ -53,34 +54,25 @@ app.post('/api/chat', async (req, res) => {
         let reply = "";
         let responded = false;
 
-        const isPlaceholderKey = !OPENAI_API_KEY || OPENAI_API_KEY.includes('your-') || OPENAI_API_KEY.includes('placeholder') || OPENAI_API_KEY.includes('here');
+        const isPlaceholderKey = !GEMINI_API_KEY || GEMINI_API_KEY.includes('your-') || GEMINI_API_KEY.includes('placeholder') || GEMINI_API_KEY.includes('here');
 
-        if (OPENAI_API_KEY && !isPlaceholderKey) {
+        if (GEMINI_API_KEY && !isPlaceholderKey) {
             try {
-                const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${OPENAI_API_KEY}`,
-                    },
-                    body: JSON.stringify({
-                        model: OPENAI_MODEL,
-                        messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...trimmed],
-                        max_tokens: 400,
-                        temperature: 0.4,
-                    }),
+                const result = await callGemini({
+                    apiKey: GEMINI_API_KEY,
+                    model: GEMINI_MODEL,
+                    systemPrompt: SYSTEM_PROMPT,
+                    messages: trimmed,
                 });
 
-                if (openaiRes.ok) {
-                    const data = await openaiRes.json();
-                    reply = data.choices?.[0]?.message?.content?.trim() || "I'm sorry, I couldn't generate a response.";
+                if (result.ok) {
+                    reply = result.reply;
                     responded = true;
                 } else {
-                    const errText = await openaiRes.text();
-                    console.warn('OpenAI API error:', openaiRes.status, errText);
+                    console.warn('Gemini API error:', result.status, result.errText);
                 }
             } catch (err) {
-                console.warn('OpenAI request failed:', err);
+                console.warn('Gemini request failed:', err);
             }
         }
 

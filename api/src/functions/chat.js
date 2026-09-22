@@ -1,9 +1,10 @@
 const { app } = require('@azure/functions');
 const SYSTEM_PROMPT = require('../../shared/vai-system-prompt');
 const { isRateLimited } = require('../../shared/rate-limiter');
+const { callGemini } = require('../../shared/gemini-client');
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
 
 app.http('chat', {
     methods: ['POST'],
@@ -11,7 +12,7 @@ app.http('chat', {
     route: 'chat',
     handler: async (request, context) => {
         try {
-            if (!OPENAI_API_KEY) {
+            if (!GEMINI_API_KEY) {
                 return { status: 500, jsonBody: { error: 'The assistant is not configured yet. Please configure your API key.' } };
             }
 
@@ -31,37 +32,28 @@ app.http('chat', {
                 .slice(-10)
                 .map((m) => ({ role: m.role, content: m.content.slice(0, 2000) }));
 
-            const isPlaceholderKey = OPENAI_API_KEY.includes('your-') || OPENAI_API_KEY.includes('placeholder') || OPENAI_API_KEY.includes('here');
+            const isPlaceholderKey = GEMINI_API_KEY.includes('your-') || GEMINI_API_KEY.includes('placeholder') || GEMINI_API_KEY.includes('here');
             if (isPlaceholderKey) {
                 return { status: 502, jsonBody: { error: 'The assistant is temporarily unavailable. Please verify your API key settings.' } };
             }
 
-            const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${OPENAI_API_KEY}`,
-                },
-                body: JSON.stringify({
-                    model: OPENAI_MODEL,
-                    messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...trimmed],
-                    max_tokens: 400,
-                    temperature: 0.4,
-                }),
+            const result = await callGemini({
+                apiKey: GEMINI_API_KEY,
+                model: GEMINI_MODEL,
+                systemPrompt: SYSTEM_PROMPT,
+                messages: trimmed,
             });
 
-            if (!openaiRes.ok) {
-                const errText = await openaiRes.text();
-                context.warn('OpenAI API error:', openaiRes.status, errText);
+            if (!result.ok) {
+                context.warn('Gemini API error:', result.status, result.errText);
                 return { status: 502, jsonBody: { error: 'The assistant is temporarily unavailable. Please verify your API key settings.' } };
             }
 
-            const data = await openaiRes.json();
-            const reply = data.choices?.[0]?.message?.content?.trim() || "I'm sorry, I couldn't generate a response.";
-            return { jsonBody: { reply } };
+            return { jsonBody: { reply: result.reply } };
         } catch (err) {
             context.error('Chat endpoint error:', err);
             return { status: 500, jsonBody: { error: 'Something went wrong. Please try again.' } };
         }
     }
 });
+
