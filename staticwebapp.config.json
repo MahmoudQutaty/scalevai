@@ -1,0 +1,15 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*", "/css/*", "/scripts/*", "/solutions/*", "/industries/*", "/vai/*", "/api/*", "*.{html,js,css,png,jpg,jpeg,svg,mp4,ico,json,txt}"]
+  },
+  "mimeTypes": {
+    ".mp4": "video/mp4"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 404
+    }
+  }
+}
