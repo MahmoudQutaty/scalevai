@@ -53,16 +53,7 @@ app.http('chat', {
             if (!openaiRes.ok) {
                 const errText = await openaiRes.text();
                 context.warn('OpenAI API error:', openaiRes.status, errText);
-                return {
-                    status: 502,
-                    jsonBody: {
-                        error: 'The assistant is temporarily unavailable. Please verify your API key settings.',
-                        debugStatus: openaiRes.status,
-                        debugText: errText.slice(0, 300),
-                        debugKeyTail: OPENAI_API_KEY.slice(-6),
-                        debugKeyLen: OPENAI_API_KEY.length,
-                    },
-                };
+                return { status: 502, jsonBody: { error: 'The assistant is temporarily unavailable. Please verify your API key settings.' } };
             }
 
             const data = await openaiRes.json();
