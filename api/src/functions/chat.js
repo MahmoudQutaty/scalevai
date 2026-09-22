@@ -46,7 +46,14 @@ app.http('chat', {
 
             if (!result.ok) {
                 context.warn('Gemini API error:', result.status, result.errText);
-                return { status: 502, jsonBody: { error: 'The assistant is temporarily unavailable. Please verify your API key settings.' } };
+                return {
+                    status: 502,
+                    jsonBody: {
+                        error: 'The assistant is temporarily unavailable. Please verify your API key settings.',
+                        debugStatus: result.status,
+                        debugText: (result.errText || '').slice(0, 300),
+                    },
+                };
             }
 
             return { jsonBody: { reply: result.reply } };
