@@ -14,7 +14,7 @@ const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
 // Calendly configurations
 const CALENDLY_URL = (process.env.CALENDLY_URL && !process.env.CALENDLY_URL.includes('new-meeting'))
     ? process.env.CALENDLY_URL
-    : 'https://calendly.com/qutatym129/30min';
+    : 'https://calendly.com/saba-scalevai/30min';
 const CALENDLY_CLIENT_ID = process.env.CALENDLY_CLIENT_ID || '';
 const CALENDLY_CLIENT_SECRET = process.env.CALENDLY_CLIENT_SECRET || '';
 const CALENDLY_WEBHOOK_SIGNING_KEY = process.env.CALENDLY_WEBHOOK_SIGNING_KEY || '';
